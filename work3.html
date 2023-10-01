@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--1. **Question 1:**
+   - Create a `div` element with a class of `banner`.
+   - Assign a background image to it.
+   - Set the background image to cover the entire `div` without repeating and position it at the center of the `div`.
+   - Finally, set a fallback background color to `#a1a1a1`.
+2. **Question 2:**
+   - Create an element with an id of `double-background`.
+   - Assign two different background images to it.
+   - Position the first image at the top left corner and the second one at the bottom right corner.
+   - Set the background size of the first image to `contain` and the second one to `50% 50%`.
+   - Make sure the second image does not repeat.
+3. **Question 3:**
+   - Create a `section` element with a class of `hero`.
+   - Set a background image and a background color of `#f0f0f0` to the `section`.
+- Position the background image to the bottom center of the `section` and do not allow it to repeat.
+ - What will be visible if the background image is smaller than the size of the `section`?-->
+    <style>
+        .banner{
+            background-image: url(images.jpg);
+            background-size: cover;
+            height: 300px;
+            width: 300px;
+            background-position: center;
+        }
+        #double-background{
+            background-image: url(images.png), url(Cillian_Murphy-2014.jpg);
+            height: 300px;
+            width: 300px;
+            background-position: right bottom, left 50%;
+            background-repeat: no-repeat;
+        }
+
+        .hero{
+            background-image: url(images.png);
+            background-color: #f0f0f0;
+            width: 300px;
+            height: 300px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"></div>
+    <div id="double-background"></div>
+    <div class="hero"></div>
+</body>
+</html>
