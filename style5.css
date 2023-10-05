@@ -1,0 +1,31 @@
+body{
+    background-color: black;
+}
+
+
+a  {
+    font-size: 2rem;
+    text-decoration: none;
+    color: aqua;
+}
+
+a:visited {
+    color: blue;
+}
+
+a:hover {
+
+     text-decoration: underline;
+     color: azure;
+}
+
+ul {
+    font-size: 2rem;
+    color: aliceblue;
+    text-align: center;
+    list-style-position: inside;
+}
+
+ul li:nth-child(3){
+    color: blue;
+}
