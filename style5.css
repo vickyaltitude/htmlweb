@@ -29,3 +29,18 @@ ul {
 ul li:nth-child(3){
     color: blue;
 }
+
+section{
+    color: antiquewhite;
+    font-size: 2rem;
+}
+
+#flo1{
+    float: left;
+    margin-right: 20px;
+}
+
+img{
+    height: 300px;
+    width: 300px;
+}
