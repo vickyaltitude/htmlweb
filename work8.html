@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div{
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        #one{
+            width: 300px;
+            height: 300px;
+            background-color: brown;
+        }
+        #two{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+
+              #three{
+                width: 300px;
+                height: 300px;
+                background-image: url("https://as2.ftcdn.net/v2/jpg/00/97/58/97/1000_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg");
+                background-position: center;
+            }
+            
+
+        @media screen and (max-width: 600px) {
+            
+         
+            #div{
+              flex-direction: column;
+
+            }
+
+        
+        #one{
+            width: 300px;
+            height: 300px;
+            background-color: brown;
+        }
+        #two{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+        #three{
+            width: 300px;
+            height: 300px;
+            background-image: url("https://img.freepik.com/free-photo/isolated-happy-smiling-dog-white-background-portrait-2_1562-691.jpg?size=626&ext=jpg");
+
+
+        }
+    }
+
+        /**
+        Media query syntax 
+        @media media-type and (media-feature:value){
+            CSS rule on the basis of id selector or class selector or tag selector
+        }
+        media-type -all
+        screen -for screen like mobile phones  or tabnlests
+        print -printing the pdf and all
+
+        media feature -
+        width and height (width and height of veiw port)
+        max-width
+        min-width
+        orientation (landscape or portrait) ,
+        resolution 
+
+    
+
+         @media screen and (height:200px){
+            CSS rule on the basis of id selector or class selector or tag selector
+        }
+        **/
+    </style>
+</head>
+<body>
+    <div id="div">
+        <div id="one">
+
+        </div>
+
+        <div id="two">
+
+        </div>
+
+        <div id="three">
+
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
