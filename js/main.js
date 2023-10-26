@@ -1,0 +1,1 @@
+console.log(typeof("Hi I'm vignesh"))
