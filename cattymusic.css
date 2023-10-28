@@ -1,0 +1,98 @@
+/*Re-sizing the entire html*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Side Navingation bar*/
+.head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 4vw;
+    position: absolute;
+    ;background-color: rgb(217, 232, 245);
+    font-size: 1.5rem;
+}
+/* header section*/
+.bg2{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    background-color: rgba(0, 0, 0, 0.616);
+    color: azure;
+    margin-left: 4vw;
+    display: flex;
+    height: 100%;
+    width: auto;
+    gap: 50px;
+}
+/* header section next to image*/
+.main1{
+    width: 100%;
+    height: 300%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem;
+}
+.caps{
+    font-size: 2.2rem;
+}
+.main1dis{
+    display: flex;
+    gap: 20px;
+}
+/* Middle of the body below to the header*/
+.main2{
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    margin-left: 4vw;
+    height: 100%;
+    width: auto;
+    
+}
+.songs-container {
+    display: flex;
+    gap: 4rem; 
+}
+
+.song {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem; 
+    gap: 3.2rem;
+}
+
+/*footer*/
+
+.foot{
+    height: 14vh;
+    padding-top: 23px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    margin-left: 15px;
+    display: flex;
+    width: 97.5vw;
+    position: absolute;
+    background-color: #0176be;
+    color: whitesmoke;
+}
+.spac{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footicon{
+    margin-right: 60px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: end;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
