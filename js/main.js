@@ -156,7 +156,7 @@ let computer = "scissor";
 switch(computer){
     case computer === me:
         console.log("Tie");
-        break;
+        break; 
     case "scissor":
         if (computer ===  "scissor"){
             console.log("me wins");
@@ -168,3 +168,27 @@ switch(computer){
         default:
             console.log("tie");
 }
+
+
+//ternary operator - it is concise method for conditional statements like if / switch. it's syntax is condition ? itIt'sTrue : ifIt'sFalse. here ? acts as false and : acts as else. Note you can also use : on and so on like else if
+let markss = 76;
+grade = markss >= 90 ? "A" 
+: markss >= 80 ? "B"
+: markss >= 70 ? "c"
+: "No grade"
+console.log(grade);
+//small exercise to understand the ternary operator better
+let mee = "rock";
+let computerr = "paper";
+let Result = 
+computerr === mee 
+? "Tie"
+: computerr === "scissor" && mee === "paper"
+?"computer won"
+: computerr === "paper" && mee === "rock"
+? "computer won"
+: computerr === "rock" && mee === "scissor"
+? "computer won"
+: "Me won"
+console.log(Result);
+
