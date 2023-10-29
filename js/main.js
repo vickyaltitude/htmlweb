@@ -69,3 +69,102 @@ console.log(Math.round(Math.random()*100));
 // PRACTICE - YOU HAVE TO GET RANDOM LETTER FROM THE DECLARED VARIABLE
 const myVari = "vigneshyuvarani";
 console.log(myVari.charAt(Math.floor(Math.random()*myVari.length)));
+
+
+//If condition:
+
+//below are the syntax for if.  we can use ${} to fetch the declared variable but important thing to note is we have to use backtick which is next to number 1 in keyboard.
+let someone = "how are you?";
+let myreply;
+if(someone){
+    myreply = `${someone} I'm fine bro`;
+}
+console.log(myreply);
+// here we didn't give any values to some variable hence it giving us else output if we give values to some it will give us if output
+let some;
+let myrply;
+if(some){
+    myrply = `${some} I'm fine bro`;
+}
+else {
+    myrply = `sorry I'm not fine`;
+}
+console.log(myrply);
+//here we can understand that we also add two variable in single statement by giving '&&'.  Also we can add true or false for the statement to work based on boolean. Play on it. note: statement order is important because if the prior statement meets then code will show the output rightaway and won't read further statements.
+let somex = true;
+let stranger = "how u doing?";
+let hacker = false;
+let myrplyy;
+if(hacker){
+    myrply = `${somex} I'm fine bro`;
+}
+else if(stranger && somex){
+    myrply = `yes I'm good`;
+}
+else if(stranger){
+    myrply = `${stranger}yes I'm good`;
+}
+else {
+    myrply = `sorry I'm not fine`;
+}
+console.log(myrply);
+//Sample work. It is called nested if statement if we use the if condition within some statement.
+let test = 50;
+let ageBar =false;
+
+if (test>=90){
+    grade = "Congrats! Distinction";
+}
+else if(test>=80){
+    grade = "Good! Fist class";
+}
+else if (test>=70){
+    grade = "Nice! Second class";
+}
+else if (test>=60){
+    grade = "Not bad! Third class";
+}
+else{
+    if(ageBar){
+        grade = "Sorry your age is bar.  You can't reappear for the exam!";
+    }
+    else{
+        grade = "Poor! Fail";
+    }
+    
+}
+console.log(grade)
+
+
+//switch statement
+
+//switch statement is kind of if statement but not widely used in javascript
+switch (Math.round(Math.random()*4)){
+    case 4:
+    console.log("wrong");
+    break;
+    case 3:
+        console.log("correct");
+        break;
+    default:
+        console.log('no match'); 
+}
+//simple switch statement exercise
+let me = "rock";
+let computer = "scissor";
+
+switch(computer){
+    case computer === me:
+        console.log("Tie");
+        break;
+    case "scissor":
+        if (computer ===  "scissor"){
+            console.log("me wins");
+        }
+        else{
+            console.log("computer wins");
+        }
+        break;
+        default:
+            console.log("tie");
+}
