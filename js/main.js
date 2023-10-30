@@ -192,3 +192,23 @@ computerr === mee
 : "Me won"
 console.log(Result);
 
+
+//User Input
+
+let myData = confirm("are you fine?");
+console.log(myData);
+//prompt helps to get input from customer and then entered values will be thrown as output
+let myD = prompt("enter your name:");
+console.log(myD);
+//If the customer cancelled without enter anything than the "??" acts as a check if the customers entered anything and if customer cancelled without entered anything then the values after this "??" will be thrown as output
+let myH = prompt("enter your name");
+console.log(myH ?? "you didn't enter the valid input");
+// here we used small logic to get output if customer entered nothing but give ok and cancelled the prompt.
+let myY = prompt("Enter your name:");
+
+    if (myY) {
+        console.log(myY ?? "You didn't enter anything");
+    }
+    else{
+        console.log("you didn't entered anything");
+    }
