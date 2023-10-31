@@ -1,16 +1,17 @@
 //String in JS
 console.log(typeof("Hi I'm vignesh"));
 console.log("Hi im vignesh");
-const myVar = "education";
+const myVar = "mathematics";
 console.log(myVar);
 console.log(myVar.charAt(3));
 console.log(myVar.length);
 console.log(myVar.slice(2,3));
 console.log(myVar.indexOf("at"));
+console.log(myVar.lastIndexOf("mat"));
 console.log(myVar.split("t"));
 console.log(myVar.toLowerCase());
 console.log(myVar.toUpperCase());
-console.log(myVar.includes("cat"));
+console.log(myVar.includes("mat"));
 
 
 
@@ -19,6 +20,11 @@ console.log(myVar.includes("cat"));
 //Numbers in JS
 
 const myInt = 50;
+const myTint = "50";
+//some basic syntax
+console.log(myInt === myTint);
+console.log(myTint + 3);
+console.log(Number(myTint));
 //parseFloat property will turn the value in the variable into float
 //We use number function because we handling with the numbers here
 console.log(Number.parseFloat(myInt));
@@ -31,7 +37,7 @@ console.log(myNu + myNe);
 console.log(Number(true));
 //parseInt is same as parseFloat
 console.log(Number.parseInt(myNu));
-//to fixed property will round off the number after point and remember it also will turn the value into string.
+//tofixed property will round off the number after point and remember it also will turn the value into string.
 console.log(Number.parseFloat(myNu).toFixed(2));
 //two types of isNaN Object is there
 Number.isNaN();
@@ -111,6 +117,7 @@ console.log(myrply);
 //Sample work. It is called nested if statement if we use the if condition within some statement.
 let test = 50;
 let ageBar =false;
+let grade;
 
 if (test>=90){
     grade = "Congrats! Distinction";
@@ -212,3 +219,8 @@ let myY = prompt("Enter your name:");
     else{
         console.log("you didn't entered anything");
     }
+ 
+
+//Rock, paper, scissor game!!
+
+
