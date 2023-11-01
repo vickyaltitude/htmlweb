@@ -223,7 +223,7 @@ let myY = prompt("Enter your name:");
 
 //Rock, paper, scissor game!!
 
-
+/* 
 let userWish = confirm("Shall we play a game?");
 if (userWish){
     let userChoice = prompt("Type rock, paper or scissor");
@@ -317,7 +317,7 @@ if (userWish){
                 location.reload();
             }
             else{
-                alert("Okay Take care!")
+                alert("Okay Take care!");
             }
         }
 
@@ -334,3 +334,31 @@ else {
     alert("Okay! May be next time");
 }
 
+ */
+
+//Loop
+
+//while loop will execute the code until the given condition mets. here after entering the loop it prints 0 first then after entering the increment it adds 0 with 1 then again goes to the while loop and checks if 2 if smaller than given condition which is 10 then again prints the number 2 and so on.
+let i = 0;
+while (i<=10){
+    console.log(i);
+    i = i + 1; //i++or(i+=2) is shortcut for i = i+1 
+}
+//do is also same like while but it prints the value atleast once even if the condition breaks or not met. here after entering the do it first prints the l and then add l with increment 1 then entering the while and checks if 21 is smaller than 20 but its not then break occurs. the notable thing here is it executes the value once even the condition breaks after that.
+ let l = 20;
+do {
+    console.log(l);
+    l = l + 1; //i++ is shortcut for i = i+1
+}while (l<20) 
+//for loop is the one which we give the entire values inside the for conditin itself. there must be 3 ";" in which the conditin should present. we can also give values before or after like while loop but ; symbol should present.
+/* let myNme = "vignesh"
+for(let i=0;i<=myNme.length;i++;){
+    console.log(myNme.charAt(i));
+    i++;
+} */
+//other way of writing above code
+let myNme = "vignesh"
+for(let i=0;i<=myNme.length;){
+    console.log(myNme.charAt(i));
+    i++;
+}
