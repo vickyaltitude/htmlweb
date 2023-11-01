@@ -201,7 +201,7 @@ console.log(Result);
 
 
 //User Input
-
+/* 
 let myData = confirm("are you fine?");
 console.log(myData);
 //prompt helps to get input from customer and then entered values will be thrown as output
@@ -219,8 +219,70 @@ let myY = prompt("Enter your name:");
     else{
         console.log("you didn't entered anything");
     }
- 
+  */
 
 //Rock, paper, scissor game!!
 
 
+let userWish = confirm("Shall we play a game?");
+if (userWish){
+    let userChoice = prompt("Type rock, paper or scissor");
+    const syStem = Math.floor(Math.random()*3 + 1);
+    syStemChoice = syStem === 1 ? "rock"
+    : syStem === 2 ? "paper"
+    : syStem === 3 ? "scissor"
+    : confirm("You did not entered the proper value. \n Play Again?")
+      
+    if (userChoice){
+        if (userChoice.trim().toLowerCase() === syStemChoice){
+            alert("Game tie!");
+        }
+        else if (userChoice.trim().toLowerCase() === "rock" && syStemChoice === "paper"){
+            alert("User: rock\n System: paper\n Result: System wins");
+        }
+        else if (userChoice.trim().toLowerCase() === "paper" && syStemChoice === "rock"){
+            alert("User: paper\n System: rock\n Result: User wins");
+        }
+        else if (userChoice.trim().toLowerCase() === "scissor" && syStemChoice === "paper"){
+            alert("User: scissor\n System: paper\n Result: User wins");   
+        }
+        else if (userChoice.trim().toLowerCase() === "paper" && syStemChoice === "scissor"){
+            alert("User: paper\n System: scissor\n Result: System wins"); 
+        }
+        else if (userChoice.trim().toLowerCase() === "scissor" && syStemChoice === "rock"){
+            alert("User: scissor\n System: rock\n Result: System wins"); 
+        }
+        else if (userChoice.trim().toLowerCase() === "rock" && syStemChoice === "scissor"){
+            alert("User: rock\n System: scissor\n Result: User wins"); 
+        }
+        else if (userChoice === "rock" || "paper" || "scissor"){
+           uC = confirm("You have entered incorrect value!.\n Want to play again?");
+            if (uC === true){
+                location.reload();
+            }
+            else{
+                alert("Okay Take care!")
+            }
+        }
+
+        else{
+            location.reload();
+        }
+    }
+    else{
+        alert("I think you changed your mind.  Anyways may be later!");
+    }
+
+}
+else {
+    alert("Okay! May be next time");
+}
+
+ playAgain = confirm("you want to play again?");
+
+ if (playAgain === true) {
+    location.reload();
+ }
+  else{
+    alert('Thanks for playing');
+  }
