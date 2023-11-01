@@ -236,24 +236,80 @@ if (userWish){
     if (userChoice){
         if (userChoice.trim().toLowerCase() === syStemChoice){
             alert("Game tie!");
+            playAgain = confirm("you want to play again?");
+
+            if (playAgain === true) {
+               location.reload();
+            }
+             else{
+               alert('Thanks for playing');
+             }
         }
         else if (userChoice.trim().toLowerCase() === "rock" && syStemChoice === "paper"){
             alert("User: rock\n System: paper\n Result: System wins");
+            playAgain = confirm("you want to play again?");
+
+            if (playAgain === true) {
+               location.reload();
+            }
+             else{
+               alert('Thanks for playing');
+             }
         }
         else if (userChoice.trim().toLowerCase() === "paper" && syStemChoice === "rock"){
             alert("User: paper\n System: rock\n Result: User wins");
+            playAgain = confirm("you want to play again?");
+
+            if (playAgain === true) {
+               location.reload();
+            }
+             else{
+               alert('Thanks for playing');
+             }
         }
         else if (userChoice.trim().toLowerCase() === "scissor" && syStemChoice === "paper"){
             alert("User: scissor\n System: paper\n Result: User wins");   
+            playAgain = confirm("you want to play again?");
+
+            if (playAgain === true) {
+               location.reload();
+            }
+             else{
+               alert('Thanks for playing');
+             }
         }
         else if (userChoice.trim().toLowerCase() === "paper" && syStemChoice === "scissor"){
             alert("User: paper\n System: scissor\n Result: System wins"); 
+            playAgain = confirm("you want to play again?");
+
+            if (playAgain === true) {
+               location.reload();
+            }
+             else{
+               alert('Thanks for playing');
+             }
         }
         else if (userChoice.trim().toLowerCase() === "scissor" && syStemChoice === "rock"){
             alert("User: scissor\n System: rock\n Result: System wins"); 
+            playAgain = confirm("you want to play again?");
+
+            if (playAgain === true) {
+               location.reload();
+            }
+             else{
+               alert('Thanks for playing');
+             }
         }
         else if (userChoice.trim().toLowerCase() === "rock" && syStemChoice === "scissor"){
             alert("User: rock\n System: scissor\n Result: User wins"); 
+            playAgain = confirm("you want to play again?");
+
+            if (playAgain === true) {
+               location.reload();
+            }
+             else{
+               alert('Thanks for playing');
+             }
         }
         else if (userChoice === "rock" || "paper" || "scissor"){
            uC = confirm("You have entered incorrect value!.\n Want to play again?");
@@ -278,11 +334,3 @@ else {
     alert("Okay! May be next time");
 }
 
- playAgain = confirm("you want to play again?");
-
- if (playAgain === true) {
-    location.reload();
- }
-  else{
-    alert('Thanks for playing');
-  }
