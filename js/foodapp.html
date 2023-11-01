@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Blog</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .body{
+        margin: 0 180px;
+        min-height: 100vh;
+    }
+   
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        padding: 20px 0;
+       
+    }
+  .position{
+    position: sticky;
+    top: 0;
+    background-color: white;
+  }
+    .main{
+        padding-top: 50px;;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .container{
+        width: calc(25% - 10px); /* Adjust the width as needed */
+        margin: 5px; /* Adjust the margin as needed */
+        box-sizing: border-box;
+        padding-top: 25px;
+    }
+    h2, p{
+        text-align: center;
+    }
+    p{
+        padding-top: 20px;
+    }
+
+    @media screen and (max-width: 750px){
+        .body{
+        margin: 0 0;
+        min-height: 100vh;
+    }
+        .nav{
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        padding: 20px 0;
+        gap: 30px;
+       
+    }
+  .position{
+    position: sticky;
+    top: 0;
+    background-color: white;
+  }
+   
+    .container{
+        width: 100%; /* Adjust the width as needed */
+        margin: 0px; /* Adjust the margin as needed */
+        box-sizing: border-box;
+        padding: 25px 10px;
+    }
+    h2, p{
+        text-align: center;
+    }
+    p{
+        padding-top: 20px;
+    }
+    }
+</style>
+<body>
+    <section class="body">
+        <header class="position">
+            <section>
+                <nav  class = "nav">
+                    
+                        <div>&#9776; &nbsp;</div>
+                        <div>My Food</div>
+                        <div>Mail</div>
+                    
+                </nav>
+            </section>
+        </header>
+        
+        <main>
+            <section class = "main">
+                <section class = container>
+                    <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="food1" height=75% width=100%>
+                    <h2>The Perfect Sandwich, A Real NYC Classic</h2>
+                    <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+                </section>
+                <section class = container>
+                    <img src="https://www.w3schools.com/w3images/steak.jpg" alt="food1" height=75% width=100%>
+                    <h2>Let Me Tell You About This Steak</h2>
+                    <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+                </section>
+                <section class = container>
+                    <img src="https://www.w3schools.com/w3images/cherries.jpg" alt="food1" height=75% width=100%>
+                    <h2>Cherries, interrupted</h2>
+                    <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+                </section>
+                <section class = container>
+                    <img src="https://www.w3schools.com/w3images/wine.jpg" alt="food1" height=75% width=100%>
+                    <h2>Once Again, Robust Wine and Vegetable Pasta</h2>
+                    <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+                </section>
+                <section class = container>
+                    <img src="https://www.w3schools.com/w3images/popsicle.jpg" alt="food1" height=75% width=100%>
+                    <h2>All I Need Is a Popsicle</h2>
+                    <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+                </section>
+                <section class = container>
+                    <img src="https://www.w3schools.com/w3images/salmon.jpg" alt="food1" height=75% width=100%>
+                    <h2>Salmon For Your Skin</h2>
+                    <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+                </section>
+                <section class = container>
+                    <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="food1" height=75% width=100%>
+                    <h2>The Perfect Sandwich, A Real Classic</h2>
+                    <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+                </section>
+                <section class = container>
+                    <img src="https://www.w3schools.com/w3images/croissant.jpg" alt="food1" height=75% width=100%>
+                    <h2>Le French</h2>
+                    <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+                </section>
+            </section>
+        </main>
+
+        <footer>
+
+        </footer>
+    </section>
+</body>
+</html>
