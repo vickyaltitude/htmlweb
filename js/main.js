@@ -362,3 +362,39 @@ for(let i=0;i<=myNme.length;){
     console.log(myNme.charAt(i));
     i++;
 }
+
+//Exercise - 1 : check whether the user eligible to vote
+
+confirmC = confirm("Do you want to check whether are you eligble for vote?");
+if(confirmC===true){
+    userAge= prompt("Please enter your age")
+    
+     if (userAge){
+
+        if (userAge>=18){
+        alert("Congratulations! you are eligible for vote");
+    }
+        else if (userAge<=18){
+       alert("Sorry, you are not eligible for vote");
+       
+    }
+       else if (isNaN(userAge)){
+       alert("oops! you didn't entered proper value");
+    }
+       else{
+        alert("i love js");
+       }
+    }
+    
+else{
+       alert("Okay you are going midway");
+    }
+     
+}
+
+else{
+    alert("Fine May be next time!");
+}
+
+
+
