@@ -365,7 +365,7 @@ for(let i=0;i<=myNme.length;){
 
 //Exercise - 1 : check whether the user eligible to vote
 
-confirmC = confirm("Do you want to check whether are you eligble for vote?");
+/* confirmC = confirm("Do you want to check whether are you eligble for vote?");
 if(confirmC===true){
     userAge= prompt("Please enter your age")
     
@@ -395,6 +395,37 @@ else{
 else{
     alert("Fine May be next time!");
 }
+ */
 
+//Exercise - 2: calculator
 
+ invite = confirm("If you want to use a calculator?");
+if (invite===true){
+    choiceOf= prompt("Select the operation you want to do:\n 'add','subtract','multiply','divide'");
+    if (choiceOf !== "add" && choiceOf !== "subtract"&&choiceOf !== "multiply"&& choiceOf !=="divide"){
+        alert("You didn't enter the proper function");
+    }
+    else if(choiceOf === "add"||"subtract"||"multiply"||"divide"){
+        firstValue = prompt("Please enter the first value");
+        firV = Number.parseInt(firstValue);
+        if(firV===true){
+            alert("You didn't entered any value");
+        }
+        else if (!isNaN(firV)){
+            secondValue = prompt("Please enter the second value");
+            secV = Number.parseInt(secondValue);
+            result = secV === true? alert("You didn't entered any value") : !isNaN(secV)  && choiceOf === "add"? alert(firV + secV) : !isNaN(secV) && choiceOf === "subtract" ? alert(firV - secV) : !isNaN(secV) && choiceOf === "multiply" ? alert(firV * secV) : !isNaN(secV) && choiceOf === "divide" ? alert(firV / secV) : alert("you cancelled this operation");
+        }
+        else{
+            alert("you cancelled the operation")
+        }
+    }
+    else{
+        alert("You cancelled the operation");
+    }
+}
+else{
+    alert("Okay, may be next time!");
+}
+ 
 
