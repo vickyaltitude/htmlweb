@@ -399,7 +399,7 @@ else{
 
 //Exercise - 2: calculator
 
- invite = confirm("If you want to use a calculator?");
+/*  invite = confirm("If you want to use a calculator?");
 if (invite===true){
     choiceOf= prompt("Select the operation you want to do:\n 'add','subtract','multiply','divide'");
     if (choiceOf !== "add" && choiceOf !== "subtract"&&choiceOf !== "multiply"&& choiceOf !=="divide"){
@@ -427,5 +427,33 @@ if (invite===true){
 else{
     alert("Okay, may be next time!");
 }
- 
+  */
 
+//Exercise - 3 : guess the number
+
+let start = confirm("Shall we play a guessing game between number 1 to 10");
+
+if(start===true){
+
+    let a = Math.floor(Math.random()*10) + 1;
+    let b = parseInt(prompt("Guess the number between 1 to 10"));
+    while (a!==b){
+        if (isNaN(b)) {
+            alert("Please enter a valid number.");
+          }
+        else if (b < 1 || b > 10) {
+            alert("Your guess is out of range. Please guess between 1 and 10.");
+          }
+        else if (a>b){
+            alert("Your guessed number is smaller than the result")
+        }
+        else if(a<b){
+            alert("Your guessed number is bigger than the result");
+        }
+        b = parseInt(prompt("Guess the number again"));
+}
+        alert("Congrats you won the game");
+}
+else{
+    alert("ok may be next time");
+}
