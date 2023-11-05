@@ -32,7 +32,7 @@ subtract();
 
 whetherCheckAlphabets("a"); */
 
-function FIZZFUZZ(fizzFuzz){
+/* function FIZZFUZZ(fizzFuzz){
     if (fizzFuzz%3==0){
         console.log("Fizz")
     }
@@ -43,4 +43,56 @@ function FIZZFUZZ(fizzFuzz){
         console.log("FizzFuzz");
     }
 }
-FIZZFUZZ(46);
+FIZZFUZZ(46); */
+
+function FIZZFUZZ(fizzFuzz){
+    if (fizzFuzz%3==0){
+        console.log("Fizz")
+    }
+    else if (fizzFuzz%5==0){
+        console.log("buzz");
+    }
+    else if (fizzFuzz%5==0 && fizzFuzz%3==0){
+        console.log("fizzbuzz");
+    }
+    else if (fizzFuzz%5==0 || fizzFuzz%3==0){
+        console.log("buzz");
+    }
+    else{
+        console.log("BuzzFizz");
+    }
+}
+FIZZFUZZ(40); 
+
+function lessOrGreat(num){
+    if (num>0){
+        console.log("Number is positive")
+    }
+    else if (num<0){
+        console.log("number is negative");
+    }
+    else{
+        console.log("number is zero");
+    }
+}
+lessOrGreat(0);
+
+function lessOrGreat(numa,numb){
+   
+    a = numa + numb
+    b = numa - numb
+    c = numa * numb
+    d = numa / numb
+    if (numa>numb){
+        console.log("number 1 is greater than number 2")
+    }
+    else if (numa<numb){
+        console.log("number 2 is greater than number 1");
+    }
+    else{
+        console.log("both are equal");
+    }
+    console.log(a,b,c,d);
+
+}
+lessOrGreat(2,4);
