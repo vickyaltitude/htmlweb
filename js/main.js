@@ -431,7 +431,7 @@ else{
 
 //Exercise - 3 : guess the number
 
-let start = confirm("Shall we play a guessing game between number 1 to 10");
+/* let start = confirm("Shall we play a guessing game between number 1 to 10");
 
 if(start===true){
 
@@ -457,3 +457,43 @@ if(start===true){
 else{
     alert("ok may be next time");
 }
+ */
+
+//function
+
+function letProperCase(userName){    //proper case means first letter caps and remaining small
+    return userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase()
+}
+
+console.log(letProperCase("vignesh"));
+console.log(letProperCase("yuvarani"));
+
+//another way of declaring a function which is we can put it in a variable
+let letProperCase1 = function (userName){    
+    return userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase()
+}
+
+console.log(letProperCase1("vignesh"));
+console.log(letProperCase1("yuvarani"));
+
+//yet another way of declaring a function in which we can use => symbol instead of mentioning function
+let letProperCase2 = (userName) => {    
+    return userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase()
+}
+
+console.log(letProperCase2("vignesh"));
+console.log(letProperCase2("yuvarani"));
+
+//Array!!
+
+let myArray = [];
+
+myArray[0] = "vignesh";
+myArray[1] = "yuvarani";
+myArray[2] = 33;
+myArray[3] = 20;
+console.log(myArray);
+console.log(myArray[1]);
+console.log(myArray.length);
+console.log(myArray[myArray.length - 1]);  //it will fetch you the last value in the array, we using - 1 here because we know that length always counts from 1 so inorder to get last value we have to minus 1.
+
