@@ -497,3 +497,18 @@ console.log(myArray[1]);
 console.log(myArray.length);
 console.log(myArray[myArray.length - 1]);  //it will fetch you the last value in the array, we using - 1 here because we know that length always counts from 1 so inorder to get last value we have to minus 1.
 
+//shift() method will delete the first element in array
+myArray.shift()
+console.log(myArray);
+//unshift() method will add a given element in the beginning of the array
+myArray.unshift("hi")
+console.log(myArray)
+//pop() method will delete the last element in a given array
+myArray.pop()
+console.log(myArray)
+//push() method will add the given element to the last of the array
+myArray.push("hello")
+console.log(myArray)
+
+
+
