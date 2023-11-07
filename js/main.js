@@ -509,6 +509,51 @@ console.log(myArray)
 //push() method will add the given element to the last of the array
 myArray.push("hello")
 console.log(myArray)
+//NOTE : if we store unshift() and push() in a variable and call it then it will show the length of the whole array including new element added 
+//NOTE : if we store shift() and pop() in a variable and call it then it will give us the particular element that we try to remove.
+const lastItem = myArray.pop();
+console.log(lastItem);
+const firstItem = myArray.shift();
+console.log(myArray)
+console.log(firstItem);
+//delete method is used to delete the particular element inside the array unlike other 4 mehtods we seen before which deletes or add the initial or last element. but its not commonly used because it will delete the element but leave the space as it is as undefined.
+delete myArray[0];
+console.log(myArray);
+//we use splice instead of delete because it removes the element completely and leave no undefined element in the deleted place.
+//myArray.splice('start position','how many element to delete','replace with this item')
+myArray.splice(0,1);
+console.log(myArray);
+myArray.splice(0,0,"hello everyone");
+console.log(myArray);
+//slice() method is used to get a copy of an array from particular element to particular element as you given as you want
+//myArray.slice("start position","end position") note: it will give the end position's before element. you shall put this slice method in a new variable and store it then call it.
+//reverse() method will reverse the entire array. you shall put this slice method in a new variable and store it then call it.
+//join() method will get the entire array turned into a single string.
+//split() method will split the string that you just made with join() method.
+//myArray.split(",");
+//by concat() you can add the 2 different array into a single array
+/* myArrayA = ["mine","you", "I", 3,4];
+newArray = myArray.concat(myArrayA);
+console.log(newArray); */
+//another easy method to add two different array is called shelf method(...)
+myArrayA = ["mine","you", "I", 3,4];
+newArray = [...myArray,...myArrayA];
+console.log(newArray);
+
+//understanding 2 and 3 dimensional arrays
+
+let myDetails = ["vignesh",24,"pondy","bscphyscis"]
+let myAmbition = ["dev","fullstack","tech"]
+let myFamily = ["vino", "mom", "dad", "simba", "tiger"]
+let myArea = ["js", "react", "mongodb"]
+let myHobby = ["cricket", "uno", "music"]
+
+const myDandmyA = [myDetails,myAmbition,myFamily];  //we just made a 2 dimensional array by putting 2 single array as 1
+console.log(myDandmyA[0][2]);  //here first condition [0] is we calling the first array as we already put it in myDandmyA variable and [2] condition is we calling the 2nd element in that particular array.
+console.log(myDandmyA[1][2],myDandmyA[1][1]);  //here first condition [1] is we calling the second array as we already positioned it as second in myDandmyA variable and [2] condition is we calling the 2nd element in that particular array. we can continuosly any element we want by giving this condition and put comma between the condition.
+const mine = [myDandmyA,myHobby]; //this is 3 dimensional as we put 2 different arrays and the first array is already a 2 dimensional hence after we putting that into a new array now the new array becomes 3 dimensional.
+console.log(mine[0][2][0],mine[1][2]); //here first condition has 3 values [0] is first position array which is myDandmyA and [2] is second position in that myDandmyA variable and [0] is first element 1st element in myAmbition array.
+
 
 
 
