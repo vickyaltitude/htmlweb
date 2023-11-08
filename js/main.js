@@ -555,5 +555,61 @@ const mine = [myDandmyA,myHobby]; //this is 3 dimensional as we put 2 different 
 console.log(mine[0][2][0],mine[1][2]); //here first condition has 3 values [0] is first position array which is myDandmyA and [2] is second position in that myDandmyA variable and [0] is first element 1st element in myAmbition array.
 
 
+//reworking stone, paper and scissor game without any bugs
 
+let Game = (initializeGame) => {
+    if (initializeGame) {
+        let userChoice = prompt("Please enter your choice! \nrock, paper, or scissor?");
+        let compChoice = ["rock", "paper", "scissor"][Math.floor(Math.random() * 3)];
+        if(userChoice === null){
+            alert("You canceled the game. See you next time!");
+            return;
+        }
+        userChoice = userChoice.toLowerCase();
 
+          if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissor") {
+            if (userChoice === compChoice) {
+                alert(`Result\nYour choice: ${userChoice}\nComputer choice: ${compChoice}\nGAME TIE`);
+            } else {
+                let userWins = (
+                    (userChoice === "rock" && compChoice === "scissor") ||
+                    (userChoice === "scissor" && compChoice === "paper") ||
+                    (userChoice === "paper" && compChoice === "rock")
+                );
+
+                if (userWins) {
+                    alert(`Result\nYour choice: ${userChoice}\nComputer choice: ${compChoice}\nUSER WON`);
+                    let playAgain = confirm("Do you want to play the game again?");
+                    if (playAgain) {
+                        location.reload();
+                    } else {
+                        alert("Okay, thanks for playing!");
+                    }
+                } else {
+                    alert(`Result\nYour choice: ${userChoice}\nComputer choice: ${compChoice}\nCOMPUTER WON`);
+                    let playAgain = confirm("Do you want to play the game again?");
+                    if (playAgain) {
+                        location.reload();
+                    } else {
+                        alert("Okay, thanks for playing!");
+                    }
+                }
+
+            }
+        } 
+        
+        
+        else {
+            let userExit = confirm("You didn't enter a valid value. Do you want to play again?");
+            if (userExit) {
+                location.reload();
+            } else {
+                alert("It's fine. See you next time!");
+            }
+        }
+    } else {
+        alert("Okay, maybe next time");
+    }
+};
+
+Game(confirm("Shall we play a game?\nRock, Paper & Scissor."));
