@@ -612,4 +612,16 @@ let Game = (initializeGame) => {
     }
 };
 
-Game(confirm("Shall we play a game?\nRock, Paper & Scissor."));
+//Game(confirm("Shall we play a game?\nRock, Paper & Scissor."));
+
+
+//Reworking the calculator task with more code readability and for best coding practice
+
+
+let calci = () =>{
+    while(userWish){
+
+    }
+    //getting know userWish
+    let 
+}
