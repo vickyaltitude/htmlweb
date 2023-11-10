@@ -96,3 +96,31 @@ function lessOrGreat(numa,numb){
 
 }
 lessOrGreat(2,4);
+
+for (let i=0;i<=100;i=i+2){
+    console.log(i);
+}
+for (let i=0;i<=100;i=i+3){
+    console.log(i);
+}
+
+function odd(){
+    for (let i=0;i<=100;i=i+1){
+        if(i%3===0){
+            console.log(i);
+        }
+    }
+    return
+}
+odd();
+
+function even(){
+    for (let i=0;i<=100;i=i+1){
+        if(i%2===0){
+            console.log(i);
+        }
+    }
+    return
+}
+even();
+
