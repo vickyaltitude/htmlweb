@@ -124,3 +124,35 @@ function even(){
 }
 even();
 
+function isPrime(number) {
+    if (number <= 1) {
+        return false;
+    }
+    for (let i = 2;i < number; i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Loop through numbers from 1 to 100 and print prime numbers
+for (let i = 150; i <= 261; i++) {
+    if (isPrime(i)) {
+        console.log(i)
+    }
+}
+
+//question 1
+
+function printEvenOrOdd(){
+    for(i=0;i<=100;i++){
+        if(i%2===0){
+            console.log(i)
+        }
+        else if(i%2===1){
+            continue;
+        }
+    }
+}
+printEvenOrOdd()
