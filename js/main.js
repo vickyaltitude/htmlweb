@@ -612,16 +612,61 @@ let Game = (initializeGame) => {
     }
 };
 
-//Game(confirm("Shall we play a game?\nRock, Paper & Scissor."));
-
-
-//Reworking the calculator task with more code readability and for best coding practice
-
-
-let calci = () =>{
-    while(userWish){
-
+//object
+//object contains a key/properties and its value. we can give anything inside an object initialising with key.
+//we can give object inside an object, function and whatever we want.
+let myObj = {name:"vignesh",age:22,male:true};
+let newObj = {
+    name: "yuvarani",
+    age: 24,
+    obj: {
+        name: "vignesh",
+        age: 24
+    },
+    func: function(){
+        return `my age is ${this.age}`
     }
-    //getting know userWish
-    let 
 }
+console.log(myObj);
+console.log(newObj.obj);//another way of calling properties inside an object is console.log(newObj["obj"]). note: we have to put quotation inside bracket
+console.log(newObj["obj"]);
+console.log(newObj.func());
+//inherit object in another object. we have to call object and then create to assign already declared object in a new object.
+let car = Object.create(newObj);
+console.log(car.func());
+//we can modify the old object's property  by calling new object
+car.func= function(){
+    return "vrooom"
+};
+console.log(car.func()); //note if you call old object and then its func it will give you the function value of old object.
+//we can call object's every keys and object's every values by object.key and object.value method
+console.log(Object.keys(newObj));
+console.log(Object.values(newObj));
+//we may use for-in loop to iterate the keys and values in object
+let movie = {
+    actor: "vijay",
+    director: "lokesh",
+    producer: "lalith",
+    name: "leo"
+}
+for(let mi in movie){
+    console.log(movie[mi]); //here it will iterate all the values in in movie object and prints you the value. "mi" is the keyword we declare and it should be anything.
+}
+for(let key in movie){
+    console.log(`${key}, it's ${movie[key]}`); //here you can see if you want the key alone you have to give the keyword key but you want the values you have to call the object and square bracket with keyword inside.
+}
+//delete particular property in an object
+delete movie.producer;
+console.log(movie);
+console.log(movie.hasOwnProperty("producer")); //this hasOwnProperty method will give you the boolean of whether that given property is present in that particular object or not
+//destructuring the object
+ const {actor: myFav,director: myFavd} = movie; //we can create a variable by assigning the variable name next to the property and then give the object after the equal symbol.
+console.log(myFav);
+const{actor,director,producer} = movie; //we can either give new name to our variable or use the property itself as a variable name.
+console.log(actor); 
+
+//getting particular value inside an object
+function myNewVari({director}){ //by giving actor inside a curly bracket we can get the particular values of the given key
+    return director;
+}
+console.log(myNewVari(movie));

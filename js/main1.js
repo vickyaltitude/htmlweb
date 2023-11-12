@@ -136,8 +136,8 @@ function isPrime(number) {
     return true;
 }
 
-// Loop through numbers from 1 to 100 and print prime numbers
-for (let i = 150; i <= 261; i++) {
+
+for (let i = 2; i <= 100; i++) {
     if (isPrime(i)) {
         console.log(i)
     }
@@ -156,3 +156,71 @@ function printEvenOrOdd(){
     }
 }
 printEvenOrOdd()
+
+
+function isPrime(number){
+    if (number<=1){
+        return false;
+    }
+    for(i=2;i<number;i++){
+        if(number%i===0){
+            return false;
+        }
+    }
+    return true;
+}
+
+
+for(let i=2;i<=100;i++){
+    if(isPrime(i)){
+        console.log(i)
+    }
+}
+
+console.log(Math.sqrt(5));
+
+//Write a function that takes a number as input and prints all the even numbers from 1 to that number.
+
+function printEven(num){
+    for(i=0;i<=num;i++){
+        if(i%2===0){
+            console.log(i)
+        }
+    }
+}
+(printEven(30));
+
+//Write a function that takes two numbers as input and returns the larger of the two numbers.
+function whichIsGreater(a,b){
+    if(a<b){
+        console.log(`${b} is greater than ${a}`);
+    }
+    else if(a>b){
+        console.log(`${a} is greater than ${b}`);
+    }
+}
+whichIsGreater(3,45);
+
+//Create an object to represent a student, with properties for the student's name, age, and grade. Write a function that takes the student object as input and prints the student's information.
+
+let vignesh = {
+    name: 'Vignesh',
+    age: 24,
+    grade: "A"
+}
+let yuvarani = {
+    name: 'Yuvarani',
+    age: 24,
+    grade: "A"
+}
+
+function details(){
+    if(details(vignesh)){
+        console.log(vignesh);
+    }
+    else if(details(vignesh)){
+        console.log(yuvarani);
+    }
+   
+}
+details(vignesh);
