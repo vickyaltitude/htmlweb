@@ -214,13 +214,5 @@ let yuvarani = {
     grade: "A"
 }
 
-function details(){
-    if(details(vignesh)){
-        console.log(vignesh);
-    }
-    else if(details(vignesh)){
-        console.log(yuvarani);
-    }
-   
-}
-details(vignesh);
+
+
