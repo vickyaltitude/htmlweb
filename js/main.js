@@ -670,3 +670,6 @@ function myNewVari({director}){ //by giving actor inside a curly bracket we can 
     return director;
 }
 console.log(myNewVari(movie));
+
+let myName= ["vignesh","yuvarani","pradhanya","virutha","vinothini","govind"];
+console.log(myName[Math.floor(Math.random()*6)]);
