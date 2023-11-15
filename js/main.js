@@ -673,3 +673,17 @@ console.log(myNewVari(movie));
 
 let myName= ["vignesh","yuvarani","pradhanya","virutha","vinothini","govind"];
 console.log(myName[Math.floor(Math.random()*6)]);
+
+function dream11(){
+    let arrayA = ["Rohit Sharma (c)", "Shubman Gill", "Virat Kohli", "Shreyas Iyer", "KL Rahul (wk)", "Suryakumar Yadav", "Ravindra Jadeja", "Mohammed Shami", "Kuldeep Yadav", "Jasprit Bumrah", "Mohammed Siraj", "Devon Conway", "Rachin Ravindra", "Kane Williamson (c)", "Daryl Mitchell", "Glenn Phillips", "Tom Latham (wk)", "Mark Chapman", "Mitchell Santner", "Tim Southee", "Trent Boult", "Lockie Ferguson"]
+
+    for(i=0;i<=1;i++){
+        console.log(arrayA[Math.floor(Math.random()*22)]);
+       
+       
+    }
+}
+
+dream11();
+
+
