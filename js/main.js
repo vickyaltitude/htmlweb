@@ -686,4 +686,62 @@ function dream11(){
 
 dream11();
 
+//classes
 
+//this is how we declare object
+ let myPizza = {
+    size: "medium",
+    flav: "margarita",
+    bake: function(){
+        return console.log(`please bake ${this.size} size, ${this.flav} pizza`);
+    }
+ }
+myPizza.bake();
+
+//class is like a template with which we can create numerous object within single step
+class pizza {
+       constructor(){
+        this.size= "big";
+        this.flav= "chicken";
+       }
+       bake(){ //in class template you don't have to mention function.
+        return console.log(`please bake ${this.size} size, ${this.flav} pizza`);
+       }
+}
+//this is how we create an object in single line using class template
+const anotherPizza = new pizza();
+//now we check if anotherPizza object created by calling the bake function
+anotherPizza.bake(); //new object created successfully...
+//if you want to add values to the properties. you can use this syntax
+class pizzaa {
+    constructor(size,flav){ //you can remember this in a way you remember function parameter
+     this.size= size;
+     this.flav= flav;
+    }
+    bake(){ //in class template you don't have to mention function.
+     return console.log(`please bake ${this.size} size, ${this.flav} pizza`);
+    }
+}
+const anotherPizzaB = new pizzaa("large","mushroom");
+anotherPizzaB.bake();
+//remember good class is when you don't give the values directly inside the template but via parameter.
+
+//small exercie to check whether input string from a customer is palisyndrome or not
+
+function checkPalindrome(value){
+    let valueA = value.length;
+    let valueB = value.charAt(0);
+    if(valueA === value.length){
+            if(valueB===value.charAt(value.length - 1) && value.charAt(1) === value.charAt(value.length - 2)){
+                console.log("Given string is palisyndrome")
+            }
+            else{
+                console.log("Given string is not a palisyndrome");
+            }
+        }
+    else{
+        console.log("given string is not a palisyndrome");
+    }
+}
+
+checkPalindrome("tenet");
