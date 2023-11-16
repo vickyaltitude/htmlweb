@@ -833,4 +833,137 @@ bake(){
 }
 const pizza12 = new pizza11("large")
 console.log(pizza12.bake());
-console.log(pizza1.type);
+console.log(pizza1.type); //it's private property so gives output as undefined.
+
+
+//task - 1 - expiry date - 16-11-23 NOTE: code should be professional and easily readable
+/* Enter first number: 10
+Enter second number: 5
+Choose operation (+, -, *, /): +
+Result: 10 + 5 = 15 */
+
+//task - 2 - expiry date - 18-11-23  NOTE: code should be professional and easily readable
+//Build a simple to-do list application. Create functions to add tasks, remove tasks, and display all tasks in the list. Use arrays and functions to manage the list of tasks.
+/* 1. Add Task
+2. Remove Task
+3. Show All Tasks
+4. Exit
+
+Enter your choice: 1
+Enter task: Do laundry
+Task added successfully!
+
+Enter your choice: 3  NOTE: code should be professional and easily readable
+Tasks:
+1. Do laundry
+
+Enter your choice: 2
+Enter task number to remove: 1
+Task removed successfully!
+
+Enter your choice: 4 */
+
+//task - 3 - expiry date - 20-11-2023
+//Design a simple banking system. Create classes for accounts, including attributes like account number, balance, and account type. Implement methods for withdrawing, depositing, and transferring funds between accounts.
+
+/* Account Menu:
+1. Create Account
+2. Withdraw
+3. Deposit
+4. Transfer
+5. Check Balance
+6. Exit
+
+Enter your choice: 1
+Enter account type (Savings/Checking): Savings
+Account created successfully! Account Number: 12345
+
+Enter your choice: 3
+Enter account number: 12345
+Enter amount to deposit: 500
+$500 deposited successfully!
+
+Enter your choice: 2
+Enter account number: 12345
+Enter amount to withdraw: 200
+$200 withdrawn successfully!
+
+Enter your choice: 4
+Enter sender's account number: 12345
+Enter receiver's account number: 67890
+Enter amount to transfer: 100
+$100 transferred successfully!
+
+Enter your choice: 5
+Enter account number: 12345
+Balance: $200
+
+Enter your choice: 6 */
+
+
+//task - 4 - expiry date - 21/11/23 NOTE: code should be professional and easily readable
+//Create a simplified online shopping system. Design classes for products, a shopping cart, and a user. Implement functionalities like adding products to the cart, removing products, calculating total cost, and checking out.
+
+/* 1. View Products
+2. Add to Cart
+3. Remove from Cart
+4. View Cart
+5. Checkout
+6. Exit
+
+Enter your choice: 1
+Products available:
+1. Laptop ($800)
+2. Headphones ($100)
+3. Backpack ($50)
+
+Enter your choice: 2
+Enter product number to add: 1
+Laptop added to cart successfully!
+
+Enter your choice: 4
+Items in Cart:
+1. Laptop ($800)
+
+Enter your choice: 3
+Enter item number to remove: 1
+Laptop removed from cart successfully!
+
+Enter your choice: 5
+Total cost: $0
+
+Enter your choice: 6 */
+
+//task - 5 - expiry date - 22/11/23 NOTE: code should be professional and easily readable
+//Build a basic social media platform with user profiles, posts, and interactions. Implement functionalities like creating posts, following users, liking posts, and viewing a user's feed.
+
+/* 1. Create User
+2. Create Post
+3. Follow User
+4. View Feed
+5. Like Post
+6. Exit
+
+Enter your choice: 1
+Enter username: @Alice
+User @Alice created successfully!
+
+Enter your choice: 2
+Enter your username: @Alice
+Enter post content: Hello, world!
+Post created successfully!
+
+Enter your choice: 3
+Enter your username: @Bob
+@Alice followed @Bob successfully!
+
+Enter your choice: 4
+@Alice's Feed:
+1. Hello, world! - by @Alice
+
+Enter your choice: 5
+Enter post number to like: 1
+You liked the post by @Alice!
+
+Enter your choice: 6 */
+
