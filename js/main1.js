@@ -215,4 +215,21 @@ let yuvarani = {
 }
 
 
+//check whether received value string is palindrome or not
+function checkPalindrome(value){
+    let valueA = value.length;
+    let valueB = value.charAt(0);
+    if(valueA === value.length){
+            if(valueB===value.charAt(value.length - 1) && value.charAt(1) === value.charAt(value.length - 2)){
+                console.log("Given string is palindrome")
+            }
+            else{
+                console.log("Given string is not a palindrome");
+            }
+        }
+    else{
+        console.log("given string is not a palindrome");
+    }
+}
 
+checkPalindrome("tenet");

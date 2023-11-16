@@ -1,7 +1,7 @@
 //String in JS
 console.log(typeof("Hi I'm vignesh"));
 console.log("Hi im vignesh");
-const myVar = "mathematics";
+const myVar = "mathematic";
 console.log(myVar);
 console.log(myVar.charAt(3));
 console.log(myVar.length);
@@ -40,8 +40,8 @@ console.log(Number.parseInt(myNu));
 //tofixed property will round off the number after point and remember it also will turn the value into string.
 console.log(Number.parseFloat(myNu).toFixed(2));
 //two types of isNaN Object is there
-Number.isNaN();
-isNaN();
+console.log(Number.isNaN("jj"));
+console.log(isNaN("pp"));
 //if you give number isnan it will check whether the is nan and will show true if it is not a num. note it will show false even if we give string as the value because we use number object and hence it will consider only number related values.
 console.log(Number.isNaN(45));
 // here just isnan is a global value so if we give string as the value it will show as true.
@@ -187,7 +187,7 @@ console.log(grade);
 //small exercise to understand the ternary operator better
 let mee = "rock";
 let computerr = "paper";
-let Result = 
+let Result =
 computerr === mee 
 ? "Tie"
 : computerr === "scissor" && mee === "paper"
@@ -201,8 +201,8 @@ console.log(Result);
 
 
 //User Input
-/* 
-let myData = confirm("are you fine?");
+
+/* let myData = confirm("are you fine?");
 console.log(myData);
 //prompt helps to get input from customer and then entered values will be thrown as output
 let myD = prompt("enter your name:");
@@ -210,16 +210,7 @@ console.log(myD);
 //If the customer cancelled without enter anything than the "??" acts as a check if the customers entered anything and if customer cancelled without entered anything then the values after this "??" will be thrown as output
 let myH = prompt("enter your name");
 console.log(myH ?? "you didn't enter the valid input");
-// here we used small logic to get output if customer entered nothing but give ok and cancelled the prompt.
-let myY = prompt("Enter your name:");
-
-    if (myY) {
-        console.log(myY ?? "You didn't enter anything");
-    }
-    else{
-        console.log("you didn't entered anything");
-    }
-  */
+ */
 
 //Rock, paper, scissor game!!
 
@@ -232,8 +223,19 @@ if (userWish){
     : syStem === 2 ? "paper"
     : syStem === 3 ? "scissor"
     : confirm("You did not entered the proper value. \n Play Again?")
+
+    if (userChoice === undefined){
+            playAgain = confirm("You didn't entered anything.  You want to play again?");
+
+            if (playAgain === true) {
+               location.reload();
+            }
+             else{
+               alert('Okay. good day');
+             }
+    }
       
-    if (userChoice){
+    else if (userChoice != undefined){
         if (userChoice.trim().toLowerCase() === syStemChoice){
             alert("Game tie!");
             playAgain = confirm("you want to play again?");
@@ -311,7 +313,7 @@ if (userWish){
                alert('Thanks for playing');
              }
         }
-        else if (userChoice === "rock" || "paper" || "scissor"){
+        else if (userChoice != "rock" || "paper" || "scissor"){
            uC = confirm("You have entered incorrect value!.\n Want to play again?");
             if (uC === true){
                 location.reload();
@@ -334,7 +336,7 @@ else {
     alert("Okay! May be next time");
 }
 
- */
+  */
 
 //Loop
 
@@ -517,24 +519,25 @@ const firstItem = myArray.shift();
 console.log(myArray)
 console.log(firstItem);
 //delete method is used to delete the particular element inside the array unlike other 4 mehtods we seen before which deletes or add the initial or last element. but its not commonly used because it will delete the element but leave the space as it is as undefined.
-delete myArray[0];
-console.log(myArray);
+let myArray2 = ["vig","vin",23,45,67,67,8,90,88];
+delete myArray2[0];
+console.log(myArray2);
 //we use splice instead of delete because it removes the element completely and leave no undefined element in the deleted place.
 //myArray.splice('start position','how many element to delete','replace with this item')
-myArray.splice(0,1);
-console.log(myArray);
-myArray.splice(0,0,"hello everyone");
-console.log(myArray);
-//slice() method is used to get a copy of an array from particular element to particular element as you given as you want
+myArray2.splice(1,1);
+console.log(myArray2);
+myArray2.splice(0,1,"hello everyone","hi");
+console.log(myArray2);
+//slice() method is used to get a copy of an array from particular element to particular element as you give as you want
 //myArray.slice("start position","end position") note: it will give the end position's before element. you shall put this slice method in a new variable and store it then call it.
-//reverse() method will reverse the entire array. you shall put this slice method in a new variable and store it then call it.
+//reverse() method will reverse the entire array. you shall put this reverse() method in a new variable and store it then call it.
 //join() method will get the entire array turned into a single string.
 //split() method will split the string that you just made with join() method.
 //myArray.split(",");
 //by concat() you can add the 2 different array into a single array
-/* myArrayA = ["mine","you", "I", 3,4];
+myArrayA = ["mine","you", "I", 3,4];
 newArray = myArray.concat(myArrayA);
-console.log(newArray); */
+console.log(newArray); 
 //another easy method to add two different array is called shelf method(...)
 myArrayA = ["mine","you", "I", 3,4];
 newArray = [...myArray,...myArrayA];
@@ -638,7 +641,7 @@ console.log(car.func());
 car.func= function(){
     return "vrooom"
 };
-console.log(car.func()); //note if you call old object and then its func it will give you the function value of old object.
+console.log(car.func()); //NOTE: if you call old object and then its func it will give you the function value of old object.
 //we can call object's every keys and object's every values by object.key and object.value method
 console.log(Object.keys(newObj));
 console.log(Object.values(newObj));
@@ -652,8 +655,8 @@ let movie = {
 for(let mi in movie){
     console.log(movie[mi]); //here it will iterate all the values in in movie object and prints you the value. "mi" is the keyword we declare and it should be anything.
 }
-for(let key in movie){
-    console.log(`${key}, it's ${movie[key]}`); //here you can see if you want the key alone you have to give the keyword key but you want the values you have to call the object and square bracket with keyword inside.
+for(let ey in movie){
+    console.log(`${ey}, it's ${movie[ey]}`); //here you can see if you want the key alone you have to give the keyword key but you want the values you have to call the object and square bracket with keyword inside.
 }
 //delete particular property in an object
 delete movie.producer;
@@ -666,8 +669,8 @@ const{actor,director,producer} = movie; //we can either give new name to our var
 console.log(actor); 
 
 //getting particular value inside an object
-function myNewVari({director}){ //by giving actor inside a curly bracket we can get the particular values of the given key
-    return director;
+function myNewVari({actor}){ //by giving actor inside a curly bracket we can get the particular values of the given key
+    return actor;
 }
 console.log(myNewVari(movie));
 
@@ -687,7 +690,7 @@ function dream11(){
 dream11();
 
 //classes
-
+/* 
 //this is how we declare object
  let myPizza = {
     size: "medium",
@@ -723,25 +726,111 @@ class pizzaa {
     }
 }
 const anotherPizzaB = new pizzaa("large","mushroom");
-anotherPizzaB.bake();
+anotherPizzaB.bake(); */
 //remember good class is when you don't give the values directly inside the template but via parameter.
 
-//small exercie to check whether input string from a customer is palisyndrome or not
-
-function checkPalindrome(value){
-    let valueA = value.length;
-    let valueB = value.charAt(0);
-    if(valueA === value.length){
-            if(valueB===value.charAt(value.length - 1) && value.charAt(1) === value.charAt(value.length - 2)){
-                console.log("Given string is palisyndrome")
-            }
-            else{
-                console.log("Given string is not a palisyndrome");
-            }
-        }
-    else{
-        console.log("given string is not a palisyndrome");
+//order pizza
+//get and set method type-1
+/* class pizza {
+    constructor(size,type){
+        this.size = size;
+        this.type = type;
+        this.toppings = "cheese";
+    }
+    get newToppings(){  //get and set method is used if we want to change the particular values we don't need to change directly instead we use this method and change the values with this function being called.
+        return this.toppings;
+    }
+    set newToppings(newToppings){
+        this.toppings = newToppings
+    }
+    bake(){
+        return (`please bake ${this.size} size pizza with ${this.type} type with ${this.toppings} toppings`);
     }
 }
+newOrderPizza = new pizza("small","margaritta");
+//newOrderPizza.toppings = "oil";//we can change the value by this method as we already know. but this is not a good method.
+newOrderPizza.newToppings = "oil"; 
+console.log(newOrderPizza.bake()); */
 
-checkPalindrome("tenet");
+//get and set method type-2
+/* class pizza {
+    constructor(size,type){
+        this.size = size;
+        this.type = type;
+        this.toppings = "cheese";
+    }
+    getToppings(){  //get and set method is used if we want to change the particular values we don't need to change directly instead we use this method and change the values with this function being called.here we name it self as getToppings method which is widely used and considered
+        return this.toppings;
+    }
+    setToppings(newToppings){
+        this.toppings = newToppings
+    }
+    bake(){
+        return (`please bake ${this.size} size pizza with ${this.type} type with ${this.toppings} toppings`);
+    }
+}
+newOrderPizza = new pizza("small","margaritta");
+//newOrderPizza.toppings = "oil";//we can change the value by this method as we already know. but this is not a good method.
+newOrderPizza.setToppings("oil");   //this another way of using get and set function.
+console.log(newOrderPizza.bake()); */
+
+//get and set method type-3
+class pizza {
+    constructor(size,type){
+        this.size = size;
+        this.type = type;
+        this.toppings = []; //in some scenarios customer needs more toppings in that case we just let an empty array
+    }
+    getToppings(){  //get and set method is used if we want to change the particular values we don't need to change directly instead we use this method and change the values with this function being called.here we name it self as getToppings method which is widely used and considered
+        return this.toppings;
+    }
+    setToppings(newToppings){
+        this.toppings.push(newToppings); //we use push method so ifincase customer asked more than one topping we will add it to the end any number of time. 
+    }
+    bake(){
+        return (`please bake ${this.size} size pizza with ${this.type} type with ${this.toppings} toppings`);
+    }
+}
+newOrderPizza = new pizza("small","margaritta");
+//newOrderPizza.toppings = "oil";//we can change the value by this method as we already know. but this is not a good method.
+newOrderPizza.setToppings("oil");   //this another way of using get and set function.
+newOrderPizza.setToppings("cheese");
+console.log(newOrderPizza.bake());
+console.log(newOrderPizza.getToppings()); //to see what is there
+
+//understanding child class... 
+
+class pizza1 {
+    constructor(size){
+        this.size = size;
+    }
+
+}
+
+class pizza2 extends pizza1{ //creating child class with extends keyword
+    constructor(size){
+        super(size);
+        this.flav = "juicy"
+    }
+    slice(){
+        return `bake ${this.size} pizza with ${this.flav}`;
+    }
+}
+const pizza3 = new pizza2("small"); //creating new pizza3 object with already created pizza 2 template
+console.log(pizza3.slice());
+
+//scope of private property - private property is called by #property which is helpful in scenarios where we don't want particular property to be called or changed with help of dot method for example mypizza.property()
+//previously javascript never had dedicated method for private property and everyone used function to declare new object so that its object can't be called out of that function. but the drawback is we can't able to manipulate the properties values if we want.  so javascript come up with # method so we put # before the property name and hence it won't me called or manipulated outside the object.
+class pizza11 {
+    toppings = "cheese"
+    #type = "margaritta"
+    constructor(size){
+        this.size = size;
+    }
+bake(){
+    return `${this.toppings} pizza and ${this.#type} pizza and ${this.size}`
+}
+}
+const pizza12 = new pizza11("large")
+console.log(pizza12.bake());
+console.log(pizza1.type);
