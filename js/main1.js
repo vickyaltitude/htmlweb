@@ -233,3 +233,60 @@ function checkPalindrome(value){
 }
 
 checkPalindrome("tenet");
+
+/*variable creation in javascript undergoes three steps
+1. declaration - it will automatically takes up the space in memory when you just write var/let/const
+2. initialization - it is the taken space are declared as undefined as default as if you are not given any value for your variable.
+3. assignment - it will assign the value you given in the variable to the space it taken previously as undefined.
+
+JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, classes, or imports to the top of their scope, prior to execution of the code.
+
+effects of hoisting
+1. if we using var then declaration and initializing process both done simultaneously and hence if we call var variable before its declared it will show you just undefined and not throws error.
+2. if we using let and const for declaring variable then declaration process alone happens and not initializing and not assignment and hence javascript will throws an error that variable can't shown before initialization.
+*/
+
+//var is functional scope. let and const are block scope
+//it means var inside a curly bracket can accessed out side it but let and scope can't accessed outside curly bracket
+//note var is not accessible outside if it is declared inside funciton.
+//anything inside a curly bracket is local scope
+//global
+
+// gloabal variables
+// Global variable is a variable which you can access in all the scopes ,it is accessible from anywhere in the code ,it is not restricted to any particular scope.
+//var g=80;
+//let c=9;
+//const h=99;
+
+// global variables should be defined at the top of the script such that they can be accessible from anywhere in your script
+/*
+var g=23;
+let c=9;
+const h=09;
+
+function foo(){
+  var g=5
+  console.log(g);
+  console.log(c);
+  console.log(h);
+}
+foo();
+*/
+
+
+//let  vs var
+// 1- let has a block scope ,var has a functional scope
+// 2- variables declared with let donot get attached to global object(window in browser) but variables declared with var do
+// 3 - let cannot be re declared in a same scope but var can 
+
+
+//const vs var
+// 1- const has a block scope ,var has a functional scope
+// 2- variables declared with const donot get attached to global object(window in browser) but variables declared with var do
+// 3 - const cannot re declared oin the same scope but var can 
+
+var h=9;
+var h=99;
+
+let g=89;
+//let g=78; //level scope can be accessed anywhere in the code and it is not restricted
