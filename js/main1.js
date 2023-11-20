@@ -290,3 +290,60 @@ var h=99;
 
 let g=89;
 //let g=78; //level scope can be accessed anywhere in the code and it is not restricted
+//callback function -
+
+
+/* function func(a,b,callback){
+    let c=a*b;
+    callback(c);
+}
+function display(num){
+    console.log(num);
+}
+func(4,5,display); */
+
+//Define a function `processData` that takes two arguments: a number and a callback function. This function should call the callback function with the square of the number. Write another function `printResult` that takes a number and prints it. Demonstrate how to use `processData` with `printResult` as a callback.*/
+function processedData(a,callBack){
+   
+    callBack(5);
+}
+
+processedData(8,function printResult(n){
+    let c = n**2;
+    console.log(c);
+});
+
+let arr= [23,34,50,60,70,35,37];
+
+var i = 0;
+
+while(i<arr.length){
+    console.log(arr[i]);
+    i++;
+}
+
+
+function reverseNumber(num) {
+    let reversed = 0;
+  
+    while (num !== 0) {
+      reversed = reversed * 10;
+      reversed = reversed + num % 10;
+      num = Math.floor(num / 10);
+    }
+  
+    return reversed;
+  }
+  
+  // Example usage:
+  const number = 234234005;
+  const reversedNumber = reverseNumber(number);
+  console.log("Original number:", number);
+  console.log("Reversed number:", reversedNumber);
+
+ 
+
+
+
+
+  

@@ -242,6 +242,7 @@ if (userWish){
 
             if (playAgain === true) {
                location.reload();
+
             }
              else{
                alert('Thanks for playing');
@@ -966,4 +967,57 @@ Enter post number to like: 1
 You liked the post by @Alice!
 
 Enter your choice: 6 */
+
+
+//JSON
+
+//to convert data to JSON file
+let myVar1 = {
+    name: "vignesh",
+    age: 25,
+    obj: function(){
+        console.log("hi how r u")
+    }
+}
+let sendJSON = JSON.stringify(myVar1); //we converted our object data into JSON format to send it to server
+console.log(sendJSON);
+
+let getJSON = JSON.parse(sendJSON);
+console.log(getJSON); //we converted json format data into object;
+
+//error handling
+
+// use "use strict"; mode get the js interpreter analyze and execute the code strictly as we know that javascript is not a strict language and it avoid throwing error on minor error.
+//typeerror - it is one of js error where you try to manipulate variable that is declared by const
+//referenceerror - reference error is the error that happens if we print a variable that are not initiated by let,var or const
+//syntax error - it is popular error and can be addressed easily since javascript itself will throw this error.
+//to handle these errors we use try and catch technique to catch minor error in our code
+
+const newF = () => {
+    try{         //try will get you the error in the code
+        //const nama = "hello"
+       // nama = "hi";
+
+       // throw new customError("this is a custome error"); //we create exclusive error message using function 
+        throw new error("this is custom error"); //this is short cut method wihout using exclusive functin for custom error throw
+    }
+    catch(err){  //catch will put the error inside parameter and you can print it with console
+
+        console.log(errstack); //you can use console.error, console.warn amd console.table alternatively here
+
+        //also console.log(err.name) or (err.stack) will fetch you different result in log
+
+        //logTheError(err); //you can log the error so that the code runs asusually and the error will be set aside as you see whenever u want
+    }finally{
+        console.log("finally...") //this will directly execute if no error found in try and also it will execute even if the try has any error
+    }
+}
+newF();
+
+/* function customError(message){
+    this.message = message;
+    this.name = "custom Error"
+    this.stack = `${this.name}:${this.message}`
+} */
+
 
