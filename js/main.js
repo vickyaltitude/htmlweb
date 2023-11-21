@@ -1012,7 +1012,7 @@ const newF = () => {
         console.log("finally...") //this will directly execute if no error found in try and also it will execute even if the try has any error
     }
 }
-newF();
+//newF();
 
 /* function customError(message){
     this.message = message;
@@ -1020,4 +1020,32 @@ newF();
     this.stack = `${this.name}:${this.message}`
 } */
 
+//DOM - document object model - its a standard of how the provided document is structured and it excutes like a tree in dom.
 
+const view1 = document.getElementById("view1");
+console.log(view1);
+
+const view2 = document.querySelector("#view2");
+console.log(view2);
+
+
+const views = document.getElementsByClassName("view");
+console.log(views);
+
+const viewsall = document.querySelectorAll(".view");
+console.log(viewsall);
+
+const divs = view1.querySelectorAll("div");
+console.log(divs);
+
+const samedivs = view1.getElementsByTagName("div");
+console.log(samedivs);
+
+const evenDivs = view1.querySelectorAll("div:nth-of-type(2n)"); //it will fetch u the even divs of that particular element
+console.log(evenDivs);
+
+evenDivs[4].style.backgroundColor = "purple"; //this way you can style the desired div
+
+for(i=0;i<=evenDivs.length;i++){
+    evenDivs[i].style.width = "150px";
+}

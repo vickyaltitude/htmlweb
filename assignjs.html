@@ -3,10 +3,43 @@
     <head>
     <meta charset="UTF-8">
     <title>Inputs and forms</title>
-    <script src="js/main.js"></script>
+    <style>
+        #view1{
+            height: 80vh;
+            width: 100vw;
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px;
+        }
+        #view1 > div{
+            height: 200px;
+            width: 250px;
+            background-color: black;
+            color: aliceblue;
+            text-align: center;
+        }
+    </style>
     </head>
 
     <body>
+        <section id = "view1" class="view">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </section>
+        <section id = "view2" class="view">
+            <div>hello</div>
+            <div>everyone</div>
+        </section>
         <section>
             <div style="background-color: bisque; width: 100%; height: 100%; text-align: center; padding: 10px; font-size: 30px;">
                 <span>Menu</span> <span>Menu</span> <span>Menu</span>
@@ -32,5 +65,6 @@
                 <span> *Contact us</span> <span>*About us</span>
             </div>
         </section>
+        <script src="js/main.js"></script>
     </body>
 </html>
