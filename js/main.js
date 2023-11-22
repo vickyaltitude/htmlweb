@@ -1041,11 +1041,41 @@ console.log(divs);
 const samedivs = view1.getElementsByTagName("div");
 console.log(samedivs);
 
-const evenDivs = view1.querySelectorAll("div:nth-of-type(2n)"); //it will fetch u the even divs of that particular element
+let evenDivs = view1.querySelectorAll("div:nth-of-type(2n)"); //it will fetch u the even divs of that particular element
 console.log(evenDivs);
 
 evenDivs[4].style.backgroundColor = "purple"; //this way you can style the desired div
 
-for(i=0;i<=evenDivs.length;i++){
+for(i=0;i<evenDivs.length;i++){
     evenDivs[i].style.width = "150px";
 }
+
+const secText = document.querySelector("#view2 > div");  //here we are selecting particular element's text. note: it will get you only the content and not entire element with tags
+secText.textContent = "hahaha"; //here we overwriting the text that already present in that particular div
+console.log(secText);
+const withTag = document.querySelector("nav");
+withTag.innerHTML = "<h1>how r u</h1> <h1>im good</h1>"; //here with innerHTML method we replacing the entire element with tags
+console.log(withTag);
+withTag.style.display = "flex";
+withTag.style.justifyContent = "space-evenly";
+
+//console.log(evenDivs [0]); as we seen earlier that DOM is nothing but a tree structure. we can get the element or item we desired by moving back and forth.
+//console.log (evenDivs [0].parentElement); //it will get us the parent child of evenDivs
+console.log(evenDivs [0].parentElement.children); //it will get us the children of the parent child
+//console.log(evenDivs [0].parentElement.childNodes); //it will give us all the content in parentelement
+//console.log(evenDivs [0].parentElement.hasChildNodes ()); //it gives output in boolean whether evenDivs's parents has child or not
+//console.log(evenDivs [0].parentElement.lastChild); //it will give last child
+//console.log (evenDivs [0].parentElement.lastElementChild); //it will give last element
+
+//play around this to know better
+//console.log(evenDivs [0].parentElement.firstChild);
+//console.log(evenDivs [0].parentElement.firstElementChild);
+//console.log (evenDivs [0].nextSibling);
+//console.log(evenDivs [0].nextElementSibling);
+//console.log(evenDivs [0].nextElementSibling.nextElementSibling);
+//console. log (evenDivs [0].previousSibling);
+//console.log (evenDivs [0].previousElementSibling);
+
+//view1.style.display = "none";
+console.log(view1.lastElementChild);
+view1.lastElementChild.remove();
