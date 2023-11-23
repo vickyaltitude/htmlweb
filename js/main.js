@@ -1078,4 +1078,88 @@ console.log(evenDivs [0].parentElement.children); //it will get us the children 
 
 //view1.style.display = "none";
 console.log(view1.lastElementChild);
-view1.lastElementChild.remove();
+//view1.lastElementChild.remove(); by this method we can remove particular element from html
+
+function newDivC(){
+    const newDiv = document.createElement("div")
+newDiv.style.width = "200px";
+newDiv.style.height = "200px";
+newDiv.style.backgroundColor = "blue";
+newDiv.textContent = "hello";
+newDiv.style.display = "flex";
+newDiv.style.alignItems = "center";
+newDiv.style.justifyContent = "center";
+newDiv.style.color = "white";
+newDiv.style.marginBottom = "10px";
+view2.append(newDiv);
+}
+for(i=0;i<11;i++){
+       newDivC();
+}
+
+//eventListener
+
+const clickFun = () =>{
+    alert("hello");
+}
+secText.addEventListener("click",clickFun,false);  //syntax - you have to give what event first then the function in which all the event had to happen and finally useCapture (true or false).
+
+secText.addEventListener("click",function(event){
+    console.log(event.target);
+    event.target.textContent = "hehehe";
+})
+
+//eventBubblingUp
+//propagation
+
+//we are creating all the below const to understand what is eventbubblingup, propagation and useCapture
+const sec1 = document.querySelector("#sec1");
+const sec2 = sec1.querySelector("#sec2");
+const sec3 = sec2.querySelector("#sec3");
+
+sec1.style.height = "50vh";
+sec1.style.width = "50vw";
+//sec1.style.backgroundColor = "green"
+sec1.style.display = "flex";
+sec1.style.justifyContent = "center";
+sec1.style.alignItems = "center";
+sec2.style.display = "flex";
+sec2.style.height = "250px";
+sec2.style.width = "250px";
+sec2.style.display = "flex";
+sec2.style.justifyContent = "center";
+sec2.style.alignItems = "center";
+sec2.style.backgroundColor = "pink";
+sec3.style.color = "black";
+
+document.addEventListener("readystatechange",(event)=>{ //here ready state change is like a checker if the website result is completely got from the server and ready to show the output in a page. simply its a checker if the site is loaded successfully.
+    if(event.target.readyState === "complete"){
+        console.log("completed");
+        initApp();
+    }
+})
+
+const initApp = () => {
+    sec1.addEventListener("click",(new1)=>{
+        //new1.stopPropagation();
+       //sec1.style.backgroundColor = "red";
+       sec1.classList.add("green"); //here we using classList.add to add new class to that element and remove to remove already presented element and if we use classList.toggle instead of add and remove it will work like if we click it will change to older status and click again back to older status
+       sec1.classList.remove("red");
+       //sec1.classList.toggle("red");
+       //sec1.classList.toggle("green");
+    },true)
+    sec2.addEventListener("click",()=>{
+        sec2.style.backgroundColor = "yellow";
+        
+    },true)
+    sec3.addEventListener("click",(new3)=>{
+       //new3.stopPropagation();
+       // sec3.textContent = "goosebumps";
+       const myText = new3.target.textContent;
+       myText === "1" ? (new3.target.textContent="goosebumps") : (new3.target.textContent = "1");
+
+    },true)
+}
+
+//from the above code we should learn - 1. eventBubblingUp - which means if we directly click sec3 (which is child of sec2 and sec2 in turn child of sec1) the whole 3 condition inside the initApp function will executed and that is called eventBubbling up.  This is because sec 3 is the child of sec2 and sec1.  note: if we click sec1, then the first condition will only execute not other 2 because eventbubblingup only goes child to parent and not from parent to child.  2. propagation - as the name suggest it will propagate like what we see in eventbubbling. unlike eventbubbling, propagation does not have any condition and if we use stop propagation method, it will stop the propagation from either parent to child or child to parent(eventbubblingup). 3.  useCapture - it is opposite of eventbubblingup so it will propagate from parent to child. so what we can understand is overall we can use stop propagation to stop propagating the values chaning if we click just one element.  note: if we click sec1, then the first condition will only execute not other 2 because it is important to note here eventhough it goes from parent to child the propagation occurs only when u click the child element not when u click the parent element. 4. also if we use function parameter and use target like new1.target.backgroundColor then it will work like differently. play with it. it will also act like a eventbubbleup but within the element u clicking.
+
