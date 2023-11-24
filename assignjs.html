@@ -29,8 +29,11 @@
         .red{
             background-color: red;
         }
+        .zoom{
+            font-size: 2rem;
+        }
     </style>
-    <script defer src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
     </head>
 
     <body>
@@ -41,7 +44,7 @@
         </section>
         <nav><h1>my page</h1><h1>my page</h1></nav>
         <section id = "view1" class="view">
-            <div>1</div>
+            <div id = "div1">1</div>
             <div>2</div>
             <div>3</div>
             <div>4</div>
@@ -80,6 +83,13 @@
             <div style="background-color: azure; text-align: center; font-size: 30px; margin-top: 100px;">
                 <span> *Contact us</span> <span>*About us</span>
             </div>
+        </section>
+        <section id = "view3">
+            <form id = "form">
+                <label for="name">Enter your name:</label>
+                <input id="name" type="text">
+                <button type="submit" class = "submit">Submit</button>
+            </form>
         </section>
         
     </body>

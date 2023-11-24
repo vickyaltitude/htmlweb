@@ -536,8 +536,8 @@ console.log(myArray2);
 //split() method will split the string that you just made with join() method.
 //myArray.split(",");
 //by concat() you can add the 2 different array into a single array
-myArrayA = ["mine","you", "I", 3,4];
-newArray = myArray.concat(myArrayA);
+let myArrayA = ["mine","you", "I", 3,4];
+let newArray = myArray.concat(myArrayA);
 console.log(newArray); 
 //another easy method to add two different array is called shelf method(...)
 myArrayA = ["mine","you", "I", 3,4];
@@ -549,10 +549,10 @@ console.log(newArray);
 let myDetails = ["vignesh",24,"pondy","bscphyscis"]
 let myAmbition = ["dev","fullstack","tech"]
 let myFamily = ["vino", "mom", "dad", "simba", "tiger"]
-let myArea = ["js", "react", "mongodb"]
+const myArea = ["js", "react", "mongodb"]
 let myHobby = ["cricket", "uno", "music"]
 
-const myDandmyA = [myDetails,myAmbition,myFamily];  //we just made a 2 dimensional array by putting 2 single array as 1
+const myDandmyA = [myDetails,myAmbition,myFamily,myArea];  //we just made a 2 dimensional array by putting 2 single array as 1
 console.log(myDandmyA[0][2]);  //here first condition [0] is we calling the first array as we already put it in myDandmyA variable and [2] condition is we calling the 2nd element in that particular array.
 console.log(myDandmyA[1][2],myDandmyA[1][1]);  //here first condition [1] is we calling the second array as we already positioned it as second in myDandmyA variable and [2] condition is we calling the 2nd element in that particular array. we can continuosly any element we want by giving this condition and put comma between the condition.
 const mine = [myDandmyA,myHobby]; //this is 3 dimensional as we put 2 different arrays and the first array is already a 2 dimensional hence after we putting that into a new array now the new array becomes 3 dimensional.
@@ -792,7 +792,7 @@ class pizza {
         return (`please bake ${this.size} size pizza with ${this.type} type with ${this.toppings} toppings`);
     }
 }
-newOrderPizza = new pizza("small","margaritta");
+let newOrderPizza = new pizza("small","margaritta");
 //newOrderPizza.toppings = "oil";//we can change the value by this method as we already know. but this is not a good method.
 newOrderPizza.setToppings("oil");   //this another way of using get and set function.
 newOrderPizza.setToppings("cheese");
@@ -1163,3 +1163,64 @@ const initApp = () => {
 
 //from the above code we should learn - 1. eventBubblingUp - which means if we directly click sec3 (which is child of sec2 and sec2 in turn child of sec1) the whole 3 condition inside the initApp function will executed and that is called eventBubbling up.  This is because sec 3 is the child of sec2 and sec1.  note: if we click sec1, then the first condition will only execute not other 2 because eventbubblingup only goes child to parent and not from parent to child.  2. propagation - as the name suggest it will propagate like what we see in eventbubbling. unlike eventbubbling, propagation does not have any condition and if we use stop propagation method, it will stop the propagation from either parent to child or child to parent(eventbubblingup). 3.  useCapture - it is opposite of eventbubblingup so it will propagate from parent to child. so what we can understand is overall we can use stop propagation to stop propagating the values chaning if we click just one element.  note: if we click sec1, then the first condition will only execute not other 2 because it is important to note here eventhough it goes from parent to child the propagation occurs only when u click the child element not when u click the parent element. 4. also if we use function parameter and use target like new1.target.backgroundColor then it will work like differently. play with it. it will also act like a eventbubbleup but within the element u clicking.
 
+document.addEventListener("readystatechange",(event)=>{ //here ready state change is like a checker if the website result is completely got from the server and ready to show the output in a page. simply its a checker if the site is loaded successfully.
+
+
+    if(event.target.readyState === "complete"){
+        console.log("completed");
+        outItApp();
+    }
+})
+
+const outItApp = () => {
+    const zoomOut = view1.querySelector("#div1");
+    zoomOut.addEventListener("mouseover",()=>{ //mouseover is when u hover the mouse over the element
+        zoomOut.style.fontSize = "32px";
+    })
+    zoomOut.addEventListener("mouseout",()=>{ //mouseout is when u get the mouse out of the element
+        zoomOut.style.fontSize = "16px";
+    })
+}
+
+
+
+const oItApp = () => {
+    const form = document.querySelector("#view3")
+const submit = form.querySelector("#form");
+      submit.addEventListener("submit",(event)=>{ //submit is when you click the submit button
+    event.preventDefault(); //this preventdefault method will avoid refreshing the page when u entered something in the input field and hit enter. refreshing the page when u entered in input and hit enter is default behaviour but when it refreshes the page everytime u entered something and hit enter it will be difficult to validate the input u entered so to avoid it we use preventDefault method.
+    console.log("submitted successfully");
+})
+
+}
+oItApp();
+
+//web api storage
+//two types of web api storage - 1. session storage 2. local storage
+//session storage will store the data for the particular session and when u close the browser the stored datas will be erased.
+//local storage will store the data in your local and even if u exit and reenter the browser the storage will still be there.
+
+const webApi = () =>{
+let newArray = ["vignesh",24,"tiger","simba"];
+const newConst = {
+    name: "vignesh",
+    newArray: ["vignesh",24,"tiger"],
+    func: () =>{
+        console.log("hello")
+    }
+}
+sessionStorage.setItem("newVariable",JSON.stringify(newConst)); //same wise try localStorage
+const myStoredData = JSON.parse(sessionStorage.getItem("newVariable"));
+const selectData = sessionStorage.key(0); //it will get u the first value stored in storage
+console.log(selectData);
+//sessionStorage.length; will get u how many values stored in storage
+//sessionStorage.removeItem("nnn"); by this method u can remove particular values stored in storage
+//sessionStorage.clear; will clear the entire storage
+console.log(myStoredData);
+}
+webApi();
+
+//module
+
+import myVaria from "./module.js";
+console.log(myVaria);
