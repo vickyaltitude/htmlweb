@@ -510,7 +510,7 @@ console.log(myArray)
 myArray.pop()
 console.log(myArray)
 //push() method will add the given element to the last of the array
-myArray.push("hello")
+myArray.push(6)
 console.log(myArray)
 //NOTE : if we store unshift() and push() in a variable and call it then it will show the length of the whole array including new element added 
 //NOTE : if we store shift() and pop() in a variable and call it then it will give us the particular element that we try to remove.
@@ -1222,5 +1222,17 @@ webApi();
 
 //module
 
-import myVaria from "./module.js";
-console.log(myVaria);
+/* import myVaria from "./module.js";
+console.log(myVaria); */
+
+//we can import all the function with single method
+
+//import * as dh from "./module.js"; //here we imported the entire function and name it as dh. so we have to use dh and dot to call the function we want
+
+//console.log(dh.showB); //incase of default fun we have to use dh.default instead of entering the function name. so to avoid this we can remove default and use mere function name in export file.
+
+//creating new object using class by importing it from another js
+
+import mail from "./module.js";
+const me3 = new mail("vignesh");
+console.log(me3.mailTo());

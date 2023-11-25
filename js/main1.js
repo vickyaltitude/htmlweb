@@ -345,5 +345,97 @@ function reverseNumber(num) {
 
 
 
+  function star(num) {
+    let stars = '';
 
-  
+    // Check if the number is positive
+    if (num > 0) {
+        // Append '*' to 'stars' 'num' times
+        for (let i = 0; i < num; i++) {
+            stars += '*';
+        }
+        console.log(stars);
+    } else {
+        console.log('Please provide a positive number.');
+    }
+}
+
+star(5);
+
+function isPalindrome(text){
+
+    let reversed = '';
+    for(i=text.length-1;i>=0;i--){
+        reversed = reversed + text.charAt(i);
+    }
+
+    console.log(reversed);
+}
+isPalindrome("given");
+
+function lastWord(word){
+    var newWord = word.split(" ");
+    var lastWord = newWord[newWord.length-1];
+   
+    for(i=newWord.length-1;i>=0;i--){
+        if(newWord[i] !== ""){
+            return newWord[i];
+        }
+    }
+    return lastWord;
+}
+console.log(lastWord("hi   hello   everyone  fsdf  "));
+
+//sum of all the multiples of 3 and 5 below 1000
+
+function sum(num){
+        let numA = 0;
+        let numC = 0;
+
+    for(i=0;i<num;i++){
+
+            if(i%3===0){
+                
+                    numA = numA+i;
+                
+            }
+            else if(i%5===0){
+                
+                    numC = numC + i;
+               
+            }       
+    }
+
+    return numA + numC;
+    
+}
+
+console.log(sum(1000));
+
+
+
+
+ 
+//sum of all the fibonacci below 1000
+
+function sumEvenFibonacci(limit) {
+    let sum = 0;
+    let prev = 1;
+    let curr = 1;
+
+    while (curr < limit) {
+        let next = prev + curr; //2 3 4 5 6
+        prev = curr; //1 2 3 4 5
+        curr = next; //2 3 4 5 6
+
+        if (curr % 2 === 0 && curr < limit) {
+            sum += curr; //2 6 12
+        }
+    }
+
+    return sum;
+}
+
+const limit = 1000;
+const result = sumEvenFibonacci(limit);
+console.log(`The sum of even Fibonacci numbers below ${limit} is: ${result}`);
