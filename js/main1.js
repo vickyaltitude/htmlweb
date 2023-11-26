@@ -439,3 +439,10 @@ function sumEvenFibonacci(limit) {
 const limit = 1000;
 const result = sumEvenFibonacci(limit);
 console.log(`The sum of even Fibonacci numbers below ${limit} is: ${result}`);
+
+const button = document.getElementById("button");
+
+
+button.addEventListener("click",()=>{
+    heading.style.fontFamily = "sans-serif"
+})

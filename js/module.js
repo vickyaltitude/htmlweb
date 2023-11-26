@@ -16,11 +16,11 @@ export  function showB(){
 //export default showI(); //there must be atleast one function that needs to be set as default 
 //export {myVaria,myVaria};
 
-export default class mail{
+/* export default class mail{
     constructor(name){
         this._name= name;
     }
     mailTo(){
         return `hi this is my name ${this._name}`
     }
-}
+} */
