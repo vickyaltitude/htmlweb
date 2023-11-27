@@ -451,6 +451,8 @@ button.addEventListener("click",()=>{
 
 function isPrime(num){
 
+    let printPrime = [];
+
     if(num === 2){
         return `Given number ${num} is a prime number`;
     }
@@ -459,19 +461,46 @@ function isPrime(num){
 
 
         let prime = num%i;
+       
 
         
         if (prime === 0){
-            return `Given number ${num} is not a prime number`;
+            continue;
         }
 
-        
+        let printPrimeA = printPrime.push(i);
 
+        
+        console.log(printPrimeA);
     }
 
-    return `Given number ${num} is a prime number`;
+    
 }
 
-console.log(isPrime(99));
+isPrime(10);
+
+
+function isPrime(num) {
+    let printPrime = [];
+
+    if (num === 2) {
+        return `Given number ${num} is a prime number`;
+    }
+
+    for (let i = 2; i <= num; i++) {
+        while (num % i === 0) {
+            printPrime.push(i);
+            num /= i;
+        }
+    }
+
+    if (printPrime.length === 0) {
+        return `${num} is a prime number itself`;
+    } else {
+        return `Prime factors of ${num} are: ${printPrime.join(', ')}`;
+    }
+}
+
+console.log(isPrime(100)); // Example usage
 
 
