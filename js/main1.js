@@ -446,3 +446,32 @@ const button = document.getElementById("button");
 button.addEventListener("click",()=>{
     heading.style.fontFamily = "sans-serif"
 })
+
+//num = 
+
+function isPrime(num){
+
+    if(num === 2){
+        return `Given number ${num} is a prime number`;
+    }
+
+    for(i=2;i<num;i++){
+
+
+        let prime = num%i;
+
+        
+        if (prime === 0){
+            return `Given number ${num} is not a prime number`;
+        }
+
+        
+
+    }
+
+    return `Given number ${num} is a prime number`;
+}
+
+console.log(isPrime(99));
+
+
