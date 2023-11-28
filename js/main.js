@@ -529,6 +529,10 @@ myArray2.splice(1,1);
 console.log(myArray2);
 myArray2.splice(0,1,"hello everyone","hi");
 console.log(myArray2);
+let myArray3 = myArray2.join();
+console.log(myArray3);
+let MYaRRAY4 = myArray3.split("45");
+console.log(MYaRRAY4);
 //slice() method is used to get a copy of an array from particular element to particular element as you give as you want
 //myArray.slice("start position","end position") note: it will give the end position's before element. you shall put this slice method in a new variable and store it then call it.
 //reverse() method will reverse the entire array. you shall put this reverse() method in a new variable and store it then call it.
@@ -1233,6 +1237,6 @@ console.log(myVaria); */
 
 //creating new object using class by importing it from another js
 
-import mail from "./module.js";
+/* import mail from "./module.js";
 const me3 = new mail("vignesh");
-console.log(me3.mailTo());
+console.log(me3.mailTo()); */

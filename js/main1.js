@@ -477,30 +477,83 @@ function isPrime(num){
     
 }
 
-isPrime(10);
+//isPrime(10);
 
 
-function isPrime(num) {
-    let printPrime = [];
+//primefactors - print largest of the factor
 
-    if (num === 2) {
-        return `Given number ${num} is a prime number`;
+function largestPrime(num) {
+    let primeList = [];
+
+    // Number below 2 is not a prime number
+    if (num < 2) {
+        return "Any number below 2 is not a prime number";
     }
 
-    for (let i = 2; i <= num; i++) {
-        while (num % i === 0) {
-            printPrime.push(i);
-            num /= i;
+    // Iterate all the way to num to fetch the prime numbers
+    for (let i = 2; i < num; i++) {
+        let isPrime = true;
+
+        // Check for factors of i
+        for (let j = 2; j < Math.sqrt(i) + 1; j++) {
+            if (i % j === 0) {
+                isPrime = false;
+                break; // Break if i is divisible by any number other than 1 and itself
+            }
+        }
+
+        // If i is a prime number, add it to the primeList array
+        if (isPrime) {
+            primeList.push(i);
         }
     }
 
-    if (printPrime.length === 0) {
-        return `${num} is a prime number itself`;
-    } else {
-        return `Prime factors of ${num} are: ${printPrime.join(', ')}`;
-    }
+    return primeList[primeList.length-1];
 }
 
-console.log(isPrime(100)); // Example usage
+console.log(largestPrime(7000)); // Output: [2, 3, 5, 7, 11]
 
+//understanding the question - the number should be in palindrome but should be the product of largest 3 digit numbers
+
+function noonerize(number1,number2){
+  
+    let numArray = [];
+    let numArray2= [];
+    let numArrayEdit1 = [];
+    let numArrayEdit2 = [];
+    let finalArray = [];
+    
+    if(isNaN(number1) === true || number1 === undefined){
+      return "The value you provided is not a number"
+    }
+    else if(isNaN(number2) === true || number2 === undefined){
+    return "The value you provided is not a number"
+      }
+    
+    else if(isNaN(number1) === false && isNaN(number2) === false){
+      
+      numArray.push(number1);
+      numArray2.push(number2);
+      
+     let xyz1 = numArray.join();
+      let xyz2 = numArray2.join();
+      
+      numArrayEdit1 = xyz1.slice(0,1);
+      numArrayEdit2 = xyz2.slice(0,1);
+      let numArrayEdit3 = xyz1.slice(1,xyz1.length);
+     let  numArrayEdit4 = xyz2.slice(1,xyz2.length);
+
+      let finalArray1 = numArrayEdit2 + numArrayEdit3;
+      let finalArray2 = numArrayEdit1 + numArrayEdit4;
+
+      
+      finalArray.push(finalArray1);
+      finalArray.push(finalArray2);
+      console.log(Math.abs(Number.parseInt(finalArray1) - Number.parseInt(finalArray2)));
+      return finalArray;
+    
+    }
+  }
+
+  console.log(noonerize(434,634));
 
