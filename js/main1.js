@@ -557,3 +557,39 @@ function noonerize(number1,number2){
 
   console.log(noonerize(434,634));
 
+  //exercice 1 from chatgpt
+
+  //Find the sum of all multiples of 3 and 5 below a given number.
+
+
+    function sumOfMultiples(num) {
+        let sum = 0;
+    
+        for (let i = 3; i < num; i++) {
+            if (i % 3 === 0 || i % 5 === 0) {
+                sum += i;
+            }
+        }
+    
+        return `Sum of all multiples of 3 and 5 below ${num} is ${sum}`;
+    }
+
+    console.log(sumOfMultiples(30))
+
+     //exercice 2 from chatgpt
+
+     //sum of factorial in the given number
+
+     function sumOfFactorial(n){
+        let sum;
+        let result = 0;
+        let finalResult = 0;
+
+        for(i=n;i>0;i--){
+            sum = sum * i;
+        }
+
+        return `Sum of all the factorial in the ${n} is ${finalResult}`;
+     }
+
+     console.log(sumOfFactorial(10));
