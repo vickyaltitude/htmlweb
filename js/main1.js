@@ -576,20 +576,4 @@ function noonerize(number1,number2){
 
     console.log(sumOfMultiples(30))
 
-     //exercice 2 from chatgpt
-
-     //sum of factorial in the given number
-
-     function sumOfFactorial(n){
-        let sum;
-        let result = 0;
-        let finalResult = 0;
-
-        for(i=n;i>0;i--){
-            sum = sum * i;
-        }
-
-        return `Sum of all the factorial in the ${n} is ${finalResult}`;
-     }
-
-     console.log(sumOfFactorial(10));
+    
