@@ -100,9 +100,34 @@ colorChange();
     let sixteen = calci[15];
 
 
-    calci[0].addEventListener("click",function(){
+   
 
-          
-    })
-    
+    let inst = 76586;
+    let instnew = Number(inst.toString().split("").reverse().join(""));
+    console.log(instnew);
+
+    function largestPalindrome(m,n){
+        let pali = 1 ;
+        let pali2 = 1;
+        let ndrome = 0;
+
+        for(i=m;i<=n;i++){
+
+            for(j=m;j<=n;j++){
+                pali = i*j;
+                pali2 = Number(pali.toString().split("").reverse().join(""))
+                if(pali === pali2 && pali > ndrome){
+                    ndrome = pali;
+                }
+            }
+            
+        }
+        return ndrome;
+        
+    }
+
+   console.log(largestPalindrome(10,99));
+
+   console.log(10^2);
+
 
