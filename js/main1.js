@@ -576,4 +576,13 @@ function noonerize(number1,number2){
 
     console.log(sumOfMultiples(30))
 
-    
+    //simple todo list
+    const btn = document.getElementById("btn");
+    const inpt = document.getElementById("input");
+    const list = document.getElementById("list")
+
+    btn.addEventListener("click",function(){
+        const value = inpt.value;
+        list.innerHTML = list.innerHTML+"<li>"+value+" <button>delete</button></li>"
+
+    })
