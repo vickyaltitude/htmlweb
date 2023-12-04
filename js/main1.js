@@ -579,10 +579,15 @@ function noonerize(number1,number2){
     //simple todo list
     const btn = document.getElementById("btn");
     const inpt = document.getElementById("input");
-    const list = document.getElementById("list")
+    const list = document.getElementById("list");
+    const editMe = document.createElement("button")
+        editMe.textContent = "Click me"
+    
 
     btn.addEventListener("click",function(){
         const value = inpt.value;
-        list.innerHTML = list.innerHTML+"<li>"+value+" <button>delete</button></li>"
-
+        
+        list.innerHTML = `${list.innerHTML}<li> ${value} <button>delete</button>${editMe}</li>`;
+        
     })
+
