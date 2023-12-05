@@ -130,4 +130,95 @@ colorChange();
 
    console.log(10^2);
 
+   let count = 0;
+
+function cc(card) {
+  // Only change code below this line
+  switch(card){
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+        count++;
+        break;
+    case 10:
+    case "J":
+    case "Q":
+    case "K":
+    case "A":
+        count--;
+        break;
+  }
+
+  if(count<=0){
+    console.log(`${count} Hold`);
+  } else if(count>0){
+    console.log(`${count} Bet`);
+  }
+ 
+ 
+  // Only change code above this line
+}
+
+
+
+
+cc(2); cc(3); cc(7); cc('Q'); cc('A');
+
+let holdBet = "Hold"
+  if(count > 0){
+    holdBet = "Bet"
+  }
+
+  //return count + " " + holdBet
+
+  // Setup
+const recordCollection = {
+    2548: {
+      albumTitle: 'Slippery When Wet',
+      artist: 'Bon Jovi',
+      tracks: ['Let It Rock', 'You Give Love a Bad Name']
+    },
+    2468: {
+      albumTitle: '1999',
+      artist: 'Prince',
+      tracks: ['1999', 'Little Red Corvette']
+    },
+    1245: {
+      artist: 'Robert Palmer',
+      tracks: []
+    },
+    5439: {
+      albumTitle: 'ABBA Gold'
+    }
+  };
+
+  console.log(recordCollection[2468].tracks);
+ recordCollection[5439].artist = "ABBA";
+ console.log(recordCollection);
+  
+  // Only change code below this line
+  function updateRecords(records, id, prop, value) {
+    if(id === Number){
+      if(value === "" || value === undefined){
+        delete records[id].prop;
+      }else if(prop != records[id].tracks && value != ""){
+            records[id].prop = value;
+      }else if(prop === records[id].tracks && value != ""){
+        if(records[id].prop === undefined){
+          records[id].tracks = [];
+          records[id].tracks.push(value);
+        }else if(records[id].prop != undefined){
+          records[id].tracks.push(value);
+        }
+      }
+    }
+  
+  
+    console.log(records);
+  }
+  
+  updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
 
