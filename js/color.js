@@ -201,7 +201,7 @@ const recordCollection = {
   // Only change code below this line
   function updateRecords(records, id, prop, value) {
     if(id === Number){
-      if(value === "" || value === undefined){
+      if(value === "" || undefined(value)){
         delete records[id].prop;
       }else if(prop != records[id].tracks && value != ""){
             records[id].prop = value;
