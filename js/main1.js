@@ -592,3 +592,15 @@ function noonerize(number1,number2){
         
     })
 
+    //object oriented programming language(oops)
+
+    //any programming language to be considered as a oops supported language if it meets for condition
+    //1. abstraction 2. encapsulation 3. inheritance 4. polymorphism
+
+    //javascript was object based programming language before 2015 but after es6 came into picture js also considered as a oops supported language.
+
+    //classes are generally present in oops and thats what make oops as a object oriented program
+    //objects that are created by using class in oops
+    //a language is clearly not an oops supported language if it does not has class.
+    
+
