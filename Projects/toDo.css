@@ -5,19 +5,20 @@
 }
 html{
     height: 100vh;
-    width: 100%;
+    max-width: 100%;
     background-color: #1a001a;
     color: whitesmoke;
     font-family: 'PT Serif', serif;
 }
 body{
     height: 100vh;
-    width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'PT Serif', serif;
-    gap: 10px;
+    gap: 5px;
+  
 }
 #box{
     height: 90%;
@@ -33,6 +34,7 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'PT Serif', serif;
+    
 }
 p{
     font-size: 2.2rem;
@@ -95,14 +97,21 @@ input, button {
     color: whitesmoke;
   }
   li{
+    max-width: 740px;
     list-style: none;
     font-size: 1.4rem;
     font-family: 'PT Serif', serif;
     padding: 10px;
     margin: 10px;
     background-color: #4d004d;
-    border-radius: 20px;;
+    border-radius: 20px;
+    white-space: pre-wrap; /* Allow wrapping within words */
+    word-wrap: break-word;
 
+  }
+
+  #edit{
+    margin-left: 5px;
   }
 
   #edit:hover{
