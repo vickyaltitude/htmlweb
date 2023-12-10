@@ -1241,3 +1241,4 @@ console.log(myVaria); */
 /* import mail from "./module.js";
 const me3 = new mail("vignesh");
 console.log(me3.mailTo()); */
+

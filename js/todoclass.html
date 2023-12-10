@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="input">
+
+    <button id="btn">
+        Add to Do
+    </button>
+
+<ul id="list">
+
+</ul>
+
+    <script>
+        let list=document.getElementById("list");
+        let input=document.getElementById("input");
+       let todobtn= document.getElementById("btn");
+
+       let todoListener=()=>{
+            let li=document.createElement("li");
+            const btnDelete=document.createElement("button");
+            const btnEdit=document.createElement("button");
+
+            btnDelete.innerText=` Delete Me`
+            btnEdit.innerText=`Edit Me`
+
+
+            btnDelete.addEventListener("click",(event)=>{
+                console.log(event.target); // event target is the element on which the user has interacted
+               list.removeChild(event.target.closest("li"));  // it will return the parent or any of the neigbouring 
+               
+              
+            })
+
+            btnEdit.addEventListener("click",(event)=>{
+             let litag=   event.target.closest("li");
+             let splittedArray=litag.innerText.split("Delete")
+
+             input.value=splittedArray[0]
+
+             // Now we will dynamically change the listener of the button Add todo and the text
+             todobtn.innerText="Update Value";
+
+             todobtn.removeEventListener("click",todoListener,{ passive: true })
+             const updateListener=(event)=>{
+   
+                // get the input value here
+                const h4=litag.childNodes[0];
+
+                let value=input.value;
+                h4.innerText=value;
+
+                input.value="";
+                todobtn.innerText="Add Todo";
+
+todobtn.removeEventListener("click",updateListener,{ passive: true })
+todobtn.addEventListener("click",todoListener)
+            
+
+
+
+             }
+
+             todobtn.addEventListener("click",updateListener)
+
+
+           
+            })
+
+            const h4=document.createElement("h4");
+            h4.innerText=input.value;
+
+
+            li.append(h4,btnDelete,btnEdit) // with append you can add an element along with text
+            li.className="myclass"
+            list.appendChild(li); // it adds the child elements to the list ,you can only append the elements
+            input.value="";
+
+
+        }
+
+       todobtn.addEventListener("click",todoListener)
+
+
+    </script>
+    
+</body>
+</html>

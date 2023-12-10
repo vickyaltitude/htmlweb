@@ -18,6 +18,8 @@ body{
     align-items: center;
     font-family: 'PT Serif', serif;
     gap: 5px;
+    margin-top: 20px;
+
   
 }
 #box{
@@ -34,6 +36,8 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'PT Serif', serif;
+    line-height: 50px;
+  
     
 }
 p{
@@ -107,7 +111,6 @@ input, button {
     border-radius: 20px;
     white-space: pre-wrap; /* Allow wrapping within words */
     word-wrap: break-word;
-    transition: height 0.2s ease;
 
   }
 
@@ -126,4 +129,19 @@ input, button {
   #save:hover{
     background-color: rgb(1, 63, 1);
     color: whitesmoke;
+  }
+
+  #view-list{
+    margin-top: 20px;
+    max-width: 50%;
+    max-height: 100vh;
+    position: sticky;
+    left: 50%;
+    top: 10%;
+    overflow-y: auto;
+   
+  }
+
+  #box,#view-list{
+    vertical-align: middle;
   }
