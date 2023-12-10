@@ -4,7 +4,9 @@ const lists = document.getElementById("lists");
 const box = document.getElementById("box");
 box.setAttribute("id","box");
 
-button.addEventListener("click",()=>{
+function toDo(){
+    
+    button.addEventListener("click",()=>{
     if(input.value != "" && input.value.split(" ").join("") != ""){
     const li = document.createElement("li");
     const edit = document.createElement("button");
@@ -34,6 +36,8 @@ button.addEventListener("click",()=>{
         li.appendChild(save);
         li.appendChild(del);
         li.removeChild(edit);
+
+       
         
 
     })
@@ -51,3 +55,7 @@ button.addEventListener("click",()=>{
     }
 
 })
+}
+
+toDo();
+
