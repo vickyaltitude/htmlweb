@@ -799,8 +799,8 @@ class pizza {
 }
 let newOrderPizza = new pizza("small","margaritta");
 //newOrderPizza.toppings = "oil";//we can change the value by this method as we already know. but this is not a good method.
-newOrderPizza.setToppings("oil");   //this another way of using get and set function.
-newOrderPizza.setToppings("cheese");
+newOrderPizza.setToppings("Cheese");   //this another way of using get and set function.
+newOrderPizza.setToppings("oil");
 console.log(newOrderPizza.bake());
 console.log(newOrderPizza.getToppings()); //to see what is there
 
@@ -828,18 +828,18 @@ console.log(pizza3.slice());
 //scope of private property - private property is called by #property which is helpful in scenarios where we don't want particular property to be called or changed with help of dot method for example mypizza.property()
 //previously javascript never had dedicated method for private property and everyone used function to declare new object so that its object can't be called out of that function. but the drawback is we can't able to manipulate the properties values if we want.  so javascript come up with # method so we put # before the property name and hence it won't me called or manipulated outside the object.
 class pizza11 {
-    toppings = "cheese"
-    #type = "margaritta"
+    #toppings = "cheese";
+    type = "margaritta"
     constructor(size){
         this.size = size;
     }
 bake(){
-    return `${this.toppings} pizza and ${this.#type} pizza and ${this.size}`
+    return `${this.#toppings} pizza and ${this.type} pizza and ${this.size}`
 }
 }
 const pizza12 = new pizza11("large")
 console.log(pizza12.bake());
-console.log(pizza1.type); //it's private property so gives output as undefined.
+console.log(pizza11.type); //it's private property so gives output as undefined.
 
 
 //task - 1 - expiry date - 16-11-23 NOTE: code should be professional and easily readable
@@ -984,6 +984,7 @@ let myVar1 = {
         console.log("hi how r u")
     }
 }
+console.log(myVar1);
 let sendJSON = JSON.stringify(myVar1); //we converted our object data into JSON format to send it to server
 console.log(sendJSON);
 
@@ -1000,15 +1001,15 @@ console.log(getJSON); //we converted json format data into object;
 
 const newF = () => {
     try{         //try will get you the error in the code
-        //const nama = "hello"
-       // nama = "hi";
+        const nama = "hello"
+       nama = "hi";
 
-       // throw new customError("this is a custome error"); //we create exclusive error message using function 
+       //throw new customError("this is a custome error"); //we create exclusive error message using function 
         throw new error("this is custom error"); //this is short cut method wihout using exclusive functin for custom error throw
     }
     catch(err){  //catch will put the error inside parameter and you can print it with console
 
-        console.log(errstack); //you can use console.error, console.warn amd console.table alternatively here
+        console.error(err); //you can use console.error, console.warn amd console.table alternatively here
 
         //also console.log(err.name) or (err.stack) will fetch you different result in log
 
@@ -1017,7 +1018,7 @@ const newF = () => {
         console.log("finally...") //this will directly execute if no error found in try and also it will execute even if the try has any error
     }
 }
-//newF();
+newF();
 
 /* function customError(message){
     this.message = message;
