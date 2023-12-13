@@ -106,5 +106,8 @@ function toDo(){
 
 toDo();
 
-
+let myArr = ["vignesh","vicky",24,100]
+sessionStorage.setItem("newvariable",JSON.stringify(myArr));
+let getmyArr = JSON.parse(sessionStorage.getItem("newvariable"));
+console.log(getmyArr);
 

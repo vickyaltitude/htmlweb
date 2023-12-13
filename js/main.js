@@ -1018,7 +1018,7 @@ const newF = () => {
         console.log("finally...") //this will directly execute if no error found in try and also it will execute even if the try has any error
     }
 }
-newF();
+//newF();
 
 /* function customError(message){
     this.message = message;
@@ -1056,7 +1056,7 @@ for(i=0;i<evenDivs.length;i++){
     evenDivs[i].style.width = "150px";
 }
 
-const secText = document.querySelector("#view2 > div");  //here we are selecting particular element's text. note: it will get you only the content and not entire element with tags
+const secText = document.querySelector("#view2 > div");  //here we are selecting particular id's first div. note:;
 secText.textContent = "hahaha"; //here we overwriting the text that already present in that particular div
 console.log(secText);
 const withTag = document.querySelector("nav");

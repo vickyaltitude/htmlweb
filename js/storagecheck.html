@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .myLi{
+            height: 50%;
+            width: 50%;
+            background-color: aqua;
+            
+        }
+        .li{
+            height: 30%;
+            width: 30%;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="myLi">
+        <input>
+    </ul>
+
+    <script>
+        const ul = document.getElementsByClassName("myLi");
+        localStorage.setItem("li",ul[0].innerHTML);
+        let getting = localStorage.getItem("li");
+        let newli = document.createElement("li");
+        newli.setAttribute("class","li")
+        getting.innerHTML = newli;
+        ul[0].appendChild(newli);
+    </script>
+</body>
+</html>
