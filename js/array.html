@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        let myArr = [
+            "vignesh",
+            24,
+            ["hello","apple","orange"],
+            "india"
+        ]
+        let myArrb = [
+            "senthil",
+            "from india",
+            ["not married", "bsc phy",50,12],
+            24,
+            "yes"
+        ]
+
+        console.log(myArr);
+        console.log(myArr[2][2]);
+        myArr[4] = 89;
+        myArr.push(200);
+        myArr.pop();
+        myArr.unshift("im");
+        myArr.shift();
+        console.log(myArr);
+        let newArr = myArr.concat(myArrb);
+        console.log(newArr);
+        let joinArr =  myArr.join()
+        console.log(joinArr);
+        let spillted = joinArr.split(",")
+        console.log(spillted);
+        console.log(myArr.slice(0,1));
+        console.log(myArrb.splice(2,2));
+        console.log(myArrb.reverse());
+        console.log(myArr[0].lastIndexOf("n"));
+
+        let vowel = ["a","z","y","l","u"];
+        vowel.forEach(function(letters){
+            if(letters.toLowerCase() === "a" ||
+               letters.toLowerCase() === "e" ||
+               letters.toLowerCase() === "i" ||
+               letters.toLowerCase() === "o" ||
+               letters.toLowerCase() === "u" ){
+                console.log(`${letters} is a vowel`);
+               }
+               else{
+                console.log(`${letters} is not a vowel`)
+               }
+        })
+
+        let words = ["eat","sleep","cook","brush","think"];
+        let newWords = words.map(function(letters){
+            letters = letters + "ing";
+            return letters;
+        })
+        console.log(newWords);
+
+        let returnMe = vowel.filter(function(letters){
+            return letters == "a" || letters == "e" || letters == "i" || letters == "o" || letters == "u";
+        })
+        console.log(returnMe);
+
+        //accumulator accumulates the result while iterating through the array. It starts with the initial value provided (0 in this case) or the first element of the array if no initial value is provided. The reduce() method iterates through each element of the array and accumulates a single value based on the operation specified in the function.
+
+        let add = [2,5,7,8,2,1,2,3]
+        let sum = add.reduce(function(accum,numbers){
+            return accum+numbers;
+        },0)
+        console.log(sum);
+
+        let num = [2,6,10,8,2,18,2,30];
+        let check = num.every(function(nums){
+            return nums % 2 === 0;
+        })
+        console.log(check);
+
+        //every checks each element and returns true only if all the element passed the condition whereas some method returns true if any one of the given element is true
+
+        let numodd = [23,612,101,83,23,181,21,3];
+        let checkodd = numodd.some(function(nums){
+            return nums % 2 === 0;
+        })
+        console.log(checkodd);
+    //The rest parameter ... is used in function parameters to collect multiple arguments into a single array.
+
+    function newsum(...sum){
+        return sum.reduce(function(acc,val){
+             return acc+val;
+        },0)
+    }
+    console.log(newsum(1,2,3,4,5));
+    </script>
+</body>
+</html>
