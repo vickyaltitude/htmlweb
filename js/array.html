@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+    <ul>
+        <li class="list"></li>
+        <li class="list"></li>
+        <li class="list"></li>
+    </ul>
 
 
     <script>
@@ -97,6 +102,104 @@
         },0)
     }
     console.log(newsum(1,2,3,4,5));
+
+    //array.from() is a method which converts improper arrays or array like elements into proper array
+
+    //it is used where places like nodeslist from queryselectorall.
+
+    let lists = document.querySelectorAll(".list");
+    let listArr = Array.from(lists);
+
+listArr.forEach(item => {
+    item.innerText = "hi"; // Assigning "hi" to each element's text content
+    console.log(item.textContent); // Output each element's text content
+});
+
+//findindex - this method will return the first index number of an array that meets the condition we gave.
+//find - this method will return the value of the first element that meets the condition we gave.
+
+let findarr = [1,2,3,4,5]
+ let resultfind = findarr.find(num => {
+    return num%2 === 0
+ })
+    console.log(resultfind);
+
+let findind = [2,4,6,8,12,7,4,3];
+let resultind = findind.findIndex(num=>{
+    return num%2 === 1;
+})
+console.log(resultind);
+
+//tostring method - The toString() method does not change the original array; it returns a new string representation of the array.
+//If the array contains nested arrays or objects, toString() will not deeply convert them; it will represent nested arrays/objects as strings within the main string.
+
+//fill method - it will fill all the element in the array with given value
+let fillarr = [0,3,4,5,2,3,"vicky"];
+fillarr.fill(2);
+console.log(fillarr);
+
+//flat method will flatten a nested array to a particular depth and if not gave any argument it will flatten to 1 level depth.
+let flatarr = [1,2,3,[2,3,"vicky",[3,5,4]]];
+let flattenarr = flatarr.flat(2);
+console.log(flattenarr);
+
+//we can use object.keys and object.values or object.entries to return keys and values pair of an object into an array
+
+let newobj = {
+    a: "vicky",
+    b: "hi",
+    c: "india"
+}
+//let objarr = Object.keys(newobj);
+
+console.log(Object.keys(newobj));
+console.log(Object.values(newobj));
+console.log(Object.entries(newobj)); 
+
+//copywithin is used to rearrange the array with the given condition.
+
+let copyarr = [1,2,3,4,5,6,7,8,9,10];
+console.log(copyarr.copyWithin(3,0,5)); //first argument is target index from where u started to past the values and second argument is index from where it starts to copy and last argument is the end to which it will copy.
+
+//### Problem Statement:
+ 
+/*You are given an array of objects representing various people, each with properties like `name`, `age`, and `country`. Your task is to perform the following operations in sequence:
+ 
+ 1. **Filtering**: Filter out the people who are under 18 years of age.
+ 2. **Mapping**: For the filtered array, create a new array where each person object is transformed to include a new property `isAdult` set to `true`.
+ 3. **Splicing**: From this new array, remove the first two elements, and then add a new person object at the beginning of the array.
+ */ 
+
+
+let users = [
+  { name: "Alice", age: 25, country: "USA" },
+  { name: "Bob", age: 17, country: "Canada" },
+  { name: "Carlos", age: 32, country: "Mexico" },
+  { name: "Diana", age: 15, country: "USA" },
+  { name: "Eva", age: 20, country: "France" }
+]
+
+
+let ageFilter = users.filter(function(users){
+
+   return users.age >= 18;
+})
+
+console.log(ageFilter);
+
+ let adultConfirm = ageFilter.map(function(newUsers){
+      return {...ageFilter,isAdult : true};
+ })
+
+console.log(adultConfirm);
+
+adultConfirm.splice(0,2);
+
+adultConfirm.unshift({ name: "newUser", age: 30, country: "USA" , isAdult: true});
+console.log(adultConfirm);
+
+
+
     </script>
 </body>
 </html>
