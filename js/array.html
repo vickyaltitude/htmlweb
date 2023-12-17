@@ -198,6 +198,51 @@ adultConfirm.splice(0,2);
 adultConfirm.unshift({ name: "newUser", age: 30, country: "USA" , isAdult: true});
 console.log(adultConfirm);
 
+/*Write a JavaScript function that takes an object as an
+* input and returns a new object where the keys are the original keys in uppercase.
+* Use Object.keys and the map method.*/
+
+function objRet(obj){
+
+    let newObj = {};
+    let UpperC = Object.keys(obj);
+    
+
+    UpperC.map(function(get){
+        
+        let upperCase = get.charAt(0).toUpperCase();
+        newObj[upperCase] = obj[get];
+        
+    })
+return newObj;
+}
+
+console.log(objRet({Name: "vignesh",age: 24,country:"india"}));
+
+/* Given an object with different properties, write a function that filters out properties whose values are not strings.
+* Use Object.values along with the filter method.
+ */
+ function filterObj(obj){
+ 
+ let newObj = Object.values(obj).filter(function(inp){ return isNaN(inp) === false});
+
+let newObjs = {};
+
+for(let keys in obj ){
+
+if(newObj.includes(obj[keys])){
+
+    newObjs[keys] = obj[keys];
+}
+}
+
+
+return newObjs
+
+
+}
+
+console.log(filterObj({Name: "vignesh",age: 24,country:"india",street: 12,has:24,give:14,not:6}))
 
 
     </script>

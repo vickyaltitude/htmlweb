@@ -6,9 +6,9 @@ console.log(myVar);
 console.log(myVar[3]);
 console.log(myVar.charAt(3));
 console.log(myVar.length);
-console.log(myVar.slice(2,(myVar.length)));
+console.log(myVar.slice(2,myVar.length));
 console.log(myVar.indexOf("at"));
-console.log(myVar.lastIndexOf("mat"));
+console.log(myVar.lastIndexOf("m")); //will return the last occurance of the given argument
 console.log(myVar.split("t"));
 console.log(myVar.toLowerCase());
 console.log(myVar.toUpperCase());
@@ -43,7 +43,7 @@ console.log(Number.parseFloat(myNu).toFixed(2));
 //two types of isNaN Object is there
 console.log(Number.isNaN("jj"));
 console.log(isNaN("pp"));
-//if you give number isnan it will check whether the is nan and will show true if it is not a num. note it will show false even if we give string as the value because we use number object and hence it will consider only number related values.
+//if you give number.isnan it will check whether the is nan and will show true if it is not a num. note it will show false even if we give string as the value because we use number object and hence it will consider only number related values.
 console.log(Number.isNaN(45));
 // here just isnan is a global value so if we give string as the value it will show as true.
 console.log(isNaN("hi"));
@@ -75,7 +75,7 @@ console.log(Math.round(Math.random()*10));
 console.log(Math.round(Math.random()*100));
 // PRACTICE - YOU HAVE TO GET RANDOM LETTER FROM THE DECLARED VARIABLE
 const myVari = "vigneshyuvarani";
-console.log(myVari.charAt(Math.floor(Math.random()*myVari.length)));
+console.log(myVari[Math.floor(Math.random()*myVari.length)]);
 
 
 //If condition:
@@ -91,7 +91,7 @@ console.log(myreply);
 let some;
 let myrply;
 if(some){
-    myrply = `${some} I'm fine bro`;
+    myrply = `${some} I'm fine bro`; 
 }
 else {
     myrply = `sorry I'm not fine`;
@@ -180,11 +180,11 @@ switch(computer){
 
 //ternary operator - it is concise method for conditional statements like if / switch. it's syntax is condition ? itIt'sTrue : ifIt'sFalse. here ? acts as false and : acts as else. Note you can also use : on and so on like else if
 let markss = 76;
-grade = markss >= 90 ? "A" 
+let grades = markss >= 90 ? "A" 
 : markss >= 80 ? "B"
 : markss >= 70 ? "c"
 : "No grade"
-console.log(grade);
+console.log(grades);
 //small exercise to understand the ternary operator better
 let mee = "rock";
 let computerr = "paper";
@@ -787,9 +787,9 @@ class pizza {
         this.type = type;
         this.toppings = []; //in some scenarios customer needs more toppings in that case we just let an empty array
     }
-    getToppings(){  //get and set method is used if we want to change the particular values we don't need to change directly instead we use this method and change the values with this function being called.here we name it self as getToppings method which is widely used and considered
+     getToppings(){  //get and set method is used if we want to change the particular values we don't need to change directly instead we use this method and change the values with this function being called.here we name it self as getToppings method which is widely used and considered
         return this.toppings;
-    }
+    } 
     setToppings(newToppings){
         this.toppings.push(newToppings); //we use push method so ifincase customer asked more than one topping we will add it to the end any number of time. 
     }
@@ -802,7 +802,7 @@ let newOrderPizza = new pizza("small","margaritta");
 newOrderPizza.setToppings("Cheese");   //this another way of using get and set function.
 newOrderPizza.setToppings("oil");
 console.log(newOrderPizza.bake());
-console.log(newOrderPizza.getToppings()); //to see what is there
+//console.log(newOrderPizza.getToppings()); //to see what is there
 
 //understanding child class... 
 
