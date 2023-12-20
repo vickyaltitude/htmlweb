@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+    </head>
+    <body>
+
+
+
+        <script>
+
+            let bookList = {};
+
+            class book{
+
+                constructor(book,author){
+
+                    this.book = book;
+                    this.author = author;
+                    this.details = [];
+                    
+                }
+                getDetails(){
+                    return this.detail;
+                }
+                setDetails(add){
+                    this.details.push(add);
+                }
+                giveDetails(){
+
+
+                    
+                    return `Book Name is ${this.book} written by ${this.author}\nAbout this book : ${this.details}`
+                }
+
+            }
+
+            let firstBook = new book("passion","elon");
+            firstBook.setDetails("he wrote it at 2021");
+            firstBook.setDetails("he is now richest man")
+
+            console.log(firstBook)
+            console.log(firstBook.giveDetails());
+            bookList.firstBook = firstBook;
+            console.log(bookList);
+            console.log(bookList.firstBook);
+        </script>
+    </body>
+</html>

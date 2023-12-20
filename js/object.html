@@ -24,6 +24,151 @@ second: 1
 let ob3 = {...obj1,...obj2};
 
 console.log(ob3);
+
+const originalObject = {
+  a: 1,
+  b: {
+    c: 2
+  }
+};
+
+// Creating a shallow copy
+const shallowCopy = Object.assign({}, originalObject);
+
+// Modifying the shallow copy
+shallowCopy.a = 5;
+shallowCopy.b.c = 10;
+
+console.log(originalObject); // Output: { a: 1, b: { c: 10 } }
+console.log(shallowCopy); 
+
+let obj = Object.create(originalObject);
+
+console.log(obj.a);
+
+let arrayA = [1,2,3,4,4,5,6,6,6,7,7,8,9,10,1,11,12,13,13]
+
+let arrayB = arrayA.reduce((acc,num)=>{
+  return acc+num;
+})
+
+console.log(arrayB);
+
+function highNum(par){
+
+let arrayC = arrayA.sort((a,b)=>{
+      return a-b;
+});
+
+console.log(arrayC);
+}
+
+highNum([1,2,3,4,4,5,6,6,6,7,7,8,9,10,1,11,12,13,13]);
+
+
+let myArray = [1,2,3,4,4,5,6,6,6,7,7,8,9,10,1,11,12,13,13,2];
+
+
+
+function removeDuplicate(arr){
+
+  
+  for(let i=0;i<arr.length;i++){
+  
+  
+      for(let j = 1;j<arr.length;j++){
+      
+      	if(arr[i] == arr[j]){
+        
+        	arr.splice(arr[j],1);
+          
+          
+        }
+       
+      }
+  
+  
+  
+  }
+
+ return arr;
+
+}
+
+console.log(removeDuplicate(myArray));
+
+
+function removeDuplicate(arr){
+  let uniqueArray = [];
+  
+  for(let i = 0; i < arr.length; i++) {
+    if(uniqueArray.indexOf(arr[i]) === -1) {
+      uniqueArray.push(arr[i]);
+    }
+  }
+  
+  return uniqueArray;
+}
+
+let myArray2 = [1,2,3,4,4,5,6,6,6,7,7,8,9,10,1,11,12,13,13,2];
+console.log(removeDuplicate(myArray2));
+
+
+function objSum(obj){
+
+   let values = Object.values(obj);
+   
+   let resultSum = 0;
+   
+           values.forEach((val)=>{
+    	
+      if(isNaN(val) === false){
+      
+      resultSum = resultSum + val;
+      
+   	}
+   })
+ return resultSum;
+}
+
+let myObj = {one: 1,two: 4,three: 6,four: 8,five: 10};
+
+console.log(objSum(myObj));
+
+
+function modObj(obj,keyss){
+
+    let getKey = Object.keys(obj);
+
+     getKey.forEach((key)=>{
+
+        if(key == keyss ){
+
+            delete obj[key];
+            
+            
+        }
+
+        
+
+    })
+
+   return obj;
+
+}
+
+let decObj = {
+    name: "vicky",
+    age: 2,
+    country: "india",
+    favFood : "briyani",
+    favJunk : "burger",
+    favMovie: "interstellar",
+    native: "pondicherry"
+}
+
+console.log(modObj(decObj,"native"));
+
     </script>
 </body>
 </html>
