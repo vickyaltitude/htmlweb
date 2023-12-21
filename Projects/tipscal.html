@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html,body{
+html,body{
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
@@ -110,31 +110,104 @@ button:hover{
   background-color: #3978a7;
   color: whitesmoke;
   cursor: pointer;
+  font-weight: bolder;
+}
+
+#resultT{
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  background-color: #3d88c2;
+  text-shadow: 2px 2px 2px black;
+  
+  color: whitesmoke;
+  border-radius: 10px;
+  
 }
     </style>
 </head>
 <body>
-    <section id="outer-box">
-        <section id="tip-box">
-          <section id="heading">
-            <h1>Tips Calculator</h1>
-          </section>
-          <p>Enter Your Bill Amount</p>
-    
-          <input type="number" id="bill" placeholder="Rs.">
-    
-          <p><label for="select">How Was The Service</label></p>
-          <select id="select">
-            <option value="Excellent-20%">Excellent-20%</option>
-            <option value="Medium-10%">Medium-10%</option>
-            <option value="Not So Good-5%">Not So Good-5%</option>
-          </select>
-          <p>How Many People Are Sharing The Bill</p>
-          <input type="number" id="share">
-          <p> <button type="button">Calculate</button></p>
-          <h2>Tip Amount</h2>
-          <p></p>
-        </section>
+  <section id="outer-box">
+    <section id="tip-box">
+      <section id="heading">
+        <h1>Tips Calculator</h1>
       </section>
+      <p>Enter Your Bill Amount</p>
+
+      <input type="number" id="bill" placeholder="Rs.">
+
+      <p><label for="select">How Was The Service</label></p>
+      <select id="select">
+        <option value="Excellent-20%">Excellent-20%</option>
+        <option value="Medium-10%">Medium-10%</option>
+        <option value="Not So Good-5%">Not So Good-5%</option>
+      </select>
+      <p>How Many People Are Sharing The Bill</p>
+      <input type="number" id="share">
+      <p> <button type="submit" id="calci">Calculate</button></p>
+      <h2>Tip Amount</h2>
+    </section>
+  </section>
+
+  <script>
+    let box = document.getElementById("tip-box");
+let bill = document.getElementById("bill");
+let service = document.getElementById("select");
+let share = document.getElementById("share");
+let btn = document.getElementById("calci");
+let resultTag = document.createElement("h2");
+    resultTag.setAttribute("id","resultT");
+
+
+function tipCalculate(){
+
+
+    if(document.getElementById("result")){
+      document.getElementById("result").remove();
+    }
+
+  else if(bill.value === "" || share.value === "" ||
+         bill.value == 0 || share.value == 0){
+
+    alert("Please enter values to calculate");
+    
+  }
+
+  else if(service.value === "Excellent-20%"){
+
+    let resultA = (bill.value*20/100) / share.value;
+    let roundA = Math.floor(resultA);
+    
+        resultTag.innerText = `Rs.${roundA} For Each Person`;
+        box.appendChild(resultTag);
+        
+    
+  }
+
+  else if(service.value ===  "Medium-10%"){
+
+    let resultB = (bill.value*10/100) / share.value;
+        let roundB = Math.floor(resultB);
+
+    resultTag.innerText = `Rs.${roundB} For Each Person`;
+    box.appendChild(resultTag);
+
+  }
+
+  else if(service.value ===  "Not So Good-5%"){
+
+       let resultC = (bill.value*5/100) / share.value;
+       let roundC = Math.floor(resultC);
+      resultTag.innerText = `Rs.${roundC} For Each Person`;
+      box.appendChild(resultTag);
+
+  }
+
+
+}
+
+
+btn.addEventListener("click",tipCalculate);
+  </script>
 </body>
 </html>
