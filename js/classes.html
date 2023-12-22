@@ -31,7 +31,7 @@
 
 
                     
-                    return `Book Name is ${this.book} written by ${this.author}\nAbout this book : ${this.details}`
+                    console.log( `Book Name is ${this.book} written by ${this.author}\nAbout this book : ${this.details}`);
                 }
 
             }
@@ -45,6 +45,76 @@
             bookList.firstBook = firstBook;
             console.log(bookList);
             console.log(bookList.firstBook);
+
+
+/***
+ * 
+ * Create a Library class that has the following functionalities:
+
+
+
+Ability to add a new book to the library inventory.
+Track information for each book (title, author, publication year, genre, etc.).
+Allow for book removal from the inventory.
+
+
+
+Implement a method to check if a specific book is available in the library.
+
+Borrowing and Returning:
+
+Functions/methods to borrow a book (if available) and mark it as borrowed.
+Return a book to the library and update its status.
+
+Additional Functionality (optional, for an extra challenge):
+
+Implement a feature to keep track of borrowers (users) who have borrowed books.
+Display information about borrowed books and their borrowers.**/
+
+let libManagement = {
+
+    1001:{
+        title: "atomic habits",
+        author: "james",
+        "publication-year": 2010,
+        genre: "motivation",
+        availablity: "available"
+    }
+
+}
+
+
+class library{
+
+    constructor(title,author,year,genre,stock){
+
+        this.title = title;
+        this.author = author;
+        this['publication-year'] = year;
+        this.genre = genre;
+        this.stock = stock;
+
+
+    }
+
+}
+
+libManagement[1002] = new library("vignesh","me",2020,"romance",100);
+
+console.log(libManagement);
+
+
+
+
+
+
+
+
+
+
+
+
+
         </script>
     </body>
 </html>
