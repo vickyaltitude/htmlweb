@@ -208,6 +208,56 @@ function findMedianSortedArrays(nums1, nums2) {
 
 console.log(findMedianSortedArrays([1,3],[2]));
 
+/**
+ * You manage an array of student objects, each with a name and a set of scores. Your task is to process this data asynchronously using nested callbacks.
+ 
+**Tasks:**
+ 
+1. **Create an Array of Students:** Each student should have a name and an array of scores.
+2. **First Callback - Retrieve Student:** Simulate a database call to retrieve a student based on a name. Use `setTimeout` to mimic an asynchronous operation.
+3. **Second Callback - Process Scores:** After retrieving the student, process their scores (e.g., calculate the average). This should also be done asynchronously, simulating a complex calculation.
+4. **Third Callback - Filter Based on Criteria:** Once the scores are processed, filter students based on a condition (e.g., average score above a certain threshold).**/
+
+
+let studentData = [
+    { name: "christ", score: [89, 78, 84, 60, 59] },
+    { name: "john", score: [89, 72, 69, 74, 80] },
+    { name: "jeni", score: [58, 78, 84, 89, 90] },
+    { name: "robert", score: [92, 45, 67, 69, 99] },
+    { name: "prem", score: [89, 60, 40, 60, 59] }
+  ];
+
+
+function getStudentsTotalbyName(name,cb){
+
+let studentsc = studentData.find(ele=> { return ele.name == name});
+let getStudent = studentsc.score;
+
+     cb(getStudent);
+    
+   
+}
+
+
+
+getStudentsTotalbyName("christ",function(average){
+
+
+    let averageOf = average.reduce((all,ele)=>{
+        return all+ele;
+    },0)
+
+   let  averageRes = averageOf/average.length;
+    console.log("Average score:", averageRes);
+
+})
+
+
+
+
+
+
+
 
     </script>
 </body>
