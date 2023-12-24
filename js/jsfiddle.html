@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function sumN(n){
+	let sum = 0;
+  
+	for(i=1;i<=n;i++){
+  
+  sum += i;
+  
+  }
+  
+  return sum;
+}
+
+console.log(sumN(10))
+
+function sumNum(n){
+	return(n*(n+1)/2);
+}
+
+console.log(sumNum(10))
+
+//fibonacci 1,2,3,5,8,13,21,34,55
+
+function fibo(n){
+
+	let fibo = [0,1];
+   suma = 0;
+  sumb = 1;
+  sumR =0;
+
+	for(i=1;i<=n;i++){
+  
+  sumR = suma + sumb;  //3,5
+  fibo.push(sumR);
+  suma = sumb; //2,3,5
+  sumb = sumR; //3,5,
+  
+  
+  }
+  return fibo.slice(0,n);
+	
+}
+
+console.log(fibo(10));
+
+
+
+function returnSum(arr){
+	let sum = 0;
+  
+  arr.forEach(num=>{
+    if(num>0){
+    sum = sum + (num*num);
+    }
+  })
+  return sum;
+
+}
+
+console.log(returnSum([2,1,-5,5,6,3,4,-3,7,-2]));
+
+//Create a function that takes in an array of integers and returns an array of unique triplets (a, b, c) where a, b, and c are distinct elements in the array that sum up to a target value. The function should return an array of arrays containing these triplets, without any duplicates in the result set.
+
+function returnUni(arr, tar) {
+  let filtered = [...new Set(arr)]; // Remove duplicates from the array
+  let result = [];
+
+  for (let i = 0; i < filtered.length - 2; i++) {
+    for (let j = i + 1; j < filtered.length - 1; j++) {
+      for (let k = j + 1; k < filtered.length; k++) {
+        let gett = filtered[i];
+        let secondT = filtered[j];
+        let thirdT = filtered[k];
+
+        if (gett + secondT + thirdT === tar) {
+          result.push([gett, secondT, thirdT]);
+          break; // Stop the innermost loop if a triplet is found
+        }
+      }
+    }
+  }
+  
+  return result;
+}
+
+console.log(returnUni([2, 2, 1, -1, 0, 1, -2, 3, 5, 6, -5], 10));
+
+// Create a class Dog that extends Animal class ?
+// create an object for Dog class
+
+
+
+class animal{
+
+	constructor(name,legs,tail){
+  this.name = name;
+ 
+  
+  }
+
+
+}
+
+class dog extends animal{
+
+constructor(name,legs,tail){
+
+	super(name);
+   this.legs = legs;
+  this.tail = tail;
+  this.animal = "dog";
+
+}
+obj(){
+	return `Animal is ${this.animal} and it's name is${this.name} has ${this.legs} legs and the tail is ${this.tail}`
+}
+
+
+}
+
+let jacky = new dog("jacky",4,"Present");
+console.log(jacky);
+
+function factorial(n){
+	
+  if(typeof n !== 'number' || isNaN(n)){
+  return "N is not a number"
+  }
+  
+  let result = 1;
+  
+for(i=n;i>0;i--){
+
+	result = result *i;
+}
+return result;
+}
+
+console.log(factorial(1));
+
+
+function isPrime(n){
+
+if(n<2){
+	return false;
+}
+
+else if(n>1){
+
+  for(let i=n-1;i>1;i--){
+  
+  if(n%i === 0){
+  return false
+  }
+  
+  }
+  
+  return true;
+}
+
+}
+console.log(isPrime(47));
+
+function isPowerOf(n){
+
+ for(let i=0;i < n;i++){
+ 
+ 	if(Math.pow(2,i) === n){
+  	return true
+  }
+
+ 
+ }
+ 
+ return false;
+}
+
+console.log(isPowerOf(1));
+
+
+function findMedianSortedArrays(nums1, nums2) {
+    let newNum = [...nums1,...nums2]
+    let sortArr = newNum.sort((a,b)=>{return a-b;})
+
+   console.log(sortArr);
+
+    if(sortArr.length % 2 === 0 ){
+
+        let median = (sortArr[(sortArr.length/2) - 1] + sortArr[sortArr.length/2])/2;
+        return median;
+    }
+     else if(sortArr.length % 2 === 1 ){
+
+        let medianB = sortArr[((sortArr.length/2) + 0.5) - 1] 
+        return medianB;
+    }
+}
+
+console.log(findMedianSortedArrays([1,3],[2]));
+
+
+    </script>
+</body>
+</html>
