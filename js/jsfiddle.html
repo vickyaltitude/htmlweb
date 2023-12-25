@@ -254,10 +254,100 @@ getStudentsTotalbyName("christ",function(average){
 
 
 
+function reverseNum(n){
+
+if(n<0 && n>9){
+
+		return n
+}
+let reversedNum = 0;
+
+while(n !== 0){
+
+	reversedNum = reversedNum *10 + (n%10);
+  n = Math.floor(n/10);
+}
+return reversedNum;
+}
+
+console.log(reverseNum(86721920));
+
+let n = 8672192;
+console.log(
+  Number(n.toString().split("").reverse().join(""))
+);
+
+let numbers = {
+0: "Zero", 1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine", 10: "Ten", 11: "Eleven", 12: "Twelve", 13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen", 18: "Eighteen", 19: "Nineteen", 20: "Twenty", 30: "Thirty", 40: "Forty", 50: "Fifty", 60: "Sixty", 70: "Seventy", 80: "Eighty", 90: "Ninety", 100: "Hundred", 1000: "Thousand", 100000: "Lakh"
+}
+
+function wordToNumber(num){
+
+  if(num in numbers){
+    return numbers[num];
+  }
+  let words = "";
+   if(num >= 10000000){
+    words = words + wordToNumber(Math.round(num/10000000)) + " Crore ";
+    num= num%10000000;
+   }
+   if(num>=1000000){
+    if((num/100000)%10 !== 0){
+      words = words + wordToNumber(Math.round(num/1000000)*10)+" "+ wordToNumber(Math.round(num/100000)%10) +" Lakh" ;
+    }
+    else{
+      words = words + wordToNumber(Math.round(num/1000000)*10) +" Lakh" ;
+    }
+    num = num%100000;
+   }
+   if(num>=10000){
+
+    if((num/1000)%10 !== 0){
+      words = words +" "+ wordToNumber(Math.round(num/10000)*10)+" "+ wordToNumber(Math.round(num/1000)%10) + " Thousand" ;
+    }
+    else{
+      words = words +" "+ wordToNumber(Math.round(num/10000)*10) +" Thousand" ;
+    }
+    num = num%1000;
+   }
+   if(num>=100){
+  words = words +" "+ wordToNumber(Math.round(num/100)) +" Hundred" ;
+num = num%100;
+}
+if(num>=20){
+words = words +" "+ wordToNumber(Math.round(num/10)*10);
+num = num%10;
+}
+if(num%10>0){
+words +=  "-"+ numbers[num%10];
+}
+   return words;
+}
+console.log((400000/100000)%10);
+console.log(wordToNumber(400000));
 
 
+function firstNonRepeat(word){
 
+let words = word.split();
+let sortArray = [];
 
+for(i=0;i<words.length;i++){
+
+if(sortArray.indexOf(words[i]) == -1){
+
+	sortArray.push(words[i]);
+
+ 
+}
+
+}
+
+return sortArray;
+
+}
+
+console.log(firstNonRepeat("programming"))
 
     </script>
 </body>
