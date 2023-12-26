@@ -240,6 +240,8 @@ let getStudent = studentsc.score;
 
 
 
+
+
 getStudentsTotalbyName("christ",function(average){
 
 
@@ -251,6 +253,9 @@ getStudentsTotalbyName("christ",function(average){
     console.log("Average score:", averageRes);
 
 })
+
+
+
 
 
 
@@ -329,7 +334,7 @@ console.log(wordToNumber(400000));
 
 function firstNonRepeat(word){
 
-let words = word.split();
+let words = word.split("");
 let sortArray = [];
 
 for(i=0;i<words.length;i++){
@@ -348,6 +353,124 @@ return sortArray;
 }
 
 console.log(firstNonRepeat("programming"))
+
+
+function returnsNum(num){
+
+let returned = 0;
+
+while(num!=0){ 
+
+returned = returned *10 + (num%10);
+
+num = Math.floor(num/10);
+}
+
+return returned;
+}
+
+
+console.log(returnsNum(64723217));
+
+function powerOfTwo(n){
+
+ while(n>1){
+
+  if(n%2 === 1){
+    return false;
+  }
+    n = n/2;
+ }
+return true
+}
+
+console.log(powerOfTwo(128));
+
+
+
+
+function evenSum(n){
+
+  let sum = 0;
+
+   n.forEach(number=>{
+
+  if(number%2 === 0){
+
+    sum = sum+ number;
+
+  }
+
+})
+
+return sum;
+
+
+}
+
+console.log(evenSum([2,4,5,3,1,2,4,1,3,2]));
+
+function stringreturn(variable){
+
+let reversed = variable.split("").reverse().join("");
+
+return reversed;
+
+
+}
+
+console.log(stringreturn("eligible"))
+
+
+function returnUni(n){
+
+  let unique = [];
+
+for(i=0;i<n.length;i++){
+
+  if(unique.indexOf(n[i]) == -1){
+
+    unique.push(n[i]);
+  }
+}
+ return unique;
+}
+
+console.log(returnUni([2,5,21,12,1,1,2,5,4,8,7,5,43,34,3,7]));
+
+function length(word){
+
+  if (word.charAt(word.length - 1) === '.') {
+        word = word.slice(0, - 1); 
+    }
+
+  let splitted = word.split(" ");
+  let lengthy = "";
+
+  let i = 0;
+
+  while(i<(splitted.length)){
+
+    if(lengthy.length<splitted[i].length){
+
+      lengthy = splitted[i];
+      
+    }
+   
+    i++
+  }
+  
+return lengthy;
+}
+console.log(length("India is my country and all indians are my brothers and sisters and sisterss."));
+
+
+function findCommonElements(arr1, arr2) {
+    const commonElements = arr1.filter(element => arr2.includes(element));
+    return Array.from(new Set(commonElements));
+}
+
+console.log(returnUni([2,5,21,12,1,1,2,5,4,8,7,5,43,34,3,7],[2,55,55,4,3,22,76,5,10,7,9,4]));
 
     </script>
 </body>
