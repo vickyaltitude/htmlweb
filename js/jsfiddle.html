@@ -472,6 +472,194 @@ function findCommonElements(arr1, arr2) {
 
 console.log(returnUni([2,5,21,12,1,1,2,5,4,8,7,5,43,34,3,7],[2,55,55,4,3,22,76,5,10,7,9,4]));
 
+
+
+//Write a function that takes a string as input and returns the count of each vowel (a, e, i, o, u) present in the string. The function should return an object where the keys are the vowels, and the values are the counts of each vowel in the string.
+
+
+function returnObj(str){
+
+let objectStr = {};
+
+let strarr = str.split("");
+let a = 0;
+let e = 0;
+let inn = 0;
+let o = 0;
+let u = 0;
+
+for(i=0;i<strarr.length;i++){
+
+  if(strarr[i].toLowerCase() == "a"){
+   
+       a = a + 1
+
+    objectStr["a"] = a;
+  }
+  else if(strarr[i].toLowerCase() == "e"){
+    
+       e = e + 1
+
+    objectStr["e"] = e;
+  }
+
+  else if(strarr[i].toLowerCase() == "i"){
+   
+       inn = inn + 1
+
+    objectStr["i"] = inn;
+  }
+
+  else if(strarr[i].toLowerCase() == "o"){
+    
+       o = o + 1
+
+    objectStr["o"] = o;
+  }
+
+ else if(strarr[i].toLowerCase() == "u"){
+   
+       u = u + 1
+
+    objectStr["u"] = u;
+  }
+
+
+
+}
+
+
+
+return objectStr;
+}
+
+
+console.log(returnObj("This is a sample text to count vowels."));
+
+
+function countVowels(str) {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    const count = {};
+
+    for (let char of str.toLowerCase()) {
+        if (vowels.includes(char)) {
+            if (count[char]) {
+                count[char]++;
+            } else {
+                count[char] = 1;
+            }
+        }
+    }
+
+    return count;
+}
+
+// Test the function
+const text = "This is a sample text to count vowels.";
+console.log(countVowels(text)); // Output should count the vowels and return an object with counts
+
+function returnsecond(num){
+
+let unique = [];
+
+for(i=0;i<num.length;i++){
+
+  if(unique.indexOf(num[i])== -1){
+    unique.push(num[i]);
+  }
+}
+
+unique.sort((a,b)=>{
+
+  return a-b;;
+})
+
+if(unique.length == 2){
+
+  return unique[0];
+}
+else if(unique.length> 2){
+  return unique[1];
+
+}
+
+
+return null;
+}
+
+
+
+console.log(returnsecond([3,4,4,5]));
+
+function firstWordCapital(str){
+
+  let strcap = str.split(" ");
+
+  for(let i=0;i<strcap.length;i++){
+
+       strcap[i] = strcap[i].charAt(0).toUpperCase() + strcap[i].slice(1,strcap[i].length).toLowerCase();
+        
+
+  }
+
+  let joinedstr = strcap.join(" ");
+
+  return joinedstr;
+
+}
+
+console.log(firstWordCapital("Hello my name is vignesh and im from pondicherry WHICH is in india"));
+
+
+
+function reversedstr(string){
+ 
+
+if(string.charAt(string.length-1) == "."){
+
+  let  altered = string.slice(0,string.length-1);
+   let alteredstr = altered.split(" ");
+
+   return alteredstr.reverse().join(" ");
+}
+
+let alteredstr = string.split(" ");
+
+return alteredstr.reverse().join(" ");
+
+
+}
+
+
+
+
+console.log(reversedstr("Hello my name is vignesh and im from pondicherry which is in india"))
+
+function returnHighest(arr){
+
+let swapped;
+do {
+    swapped = false;
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            let temp = arr[i];
+            arr[i] = arr[i + 1];
+            arr[i + 1] = temp;
+            swapped = true;
+        }
+    }
+} while (swapped);
+
+return arr[arr.length-1];
+
+}
+
+console.log(returnHighest([12,2,45,32,23,10,65]));
+
+
+
+
+
     </script>
 </body>
 </html>
