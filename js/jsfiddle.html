@@ -657,9 +657,178 @@ return arr[arr.length-1];
 console.log(returnHighest([12,2,45,32,23,10,65]));
 
 
+function returnarr(arr){
+
+for(i=0;i<arr.length-1;i++){
+
+let returned = arr[i]
+
+    if(arr[i]>arr[i+1]){
+
+
+      arr[i] = arr[i+1]
+
+      arr[i+1] = returned;
+
+
+    }
+  }
+  return arr[arr.length-1];
+}
 
 
 
-    </script>
+
+console.log(returnarr([12,2,100,32,23,10,65]));
+
+function sortArray(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {  
+      if (arr[j] > arr[j + 1]) {
+      
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr[arr.length-1];
+}
+
+let sortedArray = sortArray([1200, 2, 100, 32, 23, 10, 65]);
+console.log(sortedArray);
+
+
+function findMissingnum(arr){
+  let missingNum = [];
+
+  let num = 0;
+
+for(i=arr[0];i<arr[arr.length-1];i++){
+
+    
+    if(arr.indexOf(i)== -1){
+
+      missingNum.push(i);
+    }
+
+    num = num+1
+
+
+}
+return missingNum;
+
+}
+console.log(findMissingnum([17,18,19,20,22,24,25,26,27]));
+
+
+function returnintersect(arr1,arr2){
+
+  let newar= [];
+ 
+
+for(i=0;i<arr1.length;i++){
+
+
+ if(arr2.indexOf(arr1[i]) != -1){
+ 
+
+  if(newar.indexOf(arr1[i]) == -1){
+
+        newar.push(arr1[i]);
+}
+  
+  }
+ 
+
+}
+
+return newar;
+
+}
+
+console.log(returnintersect([2,3,1,3,4,5,5,9],[4,8,2,9,10,5]))
+
+function firstNonRepeat(str){
+  for(i=0;i<str.length;i++){
+
+    if(str.indexOf(str.charAt(i))==str.lastIndexOf(str.charAt(i))){
+
+      return str.charAt(i);
+    }
+  }
+
+  return null;
+
+
+}
+
+
+console.log(firstNonRepeat("tholmsonalhbert"))
+
+function returnsumofunique(arr){
+
+
+let result = 0;
+
+for(i=0;i<arr.length;i++){
+
+  uniarr = [];
+
+if(arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])){
+
+  if(arr[i]>0){
+
+   uniarr.push(arr[i])
+
+
+}
+}
+
+
+return result;
+
+}
+}
+
+console.log(returnsumofunique([-2,1,4,5,-19,18,29,45,10,2,-4,15,4,2,4,6,9,10,14,15,10]));//[4,10,2,15,]
+
+//below logic is to change every second letter of an string which is also must not already present in the given string
+
+function replaceAlp(string){
+
+let newWord = "";
+
+let replaceWord = ["Z","X","T","K","F","Q","S","N","I"]
+
+for(i=0;i<replaceWord.length;i++){
+
+  if(string.toUpperCase().indexOf(replaceWord[i]) !== -1){
+    continue;
+  }
+
+  for(j=0;j<string.length;j++){
+
+    if(j == 0 || j%2 == 0){
+      continue;
+    }
+    else if(j%2 == 1 ){
+
+      newWord = newWord + string[j-1] ;
+      newWord = newWord + replaceWord[i];
+
+    }
+
+  }
+   break;
+}
+
+return newWord;
+
+}
+
+console.log(replaceAlp("snacks"))
+
+    </script>  
 </body>
 </html>
