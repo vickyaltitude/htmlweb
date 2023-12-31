@@ -845,6 +845,72 @@ starcount = starcount + "*"
 
 star(4);
 
+
+function sumEven(arr){
+  let sum = 0;
+
+  for(i=0;i<arr.length;i++){
+    if(arr[i]%2 == 0){
+      sum = sum + arr[i];
+
+    }
+  }
+
+  return sum;
+}
+console.log(sumEven([2,4,3,1,5,8,10]));
+
+function returnCount(str){
+
+  let splitted = str.split("");
+
+  let obj = {};
+  let news = 0;
+
+  for(i=0;i<splitted.length;i++){
+
+    for(j=0;j<splitted.length;j++){
+
+      let decl = splitted[i]
+
+      if(decl == splitted[j]){
+
+        news = news + 1;
+
+        obj[splitted[i]] = news;
+      }
+
+      
+    }
+    
+    news = 0;
+  }
+  return obj;
+
+}
+
+console.log(returnCount("irregular"));
+
+function returnCount(str) {
+  let obj = {};
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+
+    // If the character is already in the object, increment its count
+    if (obj[char]) {
+      obj[char]++;
+    } else {
+      // If the character is not in the object, set its count to 1
+      obj[char] = 1;
+    }
+  }
+
+  return obj;
+}
+
+console.log(returnCount("nonassignment"));
+
     </script>  
 </body>
 </html>

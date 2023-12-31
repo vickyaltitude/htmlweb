@@ -32,10 +32,97 @@ fetch('https://jsonplaceholder.typicode.com/todos')
       })
 console.log("I am sync process");
 
-let i=0;
-while(i=10){
-    console.log(i);
-} 
+
+const Database=[
+    {
+      "name": "Willie England",
+      "email": "willieengland@macronaut.com",
+      "username": "willieengland@macronaut.com",
+      "password": "Tooleville",
+      "image": "Newry",
+      "universityId": 10001
+    },
+    {
+      "name": "Lyons Santos",
+      "email": "lyonssantos@macronaut.com",
+      "username": "lyonssantos@macronaut.com",
+      "password": "Farmers",
+      "image": "Ellerslie",
+      "universityId": 253619
+    },
+    {
+      "name": "Snow Giles",
+      "email": "snowgiles@macronaut.com",
+      "username": "snowgiles@macronaut.com",
+      "password": "Gilmore",
+      "image": "Montura",
+      "universityId": 745788
+    },
+    {
+      "name": "Rowland Fleming",
+      "email": "rowlandfleming@macronaut.com",
+      "username": "rowlandfleming@macronaut.com",
+      "password": "Gorham",
+      "image": "Monument",
+      "universityId": 902664
+    },
+    {
+      "name": "Reeves Matthews",
+      "email": "reevesmatthews@macronaut.com",
+      "username": "reevesmatthews@macronaut.com",
+      "password": "Sterling",
+      "image": "Fruitdale",
+      "universityId": 557566
+    }
+  ]
+
+
+function DbOperationPromise(universityId,cb){
+ 
+ const promise=new Promise((resolve,reject)=>{
+     setTimeout(() => {
+         let student=Database.find(ele=>{
+             return ele.universityId==universityId
+             console.log(student)
+         })
+ 
+         if(student){
+             resolve(student)
+         }else{
+             reject({
+                 resposnse:404
+             })
+ 
+         }
+        
+     }, 3000);
+
+ })
+ 
+return promise;
+}
+
+
+
+
+async function processed() {
+  try {
+    let newData = await DbOperationPromise(10001);
+    let name = newData.name;
+    name = name.toUpperCase();
+    console.log(name);
+    name = name.toUpperCase();
+    let upperCaseName = name.split("");
+    console.log(upperCaseName);
+  } catch (err) {
+    console.log(err);
+    return "no such case";
+  } 
+}
+
+processed();
+
+
 
 /**Even though JavaScript has a single-threaded execution model, modern browsers use something called "microtask queue" to handle certain asynchronous tasks. Promises (like those used with fetch().then().then()) are considered microtasks and have higher priority than regular tasks in the event loop.
 
