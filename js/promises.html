@@ -9,6 +9,11 @@
 
 
     <script>
+
+
+
+
+
         const eli = fetch("https://jsonplaceholder.org/users");
 
    
@@ -19,6 +24,8 @@
         .then(resolved=>{return resolved.json()})
         .then(newFile=>{console.log(newFile)})
         .catch(err=>{console.log("issue is there")});
+
+console.log(9);
 
 
     </script>
