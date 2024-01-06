@@ -23,10 +23,6 @@ function splitString(inp){
 
   function checkCreditCard(str){
 
-for(i=0;i<str.length-1;i++){
-    if(str[i] == " "){
-        continue;
-    }
-  
+
   }
   console.log(checkCreditCard("4532 7562 7962 4063"))
