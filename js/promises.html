@@ -27,6 +27,50 @@
 
 console.log(9);
 
+let myarr = [{student: "vignesh",age:23,city:"pondicherry",marks: [45,56,32,20,90,100]}]
+
+/* function returnAver(){
+
+    let promiseNew = new Promise((resolve,reject)=>{
+
+        setTimeout(()=>{
+            let average = myarr[0].marks.reduce((total,num)=>{
+                return total + num;
+            },0)
+            
+            let averagenew = average/myarr[0].marks.length;
+            resolve(averagenew);
+            
+
+        },2000)
+    })
+
+return promiseNew;
+}
+returnAver().then((val)=>{console.log(val)}).catch(err=>{console.log(err)}); */
+
+function returnAver(cb){
+
+
+
+    setTimeout(()=>{
+        let average = myarr[0].marks.reduce((total,num)=>{
+            return total + num;
+        },0)
+        
+        let averagenew = average/myarr[0].marks.length;
+      
+        cb(averagenew);
+
+    },2000)
+
+   console.log(99);
+
+}
+returnAver(function(avg){
+    console.log(avg);
+})
+
 
     </script>
 </body>
