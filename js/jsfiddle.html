@@ -911,6 +911,37 @@ function returnCount(str) {
 
 console.log(returnCount("nonassignment"));
 
+//luhn algorithm -- 4532756279624063,4929939187359492
+
+function checkCard(card){
+  let totalVal = 0;
+
+for(let i=card.length-1;i>=0;i--){
+  let second = 0;
+
+  if(i%2==card.length%2){
+    second = Number(card[i]) *2
+    if(second>9){
+      second = second-9;
+      totalVal=totalVal + second;
+      continue;
+    }
+    else{
+      totalVal=totalVal + second;
+      continue;
+    }
+  }
+  else  {
+    totalVal = totalVal + Number(card[i]);
+  }
+}
+if(totalVal%10 == 0){
+  return "The card is valid"
+}
+    return "The card is not valid"
+}
+console.log(checkCard('4532751980243460'));
+
     </script>  
 </body>
 </html>
