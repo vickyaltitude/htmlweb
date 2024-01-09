@@ -92,3 +92,58 @@ function arrChunk(arr,tar){
 }
 
 console.log(arrChunk([5,4,7,6,1,2,3,4,9,10,12,34,2,4,5,4],5))
+
+function convertToTitleCase(sentence){
+
+    let eachW = sentence.split(" ");
+
+    let newS = eachW.map((words)=>{
+        return words[0].toUpperCase()+words.slice(1).toLowerCase();
+    })
+
+    return newS.join(" ")
+}
+console.log(convertToTitleCase("the book explainging dumbledoor"));
+
+
+
+
+function checkUni(str){
+
+    for(let i=0;i<str.length;i++){
+
+        if(str.indexOf(str.charAt(i)) !== str.lastIndexOf(str.charAt(i))){
+            return false
+        }
+    }
+
+    return true;
+}
+
+console.log(checkUni("hello"));
+
+
+
+function returnCommon(arr1,arr2){
+    let newArr = []
+
+    for(let i=0;i<arr1.length;i++){
+
+        if(arr2.indexOf(arr1[i]) != -1 && newArr.indexOf(arr1[i]) == -1){
+            newArr.push(arr1[i]);
+        }
+    }
+
+    return newArr;
+}
+
+console.log(returnUni([1,2,4,5,7,8,1,2,2],[2,5,7,8,8,9]));
+
+
+
+
+
+
+
+
+
