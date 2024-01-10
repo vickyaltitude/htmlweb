@@ -137,7 +137,56 @@ function returnCommon(arr1,arr2){
     return newArr;
 }
 
-console.log(returnUni([1,2,4,5,7,8,1,2,2],[2,5,7,8,8,9]));
+console.log(returnCommon([1,2,4,5,7,8,1,2,2],[2,5,7,8,8,9]));
+
+var romanToInt = function(s) {
+    let outputNum = 0;
+    let objRoman = {I: 1, V: 5, X: 10, L:50, C:100, D: 500, M:1000}
+    let splittedS = s.split("");
+    let firstCheck = objRoman[splittedS[0]];
+ 
+    for(let i=0;i<splittedS.length-1;){
+            if(objRoman[splittedS[i]] >= objRoman[splittedS[i+1]]){
+                if(objRoman[splittedS[i+1]] < objRoman[splittedS[i+2]]){
+                    if(splittedS.length == 3){
+                        outputNum = objRoman[splittedS[i]];
+                    }
+                    i++
+                    continue;
+                }
+
+                let correctCheck = firstCheck + objRoman[splittedS[i+1]];
+                outputNum = outputNum + correctCheck ;
+                firstCheck = 0;
+                i++;
+            }
+            else if(objRoman[splittedS[i]] < objRoman[splittedS[i+1]]){
+                
+                let putCheck = objRoman[splittedS[i+1]] - objRoman[splittedS[i]];
+                outputNum = outputNum + putCheck;
+                i++;
+            }
+    }
+    return outputNum;
+};
+console.log(romanToInt("MCMXCIV"))
+
+var romanToInt = function(s) {
+    let outputNum = 0;
+    let objRoman = {I: 1, V: 5, X: 10, L:50, C:100, D: 500, M:1000};
+    let splittedS = s.split("");
+
+    for(let i = 0; i < splittedS.length; i++) {
+        if(objRoman[splittedS[i]] < objRoman[splittedS[i+1]]) {
+            outputNum -= objRoman[splittedS[i]];
+        } else {
+            outputNum += objRoman[splittedS[i]];
+        }
+    }
+    return outputNum;
+};
+
+console.log(romanToInt("MLXIV")); 
 
 
 

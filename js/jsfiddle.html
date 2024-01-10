@@ -942,6 +942,34 @@ if(totalVal%10 == 0){
 }
 console.log(checkCard('4532751980243460'));
 
+var romanToInt = function(s) {
+    let outputNum = 0;
+    let objRoman = {I: 1, V: 5, X: 10, L:50, C:100, D: 500, M:1000}
+    let splittedS = s.split("");
+    let firstCheck = objRoman[splittedS[0]];
+ 
+    for(let i=0;i<splittedS.length-1;){
+            if(objRoman[splittedS[i]] >= objRoman[splittedS[i+1]]){
+                if(objRoman[splittedS[i+1]] < objRoman[splittedS[i+2]]){
+                  i++
+                    continue;
+                }
+
+                let correctCheck = firstCheck + objRoman[splittedS[i+1]];
+                outputNum = outputNum + correctCheck ;
+                firstCheck = 0;
+                i++;
+            }
+            else if(objRoman[splittedS[i]] < objRoman[splittedS[i+1]]){
+                let putCheck = objRoman[splittedS[i+1]] - objRoman[splittedS[i]];
+                outputNum = outputNum + putCheck;
+                i+=2;
+            }
+    }
+    return outputNum;
+};
+console.log(romanToInt("MMMCDLXIV"))
+
     </script>  
 </body>
 </html>
