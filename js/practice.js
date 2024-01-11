@@ -190,7 +190,30 @@ console.log(romanToInt("MLXIV"));
 
 
 
+var longestCommonPrefix = function(strs) {
+    let firstEle = strs[0].split("")
+    if(strs.length == 1){
+    return strs[0];
+    }
+    let preStr = "";
+    for(i=0;i<firstEle.length;i++){
+        for(j=1;j<strs.length;j++){
+            if(firstEle[i] == strs[j][i]){
+                if(j == strs.length-1){
+                    preStr+= firstEle[i];
+                }     
+            } 
+            else if(firstEle[i] !== strs[j][i]){
+              return preStr;
+            }
+            else{break;} 
+        }  
+    }
+    return preStr;
+};
 
+
+console.log(longestCommonPrefix(["flower","flow","floght"]));
 
 
 
