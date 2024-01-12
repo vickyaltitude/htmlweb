@@ -217,5 +217,3 @@ console.log(longestCommonPrefix(["flower","flow","floght"]));
 
 
 
-
-
