@@ -217,3 +217,33 @@ console.log(longestCommonPrefix(["flower","flow","floght"]));
 
 
 
+function sumOfPrimes(n) {
+    let sum = 0;
+    let count = 0; 
+    let num = 2;   
+
+    while (count < n) {
+        if (isPrime(num)) {
+            sum += num;
+            count++;
+        }
+        num++;
+    }
+
+    return sum;
+
+    function isPrime(num) {
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return num > 1;
+    }
+}
+
+console.log(sumOfPrimes(5));
+
+
+
+
