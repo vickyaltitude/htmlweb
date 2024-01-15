@@ -247,3 +247,105 @@ console.log(sumOfPrimes(5));
 
 
 
+function fibonacci(n){
+
+    let newFib = [0,1];
+
+    for(let i=2;i<n;i++){
+
+        newFib[i]= newFib[i-1] + newFib[i-2] ;
+    }
+
+return newFib;
+}
+
+//console.log(fibonacci(n));
+
+
+function factorial(n){
+ let prod = 1;
+ let i = n
+
+ while(i>=1){
+  
+     prod = prod * i
+
+    i--
+ }
+
+ return prod
+}
+
+console.log(factorial(1));
+
+
+function returnPrime(n){
+    if(n<2){
+        return false
+    }
+    for(i=2;i<=Math.sqrt(n);i++){
+        if(n%i == 0){
+            return false
+        }
+    }
+
+    return true;
+}
+console.log(returnPrime(2));
+
+function pof2(n){
+   
+    for(i=0;i<Math.sqrt(n);i++){
+        if(Math.pow(2,i) == n){
+            return true;
+        }
+    }
+return false;
+}
+
+console.log(pof2(1));
+
+function recursiveFibonacci(n){
+    if(n<2){
+        return n
+    }
+    return recursiveFibonacci(n-1) + recursiveFibonacci(n-2)
+
+}
+
+console.log(recursiveFibonacci(9));
+
+function recursiveFactorial(n){
+  
+    if(n<2){
+        return 1
+    }
+   
+   return result = n * recursiveFactorial(n-1);;
+
+
+    
+}
+
+console.log(recursiveFactorial(4))
+
+function binarySearch(arr,tar){
+
+    let right = arr.length-1;
+    let left = 0;
+    while(right >= left){
+        let middleInd = Math.floor((right+left)/2);
+        if(tar == arr[middleInd]){
+            return middleInd;
+        }
+        else if(tar>arr[middleInd]){
+            left = middleInd +1
+        }else{
+            right = middleInd -1
+        }
+    }
+return -1;
+}
+//first it - left = 0,right = 13... second 'left = 7,right=13... third 'right = 9,left=7... fourth left=8,right=9, fifth 'left = 9,right=9
+
+console.log(binarySearch([-5,-4,-2,0,3,4,5,6,7,8,9,10,20],8))
