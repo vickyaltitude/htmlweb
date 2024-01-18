@@ -20,3 +20,22 @@ function returnSubInd(str,tar){
 }
 
 console.log(returnSubInd("javascript","script"))
+
+
+let myOb = {vignesh: 22,place: "india"}
+
+let myOb2 = myOb;
+
+myOb2.vignesh = 25;
+console.log(myOb);
+
+let myArr= [1,2,3];
+let myArr2 = myArr;
+myArr2[1] = 24;
+console.log(myArr);
+console.log(this);
+
+
+
+
+
