@@ -314,3 +314,71 @@ console.log(countUniqueValues([1,2,3,4,4,4,7,7,12,12,13])) // 7
 console.log(countUniqueValues([])) // 0
 console.log(countUniqueValues([-2,-1,-1,0,1])) // 4
 
+//sliding window
+//write a function called maxSubarraySum which accepts an array of integers and a number called n.  the functin should calculate the maximum sum so n consecutive elements in the array.
+
+function maxSubarraySum(arr,n){
+    if(arr.length<n){ return null};
+    let tempSum =0;
+    let maxSum =0;
+    for(i=0;i<n;i++){
+        maxSum+= arr[i];
+    }
+    tempSum = maxSum; 
+    for(j=n;j<arr.length;j++){
+        tempSum= tempSum- arr[j-n] + arr[j]
+        maxSum = Math.max(tempSum,maxSum);
+    }
+    
+    return maxSum
+}
+
+
+
+console.log(maxSubarraySum( [1,2,5,2,8,1,5],2)) // 10
+console.log(maxSubarraySum([1,2,5,2,8,1,5],4)) // 17
+console.log(maxSubarraySum( [4,2,1,6], 1)) // 6
+console.log(maxSubarraySum( [4,2,1,6,2], 4)) // 13
+console.log(maxSubarraySum([], 4)) // null
+
+function sameFrequency(n,m){
+    // good luck. Add any arguments you deem necessary.
+    let checkOne = n.toString();
+    let checkTwo = m.toString();
+    let obj1 = {};
+    let obj2 = {};
+    let count = 1;
+    if(checkOne.length != checkTwo.length){
+        return false
+    }
+    for(let i=0;i<checkOne.length;i++){
+       
+        if(!obj1[checkOne[i]]){
+            obj1[checkOne[i]] = count
+        }else{
+            obj1[checkOne[i]]++}
+    }
+    let count2 = 1;
+    for(let j=0;j<checkTwo.length;j++){
+       
+        if(!obj2[checkTwo[j]]){
+            obj2[checkTwo[j]] = count2
+        }else {
+            obj2[checkTwo[j]]++
+    }
+    }
+    
+    for(let key in obj1){
+        if(key in obj2 == false){
+            return false;
+        }else if(obj1[key] != obj2[key]){
+            return false
+        }
+    }
+    return true;
+  }
+  console.log(sameFrequency(1111722,1221171)); //true
+  console.log(sameFrequency(182,281)) // true
+console.log(sameFrequency(34,14)) // false
+console.log(sameFrequency(3589578, 5879385)) // true
+console.log(sameFrequency(22,222)) // false
