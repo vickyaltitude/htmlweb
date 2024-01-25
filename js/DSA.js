@@ -377,8 +377,62 @@ function sameFrequency(n,m){
     }
     return true;
   }
-  console.log(sameFrequency(1111722,1221171)); //true
+  /* console.log(sameFrequency(1111722,1221171)); //true
   console.log(sameFrequency(182,281)) // true
 console.log(sameFrequency(34,14)) // false
 console.log(sameFrequency(3589578, 5879385)) // true
-console.log(sameFrequency(22,222)) // false
+console.log(sameFrequency(22,222)) // false */
+
+function isSubsequence(word,tar){
+    let firstPointer = 0;
+    let secondPointer =0;
+    while(secondPointer<tar.length){
+        if(word[firstPointer] == tar[secondPointer]){
+            firstPointer++
+        }
+        if(firstPointer == word.length){
+            return true
+        }
+        secondPointer++
+    }
+
+    return false
+}
+
+console.log(isSubsequence('hello', 'hlleo world')); // false
+console.log(isSubsequence('sing', 'sting')); // true
+console.log(isSubsequence('abc', 'abracadabra')); // true
+console.log(isSubsequence('abc', 'acb')); // false (order matters)
+
+function maxSubarraySum(arr,tar){
+    // add whatever parameters you deem necessary - good luck!
+    if(arr.length<tar){
+    return null
+    }
+   let maxCheck = 0;
+   let i=0
+   while(i<tar){
+       maxCheck+=arr[i];
+       i++;
+   }
+   
+   let firstSlider=tar;
+   let checkSum = maxCheck;
+   
+   while(firstSlider<arr.length){
+       
+       checkSum = checkSum - arr[firstSlider-tar] + arr[firstSlider];
+       maxCheck = Math.max(checkSum,maxCheck);
+       firstSlider++
+   }
+   
+   return maxCheck
+  }
+ 
+  
+  console.log(maxSubarraySum([100,200,300,400], 2)) // 700
+  console.log(maxSubarraySum([1,4,2,10,23,3,1,0,20], 4))  // 39 
+  console.log(maxSubarraySum([-3,4,0,-2,6,-1], 2)) // 5
+  console.log(maxSubarraySum([3,-2,7,-4,1,-1,4,-2,1],2)) // 5
+  console.log(maxSubarraySum([2,3], 3)) // null
+  
