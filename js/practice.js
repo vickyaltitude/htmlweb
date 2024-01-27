@@ -349,3 +349,57 @@ return -1;
 //first it - left = 0,right = 13... second 'left = 7,right=13... third 'right = 9,left=7... fourth left=8,right=9, fifth 'left = 9,right=9
 
 console.log(binarySearch([-5,-4,-2,0,3,4,5,6,7,8,9,10,20],8))
+
+//Write a function findPalindromePairs that takes an array of words as input and returns all pairs of distinct indices (i, j) such that the concatenation of the two words at those indices is a palindrome. The function should return an array of arrays, where each inner array represents a valid pair of indices.
+function findPalindromePairs(arr){
+  let resultArr = []
+  for(i=0;i<arr.length;i++){
+
+    let intered = arr[i].split("").reverse().join("");
+
+    arr.forEach((a,j)=>{
+      if(intered==a){
+        if(resultArr.indexOf([j,i]) == -1){
+            resultArr.push([i,j])
+        }
+     
+      }
+    })
+  }
+
+  return resultArr
+}
+ 
+
+
+
+
+console.log(findPalindromePairs(["bat", "tab", "cat", "act", "god", "dog"]))
+
+
+let arr2=[1,2,3,4,5,8,9]  
+
+function BinarySearch(arr,ele){
+    let start=0;
+    let end=arr.length-1;
+
+   
+
+        let mid=Math.floor((start+end)/2);
+        
+        
+        if (ele>arr[mid]){
+            start=mid+1;
+    
+        }else if(ele<arr[mid]) {
+            end=mid-1;
+    
+        }else{
+            return mid;
+        }
+ 
+
+return -1
+}
+
+console.log(BinarySearch(arr2,3))
