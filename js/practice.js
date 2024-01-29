@@ -401,5 +401,5 @@ function BinarySearch(arr,ele){
 
 return -1
 }
-
 console.log(BinarySearch(arr2,3))
+

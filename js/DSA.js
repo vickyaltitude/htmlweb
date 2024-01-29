@@ -472,11 +472,158 @@ This function should return the minimal length of a contiguous subarray of which
     return 0
 }
 
-console.log(minSubArrayLen([2,3,1,2,4,3], 7)) // 2 -> because [4,3] is the smallest subarray
+/* console.log(minSubArrayLen([2,3,1,2,4,3], 7)) // 2 -> because [4,3] is the smallest subarray
 console.log(minSubArrayLen([2,1,6,5,4], 9)) // 2 -> because [5,4] is the smallest subarray
 console.log(minSubArrayLen([3,1,7,11,2,9,8,21,62,33,19], 52)) // 1 -> because [62] is greater than 52
 console.log(minSubArrayLen([1,4,16,22,5,7,8,9,10],39)) // 3
 console.log(minSubArrayLen([1,4,16,22,5,7,8,9,10],55)) // 5
 console.log(minSubArrayLen([4, 3, 3, 8, 1, 2, 3], 11)) // 2
-console.log(minSubArrayLen([1,4,16,22,5,7,8,9,10],95)) // 0
+console.log(minSubArrayLen([1,4,16,22,5,7,8,9,10],95)) // 0 */
   
+
+
+function binarySearch(arr,val){
+
+    let firstP = 0;
+    let lastP = arr.length-1
+
+    while(firstP<=lastP){
+        let mid = Math.floor((firstP + lastP)/2);
+        if(arr[mid]==val){
+            return mid
+        }else if(arr[mid]>val){
+            lastP = mid-1
+        }else {
+            firstP = mid+1
+        }
+    }
+    return -1
+}
+console.log(binarySearch([1,2,3,4,5],2))
+console.log(binarySearch([1,2,3,4,5],3))
+console.log(binarySearch([1,2,3,4,5],5))
+console.log(binarySearch([1,2,3,4,5],6))
+console.log(binarySearch([
+    5, 6, 10, 13, 14, 18, 30, 34, 35, 37, 
+    40, 44, 64, 79, 84, 86, 95, 96, 98, 99
+  ], 10))
+console.log(binarySearch([
+    5, 6, 10, 13, 14, 18, 30, 34, 35, 37, 
+    40, 44, 64, 79, 84, 86, 95, 96, 98, 99
+  ], 95))
+console.log(binarySearch([
+    5, 6, 10, 13, 14, 18, 30, 34, 35, 37, 
+    40, 44, 64, 79, 84, 86, 95, 96, 98, 99
+  ], 100))
+
+
+  //navie solution for searching the substring
+  function searchSub(str,tar){
+   
+
+    for(let i=0;i<str.length;i++){
+        if(str[i] == tar[0]){
+           
+            for(let j=0;j<tar.length;j++){  
+                
+            if(str[i+j] !== tar[j]){
+                    break;
+                }
+              if(j == tar.length-1){
+                return (i+j)-tar.length+1
+               }
+               
+            }
+        }
+    }
+
+    return "No match"
+  }
+
+  console.log(searchSub("lorie loled","lol"))
+
+  //bubble sort
+
+  function bubbleSort(arr){
+
+    for(let i=0;i<arr.length;i++){
+        for(let j=0;j<arr.length-1;j++){
+            if(arr[j] > arr[j+1]){
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp
+            }
+        }
+    }
+
+    return arr
+  }
+
+  console.log(bubbleSort([2,5,18,21,34,9,10]))
+
+  //bubble sort slightly optimized
+
+  function bubbleSortOpt(arr){
+
+    for(let i=arr.length;i>0;i--){
+        for(let j=0;j<i-1;j++){
+            if(arr[j] > arr[j+1]){
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp
+            }
+        }
+    }
+
+    return arr
+  }
+
+  console.log(bubbleSortOpt([2,5,18,21,34,9,10]))
+
+  //bubblesort even more optimized
+
+  function bubbleSortOptMo(arr){
+
+    for(let i=arr.length;i>0;i--){
+        let check = true
+        for(let j=0;j<i-1;j++){
+            if(arr[j] > arr[j+1]){
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp
+            }
+            check = false
+        }
+        if(check){
+            break
+        }
+    }
+
+    return arr
+  }
+
+  console.log(bubbleSortOptMo([2,5,18,21,34,9,10]))
+
+    //bubblesort even more optimized with another method for swap
+
+    function bubbleSortOptMoSwap(arr){
+
+        for(let i=arr.length;i>0;i--){
+            let swap = (arr1,idx1,idx2)=>{
+                [arr1[idx1],arr1[idx2]] = [arr1[idx2],arr1[idx1]]
+            }
+            let check = true
+            for(let j=0;j<i-1;j++){
+                if(arr[j] > arr[j+1]){
+                    swap(arr,j,j+1);
+                }
+                check = false
+            }
+            if(check){
+                break
+            }
+        }
+        return arr
+      }
+    
+      console.log(bubbleSortOptMoSwap([2,5,18,21,34,9,10]))
