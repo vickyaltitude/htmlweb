@@ -627,3 +627,48 @@ console.log(binarySearch([
       }
     
       console.log(bubbleSortOptMoSwap([2,5,18,21,34,9,10]))
+
+//selection sort
+
+function selection(arr){
+
+    for(let i=0;i<arr.length;i++){
+        let check = arr[i]
+        for(let j=i+1;j<arr.length;j++){
+            if(check>arr[j]){
+                console.log(i,j)
+                check = arr[j]
+                arr[j] = arr[i]
+                arr[i] = check
+            }
+    }
+}
+return arr
+}
+
+console.log(selection([5,6,7,9,11,10]))
+
+//selection sort with es6 swap method
+
+function selectionWithS(arr){
+
+    let swap = (arr1,idx,idx2)=>{
+        [arr1[idx1],arr1[idx2]] = [arr1[idx2],arr1[idx1]];
+    }
+
+    for(let i=0;i<arr.length;i++){
+        let check = arr[i]
+        for(let j=i+1;j<arr.length;j++){
+            if(check>arr[j]){
+                console.log(i,j)
+               // check = arr[j]
+               // arr[j] = arr[i]
+               // arr[i] = check
+                swap(arr,arr[i],arr[j])
+            }
+    }
+}
+return arr
+}
+
+console.log(selection([5,6,7,9,11,10,19,2,1,0,15]))
