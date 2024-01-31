@@ -672,3 +672,64 @@ return arr
 }
 
 console.log(selection([5,6,7,9,11,10,19,2,1,0,15]))
+
+//insertion sort
+
+function insertionSort(arr){
+
+    for(let i=1;i<arr.length;i++){
+        let currentVal = arr[i];
+        for(var j=i-1;j>=0 && arr[j]>currentVal;j--){
+            arr[j+1] = arr[j]
+        }
+        arr[j+1] = currentVal
+    }
+    return arr
+}
+
+console.log(insertionSort([2,1,9,76,5]))
+console.log(insertionSort([55,19,9,7,5,4,18,24]))
+console.log(insertionSort([10,1,9,7,5,-4,-2,0]))
+
+
+
+    //1st iteration - [ 2, 1, 9, 76, 4 ]
+    //2nd iteration - []
+
+    //mergeSort
+
+    function merge(arr1,arr2){
+        let resultArr = [];
+        let i=0;
+        let j=0;
+        while(i<arr1.length && j<arr2.length){
+            if(arr1[i]>arr2[j]){
+                resultArr.push(arr2[j])
+                j++
+            }else{
+                resultArr.push(arr1[i])
+                i++
+            }
+        }
+        while(i<arr1.length){
+            resultArr.push(arr1[i])
+            i++
+        }
+        while(j<arr2.length){
+            resultArr.push(arr2[j])
+            j++
+        }
+        return resultArr;
+    }
+
+    function mergeSort(arr){
+          if(arr.length==1){return arr}
+          let mid = Math.floor(arr.length/2)
+          let left =  mergeSort(arr.slice(0,mid));
+          let right =  mergeSort(arr.slice(mid));
+          return merge(left,right);
+
+    }
+//console.log(merge([2,5],[1,4]))
+//console.log(merge([2,5,6,3,1,9],[15,11,13,0,9,4]))
+console.log(mergeSort([2,5,6,3,1,9,15,11,13,0,9,4]))
