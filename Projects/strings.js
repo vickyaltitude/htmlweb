@@ -21,3 +21,5 @@ console.log(myS.toUpperCase());
 console.log("   hey there  ".trim());
 
 
+
+

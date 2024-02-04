@@ -733,3 +733,36 @@ console.log(insertionSort([10,1,9,7,5,-4,-2,0]))
 //console.log(merge([2,5],[1,4]))
 //console.log(merge([2,5,6,3,1,9],[15,11,13,0,9,4]))
 console.log(mergeSort([2,5,6,3,1,9,15,11,13,0,9,4]))
+
+//quick sort
+
+function pivotHelp(arr,start=0,end=arr.length-1){
+    let swap = (arr1,idx1,idx2)=>{
+        [arr1[idx1],arr1[idx2]] = [arr1[idx2],arr1[idx1]]
+    }
+
+    let check = arr[start];
+    let finalSwap = start;
+   for(let i=1;i<=end;i++){
+    if(check>arr[i]){
+        finalSwap++
+        swap(arr,finalSwap,i)
+    }
+   }
+   swap(arr,0,finalSwap)
+
+return finalSwap
+}
+
+function quickSort(arr,left=0,right=arr.length-1){
+
+if(left<right){
+    let sortIndex = pivotHelp(arr,left,right)
+    quickSort(arr,left,sortIndex-1)
+    quickSort(arr,sortIndex+1,right)
+}
+    return arr
+}
+
+
+//console.log(quickSort([5,2,6,3,1,9,15,11,13,0,9,4]))
