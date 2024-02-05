@@ -766,3 +766,54 @@ if(left<right){
 
 
 //console.log(quickSort([5,2,6,3,1,9,15,11,13,0,9,4]))
+
+
+//radix sort
+
+function findIndex(num,i){
+
+    return Math.floor(Math.abs(num)/Math.pow(10,i)) % 10;
+
+}
+
+console.log(findIndex(34657,2))
+
+function findCount(num){
+    return Math.floor(Math.log10(num)) + 1;
+}
+//console.log(findCount(34657))
+
+function checkLong(arr){
+    let longDigit = 0;
+    for(let i=0;i<arr.length;i++){
+        longDigit = Math.max(longDigit,findCount(arr[i]))
+    }
+    return longDigit;
+}
+
+//console.log(checkLong([24,231,100,3456,4574,43455,3456]))
+
+function radixSort(arr){
+    let largestDig = checkLong(arr);
+
+    for(let k=0;k<largestDig;k++){
+        let arrBucket = Array.from({length: 10},()=> [])
+        for(let i=0;i<arr.length;i++){
+            let idxDigit = findIndex(arr[i],k)
+            arrBucket[idxDigit].push(arr[i])
+        }
+        arr = [].concat(...arrBucket)
+    }
+    return arr;
+}
+
+//console.log(radixSort([24,231,100,3456,4574,43455,3456]))
+console.log(radixSort([2,21,1,3,7,55,3]))
+
+
+/* let myr = Array.from({length:10},()=>[]);
+console.log(myr)
+let news = [[3]]
+
+myr = [].concat(...news);
+console.log(myr) */
