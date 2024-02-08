@@ -408,3 +408,21 @@ if(num==1){return 1}
 return num * factorial(num-1)
 }
 console.log(factorial(6))
+
+//coin question
+
+function coin(n,ans){
+    if(n==0){
+        console.log(ans)
+        return;
+    }
+    coin(n-1,ans+"h")
+    coin(n-1,ans+"t")
+
+}
+
+coin(3,"")
+
+//coin(2,h)
+//coin(1,hh)
+//coin(0,hhh)

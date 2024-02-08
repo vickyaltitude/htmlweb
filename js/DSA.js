@@ -817,3 +817,157 @@ let news = [[3]]
 
 myr = [].concat(...news);
 console.log(myr) */
+
+
+//singly linded lists
+
+class Node{
+    constructor(val){
+        this.val = val
+        this.next = null
+    }
+}
+
+class SinglyLinkedLists{
+    constructor(){
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+    push(val){
+        let newNode = new Node(val)
+        if(!this.head){
+            this.head = newNode
+            this.tail = this.head
+        }else{
+            this.tail.next = newNode
+            this.tail = newNode
+        }
+        this.length++
+        return this
+
+    }
+    pop(){
+        if(!this.head){
+            return undefined
+        }
+        let current = this.head;
+        let newTail = current;
+        while(current.next){
+            newTail = current
+            current = current.next
+        }
+        this.tail = newTail;
+        this.tail.next = null;
+        this.length--
+        if(this.length ===0){
+            this.head = null;
+            this.tail = null;
+        }
+return current;
+    }
+    shift(){
+        if(!this.head){
+            return undefined
+        }
+        let currentHead = this.head;
+        this.head = currentHead.next;
+        this.length--
+        if(this.length ===0){
+            this.tail = null;
+        }
+        return currentHead;
+    }
+    unshift(val){
+        let newNode = new Node(val)
+        if(!this.head){
+            this.head = newNode
+            this.tail = this.head
+        }else{
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++
+        return this;
+
+    }
+
+    get(ind){
+        if(ind<0 || ind>=this.length){
+            return null
+        }
+        let counter = 0;
+        let current = this.head
+
+        while(counter !== ind){
+            current = current.next;
+            counter++;
+
+        }
+        return current
+    }
+    set(index,value){
+        let getVal = this.get(index);
+        if(getVal){
+            getVal.val = value;
+            return true
+        }
+        return false
+    }
+    insert(index,value){
+        if(index>this.length || index<0){return null}
+        if(index===0){return !!this.unshift(value);}
+        if(index === this.length){return !! this.push(value);} //we have to return true so we giving double exclamatory here
+        let newNode = new Node(value);
+        let prev = this.get(index-1);
+        let nextNode = prev.next;
+        prev.next = newNode;
+        newNode.next = nextNode;
+        this.length++
+        return true;
+    }
+    remove(index){
+        if(index>=this.length || index<0){return undefined;}
+        if(index === 0){return this.shift()}
+        if(index === this.length-1){return this.pop()}
+        let prevNode = this.get(index-1);
+        let remove = prevNode.next;
+            prevNode.next = remove.next;
+            this.length--
+            return remove;
+    }
+}
+
+let list = new SinglyLinkedLists()
+list.push(15);
+ list.push(16);
+ list.push(20);
+ list.push(25);
+//list.push(19); 
+console.log(list.head);
+//console.log(list.pop())
+//console.log(list);
+/* console.log(list.pop())
+console.log(list);
+console.log(list.pop())
+console.log(list); */
+console.log(list.shift());
+list.unshift(1);
+console.log(list);
+console.log(list.get(2));
+console.log(list.set(2,"hi"));
+console.log(list.get(2));
+console.log(list.insert(0,"addme"))
+console.log(list.get(0));
+console.log(list.insert(5,"ame"))
+console.log(list.get(5));
+console.log(list.insert(3,89))
+console.log(list.get(3));
+console.log(list.remove(3));
+console.log(list);
+console.log(list.get(3));
+
+
+
+
+
