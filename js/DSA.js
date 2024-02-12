@@ -1,12 +1,13 @@
 //KMP(Knut-Morris-Pratt) Algorithm - is used to get a substring index from the given string with time complexity O(n+m)
 
-function kmp(str,sub){
+/* function kmp(str,sub){
 
 
 
 }
+6+
 
-console.log(kmp("ababacadabab","acad"))
+console.log(kmp("ababacadabab","acad")) */
 
 
 
