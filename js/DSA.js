@@ -936,13 +936,37 @@ return current;
             this.length--
             return remove;
     }
+
+    reverse(){
+        let node = this.head;
+            this.head = this.tail;
+            this.tail = node;
+            let next;
+            let prev = null;
+            for(i=0;i<this.length;i++){
+                next = node.next;
+                node.next = prev;
+                prev = node;
+                node = next;
+            }
+            return this;
+    }
+    print(){
+        let checkArr = [];
+        let current = this.head;
+        while(current){
+            checkArr.push(current.val)
+            current = current.next;
+        }
+        return checkArr
+    }
 }
 
 let list = new SinglyLinkedLists()
-list.push(15);
- list.push(16);
- list.push(20);
- list.push(25);
+list.push(1);
+ list.push(2);
+ list.push(3);
+ list.push(4);
 //list.push(19); 
 console.log(list.head);
 //console.log(list.pop())
@@ -955,17 +979,22 @@ console.log(list.shift());
 list.unshift(1);
 console.log(list);
 console.log(list.get(2));
-console.log(list.set(2,"hi"));
+//console.log(list.set(2,"hi"));
 console.log(list.get(2));
-console.log(list.insert(0,"addme"))
+console.log(list.insert(0,0))
 console.log(list.get(0));
-console.log(list.insert(5,"ame"))
+console.log(list.insert(5,6))
 console.log(list.get(5));
-console.log(list.insert(3,89))
+console.log(list.insert(3,2))
 console.log(list.get(3));
 console.log(list.remove(3));
 console.log(list);
 console.log(list.get(3));
+console.log(list.print());
+console.log(list.reverse());
+console.log(list.print());
+console.log(list.head);
+console.log(list.tail);
 
 
 
