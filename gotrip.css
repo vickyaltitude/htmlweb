@@ -438,8 +438,14 @@ ul.menu {
   align-items: center;
 }
 
+.links{
+
+  font-size: 2px;
+}
+
 .links ul {
   list-style-type: none;
+  
 }
 
 .links h3 {

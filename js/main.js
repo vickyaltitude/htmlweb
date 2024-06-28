@@ -6,10 +6,10 @@ console.log(myVar);
 console.log(myVar[3]);
 console.log(myVar.charAt(3));
 console.log(myVar.length);
-console.log(myVar.slice(2,myVar.length));
+console.log(myVar.slice(2,myVar.length-1));
 console.log(myVar.indexOf("at"));
 console.log(myVar.lastIndexOf("m")); //will return the last occurance of the given argument
-console.log(myVar.split("t"));
+console.log(myVar.split("t"));3
 console.log(myVar.toLowerCase());
 console.log(myVar.toUpperCase());
 console.log(myVar.includes("mat"));
@@ -74,7 +74,7 @@ console.log(Math.round(Math.random()*10));
 //target to generate some random between 0 to 100
 console.log(Math.round(Math.random()*100));
 // PRACTICE - YOU HAVE TO GET RANDOM LETTER FROM THE DECLARED VARIABLE
-const myVari = "vigneshyuvarani";
+const myVari = "vignesh";
 console.log(myVari[Math.floor(Math.random()*myVari.length)]);
 
 
@@ -189,11 +189,7 @@ console.log(grades);
 let mee = "rock";
 let computerr = "paper";
 let Result =
-computerr === mee 
-? "Tie"
-: computerr === "scissor" && mee === "paper"
-?"computer won"
-: computerr === "paper" && mee === "rock"
+computerr === mee ? "Tie": computerr === "scissor" && mee === "paper" ? "computer won" : computerr === "paper" && mee === "rock"
 ? "computer won"
 : computerr === "rock" && mee === "scissor"
 ? "computer won"
@@ -208,7 +204,7 @@ console.log(myData);
 //prompt helps to get input from customer and then entered values will be thrown as output
 let myD = prompt("enter your name:");
 console.log(myD);
-//If the customer cancelled without enter anything than the "??" acts as a check if the customers entered anything and if customer cancelled without entered anything then the values after this "??" will be thrown as output
+//If the customer cancelled without enter anything then the "??" acts as a check if the customers entered anything and if customer cancelled without entered anything then the values after this "??" will be thrown as output
 let myH = prompt("enter your name");
 console.log(myH ?? "you didn't enter the valid input");
  */
@@ -1050,7 +1046,7 @@ console.log(samedivs);
 let evenDivs = view1.querySelectorAll("div:nth-of-type(2n)"); //it will fetch u the even divs of that particular element
 console.log(evenDivs);
 
-evenDivs[4].style.backgroundColor = "purple"; //this way you can style the desired div
+evenDivs[2].style.backgroundColor = "purple"; //this way you can style the desired div
 
 for(i=0;i<evenDivs.length;i++){
     evenDivs[i].style.width = "150px";
@@ -1243,3 +1239,12 @@ console.log(myVaria); */
 const me3 = new mail("vignesh");
 console.log(me3.mailTo()); */
 
+for(let i=1;i<=5;i++){
+
+    console.log(i)
+    
+    for(let j=1;j<=5,j++){
+      
+        console.log(j)
+      }
+    }

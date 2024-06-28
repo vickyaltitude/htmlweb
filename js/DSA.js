@@ -162,7 +162,7 @@ console.log(same([1,2,1], [4,4,1])) // false (must be same frequency) */
 
 //here we use 3 seperated loops instead of using indexof method inside a for loop which leads to nested loop and quadratic situation
 //hence the below is the best possible solution for the problem and hence its called frequency counter.
-/* function same(arr1,arr2){
+function same(arr1,arr2){
     let freq1 = {};
     let freq2 = {};
 
@@ -172,8 +172,10 @@ console.log(same([1,2,1], [4,4,1])) // false (must be same frequency) */
     for(let val of arr2){
         freq2[val] = (freq2[val] || 0) + 1;
     }
+    console.log(freq2)
     for(let key in freq1){
         if(!(key*key) in freq2){
+           
             return false
         }
         if(freq2[key*key] != freq1[key]){
@@ -185,7 +187,7 @@ console.log(same([1,2,1], [4,4,1])) // false (must be same frequency) */
 }
 console.log(same([1,2,2,3], [4,1,9,4])) // true
 console.log(same([1,2,3], [1,9])) // false
-console.log(same([1,2,1], [4,4,1])) // false (must be same frequency) */
+console.log(same([1,2,1], [4,4,1])) // false (must be same frequency) 
 
 
 //now we see another problems that has the opportunity to solve with the help of frequency counter.
@@ -229,7 +231,7 @@ function validAnagram (first, second) {
     }
     const lookup = {};
     
-    for (let i = 0;i< first. length; i++) {
+    for (let i = 0;i< first.length; i++) {
     let letter = first[i];
     // if letter exists, increment, otherwise set to 1
     lookup [letter] ? lookup [letter] += 1 : lookup [letter] = 1;
