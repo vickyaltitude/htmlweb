@@ -9,7 +9,7 @@
 
 
         <script>
-
+/* 
             let bookList = {};
 
             class book{
@@ -45,7 +45,7 @@
             bookList.firstBook = firstBook;
             console.log(bookList);
             console.log(bookList.firstBook);
-
+ */
 
 /***
  * 
@@ -70,7 +70,7 @@ Additional Functionality (optional, for an extra challenge):
 
 Implement a feature to keep track of borrowers (users) who have borrowed books.
 Display information about borrowed books and their borrowers.**/
-
+/* 
 let libManagement = {
 
     1001:{
@@ -102,16 +102,72 @@ class library{
 libManagement[1002] = new library("vignesh","me",2020,"romance",100);
 
 console.log(libManagement);
+ */
 
 
 
+ class Node{
+    constructor(val){
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+class BST{
+    constructor(){
+        this.root = null;
+    }
+    insert(val){
+        let newNode = new Node(val)
+        if(!this.root){
+            this.root = newNode;
+        }else{
+            let current = this.root;
+            while(true){
+                if(current.val ==  val) return false
+                if(current.val > val){
+                    if(current.left == null){
+                        current.left = newNode;
+                        return this
+                    }else{
+                        current = current.left
+                    }
+                }
+                else{
+                    if(current.right == null){
+                        current.right = newNode;
+                        return this
+                    }else{
+                        current = current.right;
+                    }
+                }
+            }
+        }
+    }
+    contains(val){
+        if(!this.root) return false;
+        let current = this.root
+        while(current){
+            if(val > current.val){
+                current = current.right
+            }else if(val < current.val){
+                current = current.left
+            }else{
+                return true
+            }
+        }
+        return false
+    }
+}
+
+
+let myBst = new BST()
+myBst.insert(20)
+myBst.insert(30)
 
 
 
-
-
-
-
+console.log(myBst)
 
 
 
