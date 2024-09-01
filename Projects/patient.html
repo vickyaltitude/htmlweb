@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Book Appointment</h1>
+  <label for='patient_details'>Patient Details</label>
+  <form id='patient_details'>
+    <p><label for='name'>Name:</label>
+      <input type='text' id='name'></p>
+     <br>
+     <br>
+     <p><label for='mail'>Email:</label>
+      <input type='email' id='mail'></p>
+     <br>
+     <br>
+     <p><label for='phn'>Phone Number:</label>
+      <input type='tel' id='phn'></p>
+     <br>
+     <br>
+  <p> <label for='date'>Date:</label>
+    <input type='date' id='date'></p> 
+     <br>
+     <br>
+     <p>   <label for='time'>Time:</label>
+    <input type='time' id='time'></p> 
+     <br>
+     <br>
+  <label for='subm' onclick="handleClick(event)"><button type='submit' id='subm'>Submit</button></label>
+ <label for='res'> <button type='reset' id='res'>Reset</button></label>
+  </form>
+</body>
+<script>
+    function handleClick(event){
+        event.preventDefault();
+        let pName = document.getElementById('name')
+        let pMail = document.getElementById('mail')
+        let phn = document.getElementById('phn')
+        let date = document.getElementById('date')
+        let time = document.getElementById('time')
+        console.log(pName.value)
+        console.log(pMail.value)
+        console.log(phn.value)
+        console.log(date.value)
+        console.log(time.value)
+        
+    }
+</script>
+</html>
