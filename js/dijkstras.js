@@ -26,6 +26,21 @@ class WeightedGraph{
         this.adjacencyList[vertex1].push({node:vertex2,weight});
         this.adjacencyList[vertex2].push({node:vertex1,weight})
     }
+    dijkstras(start,end){
+        let nodes = new PriorityQueue();
+        let distances = {};
+        let previous = {};
+        for(let vertex in this.adjacencyList){
+            if(vertex == start){
+                distances[vertex] = 0;
+                nodes.enqueue(vertex,0)
+            }else{
+                distances[vertex] = Infinity;
+                nodes.enqueue(vertex,Infinity);
+            }
+            previous[vertex] = null;
+        }
+    }
 }
 let newGraph = new WeightedGraph();
 newGraph.addVertex("A");
