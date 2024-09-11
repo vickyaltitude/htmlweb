@@ -1,69 +1,82 @@
 let sureshUsers = document.getElementById("sureshUsers")
 let deepankUsers = document.getElementById("DeepankUsers")
-let abhikUsers = document.getElementById("suresh-total")
-let sUser = [];
-let dUser = [];
-let aUser = [];
-document.addEventListener("DOMContentLoaded",()=>{
-    axios.get("https://crudcrud.com/api/648b5ba3f0de43cbaa152332adf9b831/userDetails")
-    .then(res =>{
-       showData(res.data);
-    })
-})
+let abhikUsers = document.getElementById("abhikUsers")
+let sUser;
+let dUser;
+let aUser;
+let sId;
+let dId;
+let aId;
 let scount = 0;
 let dcount = 0;
 let acount = 0;
+document.addEventListener("DOMContentLoaded",()=>{
+    axios.get("http://localhost:3500/posts")
+    .then(res =>{
+        sId = res.data[0].id;
+        dId = res.data[1].id;
+        aId = res.data[2].id;
+        scount = res.data[0].total;
+        dcount = res.data[1].total;
+        acount = res.data[2].total;
+        sUser = [...res.data[0].users]
+        dUser = [...res.data[1].users]
+        aUser = [...res.data[2].users]
+       showData(res.data);
+    })
+})
+
 function showData(datas){
+    console.log(datas)
     let sureshCount = datas[0].total;
     let sureshTotal = document.getElementById("suresh-total");
-    let sT = `Total: ${sureshCount}`
-    sureshTotal.innerText = sT;
+    sureshTotal.innerText = `Total: ${sureshCount}`;
     let deepankCount = datas[1].total;
     let deepankTotal = document.getElementById("deepank-total");
-    let dT = `Total: ${deepankCount}`
-    deepankTotal.innerText = dT;
+    deepankTotal.innerText = `Total: ${deepankCount}`;
     let abhikCount = datas[2].total;
     let abhikTotal = document.getElementById("abhik-total");
-    abhikTotal.textContent = `Total: ${abhikCount}`;
+    abhikTotal.innerText = `Total: ${abhikCount}`;
     let totalVotes = document.getElementById("total-votes");
-    let totalV = Number(datas[0].total) + Number(datas[1].total) + Number(datas[2].total)
+    let totalV = Number(sureshCount) + Number(deepankCount) + Number(abhikCount);
     totalVotes.innerText = `Total Votes: ${totalV}`;
-    if(datas){
+    if(datas[0].users){
        datas[0].users.forEach(ele=>{
           let newP = document.createElement("p");
-          let newBtn = document.createElement('button');
-          newBtn.innerText = "Delete";
-          newP.innerHTML = ele + "  " + newBtn;
+          newP.innerHTML = `${ele}  <button class='btn btn-danger del'>Delete</button>`;
           sureshUsers.appendChild(newP);
        })
     }
     if(datas[1].users){
         datas[1].users.forEach(ele=>{
            let newP = document.createElement("p");
-           let newBtn = document.createElement('button');
-           newBtn.innerText = "Delete";
-           newP.innerHTML = ele + "  " + newBtn;
+           newP.innerHTML = `${ele}  <button class='btn btn-danger del'>Delete</button>`;
            deepankUsers.appendChild(newP);
         })
      }
      if(datas[2].users){
         datas[2].users.forEach(ele=>{
            let newP = document.createElement("p");
-           let newBtn = document.createElement('button');
-           newBtn.innerText = "Delete";
-           newP.innerHTML = ele + "  " + "<button id='delete' class='btn btn-danger'>Delete</button>";
+           newP.innerHTML = `${ele}  <button class='btn btn-danger del'>Delete</button>`;
            abhikUsers.appendChild(newP);
         })
      }
 }
-document.getElementById('btn').addEventListener("click",(event)=>{
+document.getElementById('form').addEventListener("submit",(event)=>{
     event.preventDefault();
+
     let fixObj;
-    let choosen = document.getElementById("names");
-    if(choosen.value == "Suresh"){
-        let inpName = document.getElementById("inpname");
-        sUser.push(inpName.value)
-        scount++
+    let choosen = document.getElementById("names").value;
+    let inpName = document.getElementById("inpname").value;
+    let id;
+    if(!inpName){
+        alert("Please enter your name")
+        return
+    }
+    if(choosen == "Suresh"){
+        sUser.push(inpName)
+        scount++;
+        id = sId;
             fixObj = {
             "name": "suresh",
             "total": scount.toString(),
@@ -71,10 +84,10 @@ document.getElementById('btn').addEventListener("click",(event)=>{
         }
        
     }
-    if(choosen.value == "Deepank"){
-        let inpName = document.getElementById("inpname");
-        dUser.push(inpName.value)
-        dcount++
+    else if(choosen == "Deepank"){
+        dUser.push(inpName)
+        dcount++;
+        id = dId;
             fixObj = {
             "name": "Deepank",
             "total": dcount.toString(),
@@ -82,10 +95,10 @@ document.getElementById('btn').addEventListener("click",(event)=>{
         }
        
     }
-    if(choosen.value == "Abhik"){
-        let inpName = document.getElementById("inpname");
-        aUser.push(inpName.value)
-        acount++
+    else if(choosen == "Abhik"){
+        aUser.push(inpName)
+        acount++;
+        id = aId;
             fixObj = {
             "name": "Abhik",
             "total": acount.toString(),
@@ -93,8 +106,51 @@ document.getElementById('btn').addEventListener("click",(event)=>{
         }
        
     }
-    axios.put("https://crudcrud.com/api/648b5ba3f0de43cbaa152332adf9b831/userDetails",fixObj)
+    axios.put(`http://localhost:3500/posts/${id}`,fixObj)
     .then(res =>{
-        showData(res.data)
-    })
+        updateUI(choosen,inpName)
+        inpName = '';
+        let deletes = document.getElementsByClassName('del')
+
+for (let i = 0; i < deletes.length; i++) {
+    deletes[i].addEventListener("click", function(event) {
+        let getId = this.parentElement.id;
+        console.log(getId);
+    });
+}
+    }).catch(err => console.log(err))
+   
 })
+
+function updateUI(candidate, userName) {
+    let userCount, userList, totalElement;
+
+    if (candidate === "Suresh") {
+        userCount = scount;
+        userList = sureshUsers;
+        totalElement = document.getElementById("suresh-total");
+    } else if (candidate === "Deepank") {
+        userCount = dcount;
+        userList = deepankUsers;
+        totalElement = document.getElementById("deepank-total");
+    } else if (candidate === "Abhik") {
+        userCount = acount;
+        userList = abhikUsers;
+        totalElement = document.getElementById("abhik-total");
+    }
+
+    totalElement.innerText = `Total: ${userCount}`;
+
+    let newP = document.createElement("p");
+    let newB = document.createElement("button");
+    newB.innerText = "Delete"
+    newB.type = "click";
+    newB.className = "btn btn-danger del";
+    newP.innerText = `${userName}   `;
+    newP.appendChild(newB)
+    userList.appendChild(newP);
+
+    let totalVotes = document.getElementById("total-votes");
+    let totalV = Number(scount) + Number(dcount) + Number(acount);
+    totalVotes.innerText = `Total Votes: ${totalV}`;
+}
