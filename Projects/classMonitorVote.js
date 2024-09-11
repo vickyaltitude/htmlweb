@@ -110,14 +110,7 @@ document.getElementById('form').addEventListener("submit",(event)=>{
     .then(res =>{
         updateUI(choosen,inpName)
         inpName = '';
-        let deletes = document.getElementsByClassName('del')
-
-for (let i = 0; i < deletes.length; i++) {
-    deletes[i].addEventListener("click", function(event) {
-        let getId = this.parentElement.id;
-        console.log(getId);
-    });
-}
+        
     }).catch(err => console.log(err))
    
 })
