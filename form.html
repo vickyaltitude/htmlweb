@@ -6,18 +6,174 @@
     <title>Document</title>
 </head>
 <body>
-   <section>
-     <div><input type="radio"></div>
-     <div><input type="radio" name="setting 2"></div>
-     <div><input type="radio" name="setting 3"></div>
-     <div><input type="radio" name="setting 4"></div>
-   </section> 
-
-    <section>
-        <div><input type="checkbox" name="option 1"></div>
-        <div><input type="checkbox" name="option 2"></div>
-        <div><input type="checkbox" name="option 3"></div>
-        <div><input type="checkbox" name="option 4"></div> 
-    </section>
+  
 </body>
+<script>
+    //doubly linked list
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+    this.prev = null;
+  }
+}
+
+class DLL {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+  push(val) {
+    let newNode = new Node(val)
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.prev = this.tail;
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++
+    return this
+  }
+  pop() {
+    if (!this.head) return null
+    let rem = this.tail;
+    if (this.length == 1) {
+      this.head = null;
+      this.tail = null;
+      this.length--
+      return rem
+    }
+    let newTail = rem.prev;
+    newTail.next = null;
+    rem.prev = null;
+    this.tail = newTail;
+    this.length--
+    return rem
+  }
+  shift() {
+    if(!this.head) return null;
+  let rem = this.head;
+  if(this.length === 1) {
+    this.head = null;
+    this.tail = null;
+  } else {
+    this.head = rem.next;
+    this.head.prev = null;
+  }
+  this.length--;
+  return rem;
+    
+  }
+
+  unshift(val) {
+      let newNode = new Node(val);
+      if(!this.head){
+        this.head = newNode;
+        this.tail = newNode;
+      }else{
+        let current = this.head;
+        current.prev = newNode;
+        newNode.next = current;
+        this.head = newNode;
+      }
+      this.length++
+      return this
+  }
+  get(ind) {
+    if(!this.head) return null;
+    if(ind < 0 || ind> this.length-1) return null;
+     let check = Math.floor(this.length/2);
+     if(check>ind){
+        let currentH = this.head
+        let count = 0;
+        while(count != ind){
+          currentH = currentH.next;
+          count++
+        }
+        return currentH
+     }else{
+         let currentT = this.tail;
+         let count = this.length-1;
+         while(count != ind){
+          currentT = currentT.prev;
+          count--
+         }
+         return currentT
+     }
+  }
+  set(ind, val) {
+    if(!this.head) return null;
+    if(ind < 0 || ind> this.length-1) return null;
+    let getInd = this.get(ind);
+    getInd.val = val;
+    return true;
+  }
+  insert(ind, val) {
+    if(!this.head) return null;
+    if(ind < 0 || ind> this.length) return null;
+    if(ind == 0) return !!this.unshift(val);
+    if(ind == this.length) return !!this.push(val);
+    let newNode = new Node(val)
+    let getInd = this.get(ind-1);
+    let getNext = getInd.next;
+    newNode.prev = getInd;
+    newNode.next = getNext;
+    getInd.next = newNode;
+    getNext.prev = newNode;
+    this.length++
+    return true;
+  }
+  remove(ind) {
+    if(!this.head) return null;
+    if(ind < 0 || ind > this.length-1) return null;
+    if(ind == 0) return !!this.shift();
+    if(ind == this.length-1) return !!this.pop();
+    let getInd = this.get(ind-1);
+    let getNext = this.get(ind+1);
+    let rem = this.get(ind);
+    getInd.next = getNext;
+    getNext.prev = getInd;
+    rem.next = null;
+    rem.prev = null;
+    this.length--
+    return rem;
+  }
+  reverse(){
+        if(this.length === 0) return this;
+        let temp = this.head;
+        this.head = this.tail;
+        this.tail = temp;
+        let nextNode;
+        let prevNode = null;
+        for(let i = 0;i<this.length;i++){
+            nextNode = temp.next
+            temp.next = prevNode;
+            temp.prev = nextNode;
+            prevNode = temp;
+            temp = nextNode;
+            
+        }
+        return this
+    }
+}
+let newLL = new DLL();
+newLL.push(1)
+newLL.push(2)
+newLL.push(3)
+newLL.push(4)
+newLL.shift()
+newLL.pop()
+newLL.unshift("a")
+newLL.unshift("b")
+newLL.unshift("c")
+console.log(newLL.get(4))
+console.log(newLL.set(4,"three"))
+console.log(newLL.insert(1,"yes"))
+console.log(newLL.remove(1))
+console.log(newLL.reverse())
+console.log(newLL)
+</script>
 </html>
