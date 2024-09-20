@@ -1,3 +1,4 @@
+//weather api from apiweathermap website
 let apiKey = "998d956a25a3f031c9260b346dc6a19b";
 let buttonReceive = document.getElementById("receiveTemp");
 buttonReceive.addEventListener("click",function(){
